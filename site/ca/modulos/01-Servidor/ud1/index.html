@@ -1,0 +1,1374 @@
+
+<!doctype html>
+<html lang="ca" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Apunts i recursos de Formació Professional">
+      
+      
+        <meta name="author" content="Manuel Pérez Alfonso">
+      
+      
+        <link rel="canonical" href="https://mperezalf.github.io/ca/modulos/01-Servidor/ud1/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../../../about/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>UD1 - Apunts de Desenvolupament d'aplicacions web</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ud1-arquitectures-i-tecnologies-web" class="md-skip">
+          Salta el contingut
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Capçalera">
+    <a href="../../../" title="Apunts de Desenvolupament d&#39;aplicacions web" class="md-header__button md-logo" aria-label="Apunts de Desenvolupament d'aplicacions web" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Apunts de Desenvolupament d'aplicacions web
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              UD1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-orange"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="deep-orange"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Selecciona la llengua">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../../../modulos/01-Servidor/ud1/" hreflang="es" class="md-select__link">
+              Castellano
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="ca" class="md-select__link">
+              Valencià
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Neteja" aria-label="Neteja" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicialitzant cerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestanyes" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Inici
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Mòduls
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Sobre mi
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegació" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../" title="Apunts de Desenvolupament d&#39;aplicacions web" class="md-nav__button md-logo" aria-label="Apunts de Desenvolupament d'aplicacions web" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Apunts de Desenvolupament d'aplicacions web
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inici
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Mòduls
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Mòduls
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Desenvolupament web en entorn servidor
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Desenvolupament web en entorn servidor
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducció
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    UD1
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD1
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Taula de continguts">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Taula de continguts
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sondeig-inicial" class="md-nav__link">
+    <span class="md-ellipsis">
+      SONDEIG INICIAL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#avaluacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      AVALUACIÓ
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arquitectures-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      ARQUITECTURES WEB
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ARQUITECTURES WEB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arquitectura-client-servidor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arquitectura Client-Servidor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#peticions-des-del-navegador-exemple-practic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Peticions des del navegador: exemple pràctic
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-actual-darquitectura-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model actual d'Arquitectura web
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generacio-de-pagines-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      GENERACIÓ DE PÀGINES WEB
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GENERACIÓ DE PÀGINES WEB">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estatiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estàtiques
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dinamiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dinàmiques
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#models-de-programacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      MODELS DE PROGRAMACIÓ
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MODELS DE PROGRAMACIÓ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-vista-controlador" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model-Vista-Controlador
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicacions-basades-en-serveis-rest" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aplicacions basades en serveis REST
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mecanismes-dexecucio-de-codi" class="md-nav__link">
+    <span class="md-ellipsis">
+      MECANISMES D'EXECUCIÓ DE CODI
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MECANISMES D&#39;EXECUCIÓ DE CODI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#llenguatges-de-programacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Llenguatges de programació
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execucio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execució
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Execució">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#php" class="md-nav__link">
+    <span class="md-ellipsis">
+      PHP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#javascript" class="md-nav__link">
+    <span class="md-ellipsis">
+      JavaScript
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integracio-amb-els-llenguatges-de-marques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integració amb els llenguatges de marques
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eines-de-programacio-client-i-servidor-ides-editors-compiladors" class="md-nav__link">
+    <span class="md-ellipsis">
+      EINES DE PROGRAMACIÓ (CLIENT I SERVIDOR). IDEs, EDITORS, COMPILADORS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tecnologies" class="md-nav__link">
+    <span class="md-ellipsis">
+      TECNOLOGIES
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TECNOLOGIES">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#virtualitzacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Virtualització
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servidors-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      Servidors web
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servidors-daplicacions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Servidors d'aplicacions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contenidors-servlets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contenidors servlets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestors-de-bbdd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestors de BBDD
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frameworks-servidor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frameworks servidor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frameworks-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frameworks client
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navegadors-tipus-i-caracteristiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      NAVEGADORS. TIPUS I CARACTERÍSTIQUES
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#especificacions-oficials" class="md-nav__link">
+    <span class="md-ellipsis">
+      ESPECIFICACIONS OFICIALS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protocol-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      PROTOCOL HTTP
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sobre mi
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ud1-arquitectures-i-tecnologies-web">UD1 - ARQUITECTURES I TECNOLOGIES WEB<a class="headerlink" href="#ud1-arquitectures-i-tecnologies-web" title="Permanent link">&para;</a></h1>
+<p><img alt="" src="../../../../modulos/01-Servidor/ud1-Pictures/Pictures/10000000000005A700000800123FD3FA193773FF.jpg" style="display:block; margin:auto;" width="50%" /></p>
+<h2 id="sondeig-inicial">SONDEIG INICIAL<a class="headerlink" href="#sondeig-inicial" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Què és Internet?</li>
+<li>Què és la pila de protocols TCP/IP?</li>
+<li>Quin protocol de nivell d'aplicació s'utilitza a Internet? Quina és la versió segura d'aquest protocol?</li>
+<li>Què és una adreça IP? Què és un port IP?</li>
+<li>Quantes versions del protocol IP coneixes?</li>
+<li>Què és una URL? Mitjançant quin protocol/servei es relaciona un domini amb una adreça IP?</li>
+<li>Què és una pàgina web? Què és una aplicació web? Què és un lloc web? Què és una arquitectura web?</li>
+<li>Quina diferència hi ha entre una pàgina web estàtica i una dinàmica? Les pàgines web que has desenvolupat durant el primer curs, eren estàtiques o dinàmiques?</li>
+<li>Quina diferència hi ha entre la web 1.0 i la web 2.0?</li>
+<li>Un navegador web, què és exactament? Quina és la seua funció? Quants en coneixes? Hi ha diferències entre ells?</li>
+<li>Quina creus que és la principal diferència entre una aplicació web i una aplicació nativa? Has sentit parlar de les aplicacions híbrides? Coneixes exemples d'aplicacions que tinguen una versió web i la seua corresponent nativa (app mòbil)?</li>
+<li>Coneixes els termes "back-end" i "front-end"? Quin correspon al desenvolupament servidor i quin al desenvolupament en client? Quines idees t'inspira la imatge de la portada d'aquest document?</li>
+<li>Coneixes els termes "back-office" i "front-office"? Quina és la diferència?</li>
+</ul>
+<h2 id="avaluacio">AVALUACIÓ<a class="headerlink" href="#avaluacio" title="Permanent link">&para;</a></h2>
+<p>El present document, juntament amb el seu corresponent butlletí d'activitats (publicat addicionalment), cobreix els següents criteris d'avaluació:</p>
+<p>PART SERVIDOR</p>
+<table>
+<thead>
+<tr>
+<th>RESULTATS D'APRENENTATGE</th>
+<th>CRITERIS D'AVALUACIÓ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>RA1</strong>. Selecciona les arquitectures i tecnologies de programació web en entorn servidor, analitzant les seues capacitats i característiques pròpies.</td>
+<td>a) S'han caracteritzat i diferenciat els models d'execució de codi en el servidor i en el client web.<br>b) S'han reconegut els avantatges que proporciona la generació dinàmica de pàgines.<br>c) S'han identificat els mecanismes d'execució de codi en els servidors web.<br>d) S'han reconegut les funcionalitats que aporten els servidors d'aplicacions i la seua integració amb els servidors web.<br>e) S'han identificat i caracteritzat els principals llenguatges i tecnologies relacionats amb la programació web en entorn servidor.<br>f) S'han verificat els mecanismes d'integració dels llenguatges de marques amb els llenguatges de programació en entorn servidor.<br>g) S'han reconegut i avaluat les eines i frameworks de programació en entorn servidor.</td>
+</tr>
+</tbody>
+</table>
+<p>PART CLIENT</p>
+<table>
+<thead>
+<tr>
+<th>RESULTATS D'APRENENTATGE</th>
+<th>CRITERIS D'AVALUACIÓ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>RA1</strong>. Selecciona les arquitectures i tecnologies de programació sobre clients web, identificant i analitzant les capacitats i característiques de cadascuna.</td>
+<td>a) S'han caracteritzat i diferenciat els models d'execució de codi en el servidor i en el client web.<br>b) S'han identificat les capacitats i mecanismes d'execució de codi dels navegadors web.<br>c) S'han identificat i caracteritzat els principals llenguatges relacionats amb la programació de clients web.<br>d) S'han reconegut les particularitats de la programació de guions i els seus avantatges i desavantatges sobre la programació tradicional.<br>e) S'han verificat els mecanismes d'integració dels llenguatges de marques amb els llenguatges de programació de clients web.<br>f) S'han reconegut i avaluat les eines de programació i prova sobre clients web.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="arquitectures-web">ARQUITECTURES WEB<a class="headerlink" href="#arquitectures-web" title="Permanent link">&para;</a></h2>
+<p>Les arquitectures web descriuen la relació entre els diferents elements que participen en l'intercanvi i el processament d'informació a través d'Internet, així com les seues funcions.</p>
+<p>La gran majoria de les arquitectures web actuals són de tipus <strong>client-servidor</strong>: una comunicació asimètrica en la qual un dels extrems ofereix un o més serveis i l'altre fa ús d'aquests. Aquesta és l'arquitectura sobre la qual ens centrarem, encara que existeixen altres com la <a href="https://es.wikipedia.org/wiki/Peer-to-peer">Punt a Punt (P2P - Peer to Peer)</a>.</p>
+<h3 id="arquitectura-client-servidor">Arquitectura Client-Servidor<a class="headerlink" href="#arquitectura-client-servidor" title="Permanent link">&para;</a></h3>
+<p>El model client-servidor és un model que reparteix tasques entre els proveïdors d'un recurs o servei, anomenats <strong>servidors</strong>, i els sol·licitants o consumidors del servei, anomenats <strong>clients</strong>.</p>
+<p>El més freqüent és que els clients i els servidors es comuniquen a través d'una xarxa de comunicacions, però ambdós poden residir en la mateixa màquina (normalment en tasques de desenvolupament).</p>
+<p>L'esquema de funcionament més bàsic del model client-servidor per a una arquitectura web està basat en un o diversos clients que sol·liciten una pàgina web a un servidor web:</p>
+<ol>
+<li>Des del navegador web (o agent d'usuari, que pot ser també una app nativa o fins i tot un altre servidor) l'usuari sol·licita un servei web indicant la seua URL.</li>
+<li>El servidor rep la <strong>petició</strong> mitjançant el protocol d'aplicació HTTP, i la processa mitjançant la seua <strong>lògica de negoci</strong>.</li>
+<li>Produeix una <strong>resposta</strong> HTTP a la petició, que envia al client. Aquesta resposta pot contenir <strong>fitxers</strong> de diversa naturalesa: HTML, CSS, XML, JSON, fitxers multimèdia, codi JavaScript, etc.</li>
+<li>El navegador web rep la informació enviada pel servidor i la interpreta. En funció de la resposta enviada, es representa en el navegador la resposta a l'usuari (normalment en forma de pàgina web).</li>
+</ol>
+<p><img alt="" src="../../../../modulos/01-Servidor/ud1-Pictures/Pictures/10000001000003FE000001A49E7FCAF15F6518FB.png" /></p>
+<p>Avantatges:</p>
+<ul>
+<li><strong>Centralització</strong> del control: els accessos, recursos i la integritat de les dades són controlats pel servidor. Aquesta centralització també facilita la tasca d'actualitzar dades o altres recursos.</li>
+<li><strong>Escalabilitat</strong>: es pot augmentar la capacitat de clients i servidors per separat. Qualsevol element pot ser augmentat (o millorat) en qualsevol moment, o es poden afegir nous nodes a la xarxa (clients i/o servidors), sempre que el sistema estiga dissenyat per a això.</li>
+<li><strong>Portabilitat</strong>: el fet que l'aplicació web s'execute en un navegador web fa que s'independitze el programari del sistema operatiu sobre el qual s'executa. D'aquesta manera, s'aprofita el desenvolupament per a les diferents plataformes.</li>
+<li>Fàcil <strong>manteniment</strong>: en estar distribuïdes les funcions i responsabilitats entre diversos ordinadors independents, és possible reemplaçar, reparar, actualitzar, o fins i tot traslladar un servidor, mentre que els seus clients no es veuran afectats per aquest canvi (o s'afectaran mínimament). Aquesta independència dels canvis també es coneix com a <strong>encapsulació</strong>.</li>
+<li>Existeixen <strong>tecnologies</strong> prou desenvolupades, dissenyades per al model client-servidor que asseguren la seguretat en les transaccions, la <strong>usabilitat</strong> de la interfície i la facilitat d'ús.</li>
+</ul>
+<p>Desavantatges:</p>
+<ul>
+<li>La <strong>congestió</strong> del trànsit ha estat sempre un problema en aquesta arquitectura. Quan una gran quantitat de clients envien peticions simultànies al mateix servidor, es poden produir situacions de sobrecàrrega.</li>
+<li>Quan un servidor està caigut, les peticions dels clients <strong>no poden ser satisfetes</strong>, ja que els recursos no estan distribuïts.</li>
+<li>El programari i el maquinari d'un servidor són generalment molt determinants. Normalment es necessita <strong>programari i maquinari específic</strong>, depenent del tipus de servei web, sobretot en el costat del servidor. Això augmentarà el cost. Com a alternativa, es disposa de serveis web al núvol, amb diversos tipus de costos dependents de l'arquitectura web.</li>
+</ul>
+<p><em>NOTA</em>: aquestes desavantatges es refereixen al cas en què els recursos del servidor no estan replicats i/o distribuïts. Actualment existeixen tècniques d'escalat horitzontal i vertical que poden solucionar aquests problemes.</p>
+<h3 id="peticions-des-del-navegador-exemple-practic">Peticions des del navegador: exemple pràctic<a class="headerlink" href="#peticions-des-del-navegador-exemple-practic" title="Permanent link">&para;</a></h3>
+<p>En aquest apartat anem a aprofundir en què succeeix realment quan consultem una URL. Observarem, a través de les eines de desenvolupador del navegador web de Chrome (també serveix Firefox o qualsevol altre), els 4 passos que es detallaven en l'apartat anterior.</p>
+<p>Per a això utilitzarem la pàgina web de l'ajuntament d'Elx (www.elche.es).</p>
+<ol>
+<li>Obrim una pestanya del navegador web i introduïm la URL www.elche.es.</li>
+</ol>
+<p>A continuació obrim les eines de desenvolupador i anem a la pestanya Network (o Xarxa):</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/ud1-Pictures/Pictures/1000000000000554000002B01D2F9E92BCBE14ED.png" /></p>
+<p><img alt="" src="../../../../modulos/01-Servidor/ud1-Pictures/Pictures/1000000000000554000002AD0386427C0D4CC51B.png" /></p>
+<p>En aquests moments encara no hi ha dades, perquè no hem fet una petició al servidor amb la finestra d'eines de desenvolupador activa. Per tant, refresquem la pàgina (equivalent a fer una petició al servidor que gestiona www.elche.es) i passem al punt següent.</p>
+<ol>
+<li>El servidor rep la petició mitjançant el protocol d'aplicació HTTP, i la processa mitjançant la seua lògica de negoci.</li>
+</ol>
+<p>Realment no podem saber exactament què està succeint al servidor durant aquest pas, a no ser que tinguérem accés al mateix, amb els privilegis i eines correctes, però sí que podem esbrinar moltes dades mitjançant eines com:</p>
+<ul>
+<li><a href="https://who.is/dns/elche.es">whois</a>: ens indica, entre altres dades, que la IP del servidor és 217.13.88.8 (registre DNS de tipus A).</li>
+<li><a href="https://builtwith.com/detailed/elche.es">builtwith</a>: ens indica, entre altres coses, que la plataforma web disposa de dos servidors web (Apache i nginx).</li>
+</ul>
+<p><strong>ATENCIÓ</strong>: Existeixen altres mètodes per conéixer més dades sobre el servidor que podrien implicar pràctiques il·legals, en l'àmbit de la ciberseguretat.</p>
+<p>Aquest pas es duria a terme en el que s'anomena <strong>Back-end</strong>.</p>
+<p>Vegem el resultat en el següent pas.</p>
+<ol>
+<li>El servidor produeix una resposta a la petició del client, que l'envia a través d'internet i la recupera el nostre navegador.</li>
+</ol>
+<p>Ara, si consultem la pestanya Network després de refrescar la URL, podrem veure que han aparegut molts registres, el primer dels quals té com a nom "www.elche.es":</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/ud1-Pictures/Pictures/10000000000004E3000002158D73C853AFD9EA33.png" /></p>
+<p>Aquest registre correspon a la primera petició que hem realitzat al servidor de www.elche.es. Si fem clic sobre ell podrem veure tant les dades de la petició realitzada, com la resposta enviada pel servidor a través d'Internet, mitjançant HTTP. Es pot veure que el codi retornat pel servidor és 200 (en color verd, senyal que no hi ha hagut error), i ha respost un servidor web nginx:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/ud1-Pictures/Pictures/100000000000055500000291DC245AC9B6D151F3.png" /></p>
+<blockquote>
+<p><em>NOTA</em>: el servidor pot enviar també la seua versió de programari, però això podria comportar atacs maliciosos, depenent de les vulnerabilitats d'aquesta versió. És per això que és una bona pràctica configurar el servidor web perquè no envie aquesta versió (entre altres aspectes).</p>
+</blockquote>
+<p>Més avall, en la mateixa resposta, ens indica els paràmetres amb què s'ha realitzat la petició. Entre aquests, podem veure el tipus de petició que hem fet (GET), la versió del nostre navegador web, el llenguatge en què volem rebre la informació, entre altres detalls:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/ud1-Pictures/Pictures/10000000000005550000026BA6328AE318D2E092.png" /></p>
+<p>La petició ha tardat (en la prova actual) 6.31 segons a resoldre's, i ha desembocat en una transferència per part del servidor d'un total de 136 respostes i 57.9 kB transferits (entre altres mètriques):</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/ud1-Pictures/Pictures/10000000000002BE0000011BA7B15AC15D9F24D2.png" /></p>
+<p>La resta de registres que estan sota l'inicial corresponen a tots els recursos (fitxers HTML, JavaScript, arxius multimèdia, etc.) necessaris perquè el navegador represente la pàgina web. Per exemple, si fem clic sobre el segon registre "polyfiller.js", i fem clic sobre la pestanya "Preview" del panell de la dreta, podrem veure el codi JavaScript que conté aquest fitxer transferit:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/ud1-Pictures/Pictures/10000000000003230000011B71840A58B22D3C94.png" /></p>
+<p>"Logo-ayto-elche-nuevo.png" podrem veure que és el logo de l'ajuntament, transferit des del servidor:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/ud1-Pictures/Pictures/10000000000003C3000000DF9415F4075B3EB537.png" /></p>
+<p>Tots aquests fitxers tarden un temps a transferir-se, el que es representa en forma de waterfall (cascada):</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/ud1-Pictures/Pictures/1000000000000551000001CC778655E415E513F3.png" />
+La petició que més tarda a resoldre's és la primera, segons aquest gràfic.</p>
+<p>Et recorda això a algun tipus de programa de descàrregues tipus BitTorrent o similars? Doncs sí, en aquest cas es podria pensar en el navegador web com si fora un gestor de descàrregues (salvant les diferències), que s'encarrega de recuperar tots els fitxers que necessita per representar la pàgina web que se li ha sol·licitat.</p>
+<ol>
+<li>El navegador web rep la informació enviada pel servidor i la interpreta. En funció de la resposta enviada, es representa en el navegador la resposta a l'usuari (normalment en forma de pàgina web).</li>
+</ol>
+<p>El navegador web és un programari dissenyat per interpretar tot el contingut enviat per un servidor web, i representar-lo en la pantalla perquè l'usuari final puga consultar la informació rebuda, interaccionar amb la pàgina web, o també gestionar les operacions de l'usuari que requerisquen noves peticions al servidor web (en cas de pàgines web dinàmiques, o aplicacions web).</p>
+<p>Per això, el navegador web prendrà tots els fitxers descarregats i conformarà la pàgina de benvinguda de www.elche.es, el que s'anomena <strong>Front-end</strong>:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/ud1-Pictures/Pictures/1000000000000555000002ADAED4D5DD9E0314EC.png" /></p>
+<p>Encara penses que és correcte dir "navegar per Internet"?</p>
+<h3 id="model-actual-darquitectura-web">Model actual d'Arquitectura web<a class="headerlink" href="#model-actual-darquitectura-web" title="Permanent link">&para;</a></h3>
+<p>El model actual d'arquitectura web és un tipus concret de l'arquitectura client-servidor, en la qual els components i els recursos d'una aplicació es separen segons els següents nivells:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/ud1-Pictures/Pictures/10000001000001C6000000C286721D504D3015AE.png" /></p>
+<ol>
+<li>
+<p>Una <strong>capa client</strong>: generalment és el navegador web executant-se en el dispositiu de l'usuari final, encara que també pot tractar-se d'aplicacions natives, d'escriptori o altres sistemes, que requereixen respostes en forma de fitxers de text pla amb llenguatges de marques (XML, JSON).</p>
+</li>
+<li>
+<p>Un servidor web i/o servidor d'aplicacions (<strong>capa de negoci</strong>): la capa client pot accedir a diferent lògica i procediments que existeixen en la capa de negoci. Ací la lògica pot ser molt més complexa que en la capa anterior. Els components d'aquesta capa poden ser des de simples fitxers HTML, servlets de Java, fitxers PHP, Python, etc.</p>
+</li>
+<li>
+<p>Una <strong>capa de dades</strong>: es compon d'un sistema d'emmagatzematge i accés a dades que s'utilitzen per confeccionar la resposta que s'envia de tornada al client. Generalment és un gestor o gestors de bases de dades (relacionals o no relacionals), però poden ser fitxers de text pla, fitxers XML, JSON, etc.</p>
+</li>
+</ol>
+<p>La capa de negoci pot estar al seu torn dividida en dues parts si el sistema és prou gran o complex. Pot dividir-se en una capa de presentació i una capa de lògica de negoci.</p>
+<ul>
+<li>
+<p>La <strong>capa de presentació</strong> s'encarrega de compondre les pàgines integrant la part dinàmica en l'estàtica. A més, també processa les pàgines que envia el client (per exemple, dades en formularis). Aquesta part la realitza generalment un <strong>servidor web</strong>.</p>
+</li>
+<li>
+<p>La <strong>capa de lògica de negoci</strong> porta a terme operacions més complexes. Es correspon amb la implantació d'un <strong>servidor d'aplicacions</strong>. Realitza molts tipus d'operacions entre els quals destaquen:</p>
+<ul>
+<li>Realitzar totes les operacions i validacions.</li>
+<li>Gestionar el flux de treball (workflow), incloent el control i gestió de les sessions i les dades que es necessiten.</li>
+<li>Gestionar totes les operacions d'accessos a dades des de la capa de presentació.</li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="../../../../modulos/01-Servidor/ud1-Pictures/Pictures/100000010000056C000002DC4F7FBEC700ADDF68.png" /></p>
+<blockquote>
+<p>NOTA: En cas d'estar utilitzant pàgines web estàtiques (no canvien en funció de diverses variables) no existiria la capa de dades, ja que aquestes van incorporades en els propis fitxers de marques que conformen les pàgines web.</p>
+</blockquote>
+<p>La tendència és introduir dinamisme en diferents parts de l'esquema:</p>
+<ul>
+<li>Els navegadors web són capaços d'interpretar diferents elements interactius autònomament o mitjançant plugins (JavaScript, etc.).</li>
+<li>Els servidors web també poden interpretar codi (PHP, Python...) per generar les pàgines web. El servidor web necessita d'algun mòdul/extensió addicional per poder interpretar aquest codi. Generalment s'embebe en el propi servidor web per a llenguatges de script o s'incorpora en un servidor a part (d'aplicacions) per als llenguatges més potents. Alguns llenguatges que típicament s'utilitzen en les pàgines dinàmiques en el servidor web són PHP, Python, Ruby o Java. Aquests llenguatges també permeten l'accés a la capa de dades i la intercalació d'aquestes dades entre els elements de la pàgina final.</li>
+</ul>
+<p>On s'execute el codi de dinamització de la pàgina determinarà si el llenguatge de programació és d'<strong>entorn client</strong> o d'<strong>entorn servidor</strong>.</p>
+<h2 id="generacio-de-pagines-web">GENERACIÓ DE PÀGINES WEB<a class="headerlink" href="#generacio-de-pagines-web" title="Permanent link">&para;</a></h2>
+<h3 id="estatiques">Estàtiques<a class="headerlink" href="#estatiques" title="Permanent link">&para;</a></h3>
+<p>Una <strong>pàgina web estàtica</strong> és un document o conjunt de documents (generalment: HTML, CSS, contingut multimèdia, codi JavaScript) en què no existeix una <strong>actualització dinàmica</strong> del seu contingut en interactuar amb el sistema (servidor, ja siga remot o local) que proveeix el document/s. És a dir, la mateixa petició a la mateixa URL (Uniform Resource Locator), encara que la repetim en múltiples ocasions al llarg del temps, <strong>sempre</strong> tornarà la mateixa informació (a no ser que la modifique un desenvolupador en el costat servidor, manualment). Pot existir <strong>interacció</strong> amb la pàgina web estàtica (mitjançant codi JavaScript), en forma de missatges, esdeveniments, actualitzacions de la seua aparença...</p>
+<p>En aquest cas, un navegador web és capaç de representar la pàgina web en una màquina local, sense necessitat de disposar d'un servidor web addicional.</p>
+<h3 id="dinamiques">Dinàmiques<a class="headerlink" href="#dinamiques" title="Permanent link">&para;</a></h3>
+<p>Una <strong>pàgina web dinàmica</strong> pot contenir una part estàtica, i a més el contingut que es mostre dependrà del moment en què es faça la petició. Això és degut a que el servidor conformarà aquest contingut depenent de les dades de què es dispose en aquell moment en un sistema de bases de dades. La comunicació entre el navegador web i el servidor serà més complexa, ja que, a més de consultar continguts, es podran realitzar potencialment operacions de creació, modificació, i eliminació de dades.</p>
+<p>Una <strong>aplicació web</strong> és una eina de programari, formada per pàgines web dinàmiques (encara que també pot contenir documents web estàtics), basada en tecnologies web que li donen un caràcter <em>dinàmic</em> (interactuen amb un sistema remot) fent ús de serveis web (basats en l'arquitectura TCP/IP), i que proporcionen a l'usuari un servei o conjunt de serveis. Seria el més semblant a una aplicació nativa o d'escriptori, <em>però</em> executada en un navegador web. El fet d'executar-se en un navegador web les independitza del sistema operatiu en què s'executen, però també presenten determinades limitacions a causa d'aquesta independència.</p>
+<p>En aquest cas, un navegador web <strong>NO</strong> és capaç de representar la pàgina web en una màquina local sense un servidor web addicional i la resta de components que acompanyen aquesta arquitectura, com sí era el cas d'una pàgina web estàtica.</p>
+<h2 id="models-de-programacio">MODELS DE PROGRAMACIÓ<a class="headerlink" href="#models-de-programacio" title="Permanent link">&para;</a></h2>
+<p>Quan parlem de programació en entorn client/servidor parlem també d'aplicacions web, formades per pàgines web dinàmiques, amb el que això implica una arquitectura web més complexa que la necessària per a un lloc web constituït únicament per pàgines web estàtiques.</p>
+<p>Segons diferents autors, els models presentats en aquest document cauen sota la categoria d'arquitectures web. En el present document els considerarem models de programació, atenent a la forma en què estan organitzats i distribuïts els diferents fitxers que contenen la lògica de negoci de l'aplicació web.</p>
+<p>Dit això, actualment trobem dos models de programació principals, que són els que es detallen a continuació.</p>
+<h3 id="model-vista-controlador">Model-Vista-Controlador<a class="headerlink" href="#model-vista-controlador" title="Permanent link">&para;</a></h3>
+<p>Model-View-Controller o Model-Vista-Controlador és un model de programació web que separa les dades i la lògica de negoci respecte a la interfície d'usuari, i el component encarregat de gestionar els esdeveniments i les comunicacions.</p>
+<p>En separar els components en elements conceptuals permet reutilitzar el codi i millorar la seua organització i manteniment. Els seus elements són:</p>
+<ul>
+<li><strong>Model</strong>: representa la informació i gestiona tots els accessos a aquesta, tant consultes com actualitzacions provinents, normalment, d'una base de dades. S'accedeix via el controlador.</li>
+<li><strong>Controlador</strong>: Respon a les accions de l'usuari, i realitza peticions al model per sol·licitar informació. Després de rebre la resposta del model, li envia les dades a la vista.</li>
+<li><strong>Vista</strong>: Presenta a l'usuari de forma visual el model i les dades preparades pel controlador. L'usuari interactua amb la vista i realitza noves peticions al controlador.</li>
+</ul>
+<p><img alt="" src="../../../../modulos/01-Servidor/ud1-Pictures/Pictures/1000000000000438000002D00FF804BDF4A9AD20.png" style="display:block; margin:auto;" width="50%" /></p>
+<p>És molt important destacar que, en aquest model, és el servidor el que porta el pes principal tant del processat de la informació com de la seua representació. El client web, a grans trets, s'encarregarà d'enviar les peticions al servidor, rebre la resposta i representar-la en la pantalla de l'usuari. La pàgina web representada (codi HTML, JavaScript, etc.) s'haurà predeterminat en el costat servidor.</p>
+<p><strong>IMPORTANT</strong>: amb aquest model, cada petició del client al servidor implicarà un refresc de la informació que es visualitza en la pantalla, encara que la seua aparença haja canviat poc d'una petició a la següent. Això implica que es tornen a descarregar totes les dades i fitxers que no es mantinguen en la memòria cau del navegador, amb el que els temps de resposta seran majors que si no haguéssim de descarregar de nou determinada informació. L'usuari final apreciarà que, per un interval curt de temps, tots els elements de la pantalla desapareixen i després es conforma de nou la interfície d'usuari. En aquest cas, es diu que l'aplicació no és <strong>reactiva</strong> (es realitza un refresc de tota la pantalla, encara que no es necessite).</p>
+<p>A aquest model de programació MVC s'ajustarà el primer projecte que realitzarem durant aquest curs, i la primera part del segon projecte.</p>
+<p>Mitjançant aquest model s'han desenvolupat multitud de plataformes i aplicacions web, encara que la tendència és, cada vegada més, desenvolupar aplicacions basades en serveis REST.</p>
+<h3 id="aplicacions-basades-en-serveis-rest">Aplicacions basades en serveis REST<a class="headerlink" href="#aplicacions-basades-en-serveis-rest" title="Permanent link">&para;</a></h3>
+<p>En aquest tipus d'aplicacions, es delega la interacció amb l'usuari (si és que existeix), en aplicacions que es descarreguen i/o s'instal·len en el costat client (ja siga aplicacions d'escriptori, aplicacions mòbils, o aplicacions web). El servidor s'encarrega d'implementar la lògica de negoci, gestionar les dades, i enviar al client només la part de la informació sol·licitada, normalment en format <a href="https://www.w3schools.com/js/js_json_intro.asp">JSON</a>.</p>
+<p>Un esquema de funcionament podria ser el següent:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/ud1-Pictures/Pictures/10000000000002D00000019575E65C104EC252FB.png" style="display:block; margin:auto;" /></p>
+<p>S'anomena API al conjunt de serveis web a través dels quals els clients interactuen amb el servidor. Cadascun d'aquests serveis web s'identifiquen per un endpoint (URL en el costat servidor), entre altres paràmetres. Aquests conceptes es revisaran amb més deteniment en la segona fase del segon projecte que es desenvoluparà durant el curs.</p>
+<p>És important notar que, a diferència del model MVC, cada vegada que es faça una petició al servidor no es refrescarà la pàgina web per complet. L'arquitectura web permetrà que només s'actualitze una part de la interfície d'usuari, amb el que l'usuari final no experimentarà la desaparició de la interfície transitoriament.</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/ud1-Pictures/Pictures/100000000000022600000261E388164FAA0F634B.png" style="display:block; margin:auto;" /></p>
+<p>Aquest comportament s'assembla més a una aplicació web a una aplicació mòbil (<strong>la idea general és que no instal·lem una app mòbil cada vegada que realitzem una acció, sinó que només s'instal·la una vegada</strong>).</p>
+<p>Un exemple d'aquest tipus d'aplicacions són les SPA (<em>Single Page Application</em>). En una SPA només existeix un fitxer HTML, molt simple, i un altre o altres fitxers JavaScript que s'encarreguen de canviar la interfície d'usuari amb cada petició HTTP al servidor. Per tant, l'aplicació es descarrega una sola vegada (es podria dir que s'"instal·la" en el navegador) i a partir d'ací només s'intercanvien fitxers JSON amb el servidor, que contenen les dades a gestionar pel client. D'aquesta manera, s'aligera la part visual del back-end, i cada client (ja siga una aplicació web, mòbil, d'escriptori...) tindrà la responsabilitat de representar-la en la pantalla segons les seues pròpies característiques.</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/ud1-Pictures/Pictures/100000000000031D00000223FF6E02EFA6DBFA6D.png" style="display:block; margin:auto;" /></p>
+<p>Cal destacar també que els sistemes que implementen serveis REST no només <em>alimenten</em> aplicacions client, sinó que també poden interactuar amb altres sistemes. Aquest podrà ser el cas d'aplicacions híbrides, que requereixen de serveis externs per realitzar determinades tasques (enviament de correus electrònics, serveis d'IA, etc).</p>
+<h2 id="mecanismes-dexecucio-de-codi">MECANISMES D'EXECUCIÓ DE CODI<a class="headerlink" href="#mecanismes-dexecucio-de-codi" title="Permanent link">&para;</a></h2>
+<p>Durant el primer curs del cicle haureu pogut desenvolupar diferents programes consistents en fitxers que al seu torn contenen línies de codi en un llenguatge específic (Java, en aquest cas). Què es necessita per poder transformar aquest text en instruccions específiques per al sistema operatiu on s'executa aquest codi? En aquest punt és on entra en joc el concepte d'<em>entorn d'execució</em>.</p>
+<p>Els elements d'un entorn d'execució varien depenent del llenguatge de programació que s'estiga utilitzant. En general sempre és necessari un compilador, intèrpret o màquina virtual i un conjunt de llibreries pròpies del llenguatge. Però pot constar de més elements com un depurador o un bucle d'esdeveniments.</p>
+<p>Dit això, quins són els mecanismes per a l'execució del codi en l'àmbit de les aplicacions web? Per contestar a això, primer hauríem de diferenciar els diferents llenguatges de programació que es poden utilitzar, i en quins àmbits (client o servidor). És per això que, en els següents subapartats, revisarem primer alguns dels llenguatges de programació més rellevants en l'àmbit web, i a continuació es detallarà com s'executen en el costat servidor (PHP, Python, i JavaScript) i en el client (JavaScript).</p>
+<h3 id="llenguatges-de-programacio">Llenguatges de programació<a class="headerlink" href="#llenguatges-de-programacio" title="Permanent link">&para;</a></h3>
+<p>S'enumeren a continuació els llenguatges de programació més populars, en els diferents entorns:</p>
+<table>
+<thead>
+<tr>
+<th>ENTORN SERVIDOR</th>
+<th>DESCRIPCIÓ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PHP</td>
+<td>PHP és un llenguatge de programació d'ús general que s'adapta <em>especialment</em> al desenvolupament web. La seua última versió és PHP7. Aquest llenguatge es pot utilitzar sense cap tipus de framework per desenvolupar aplicacions web, encara que també existeixen frameworks molt populars com CodeIgniter, Laravel, Symfony...</td>
+</tr>
+<tr>
+<td>Python</td>
+<td>Python és un llenguatge d'alt nivell de programació interpretat la filosofia del qual és fer èmfasi en la llegibilitat del seu codi. Per a programació web existeixen diversos frameworks, encara que els més destacats són Django i Flask. Cal destacar que aquest llenguatge s'utilitza en multitud d'àmbits més, entre ells el de la ciberseguretat i el de la intel·ligència artificial.</td>
+</tr>
+<tr>
+<td>JavaScript</td>
+<td>JavaScript és un llenguatge de programació interpretat, dialecte de l'estàndard ECMAScript. Encara que va sorgir per al desenvolupament en entorn client, s'ha estès tant que han sorgit nombrosos frameworks en entorn servidor, sent Nodejs el més popular.</td>
+</tr>
+<tr>
+<td>Ruby</td>
+<td>Ruby és un llenguatge de programació interpretat i orientat a objectes. Ruby on Rails és el framework de programació web basat en Ruby més conegut.</td>
+</tr>
+<tr>
+<td>Java</td>
+<td>Java és un llenguatge de programació ràpid, segur i fiable per codificar tot, des d'aplicacions mòbils i programari empresarial fins a aplicacions de macro dades i tecnologies del costat del servidor. Com a frameworks web destaquen Spring i Hibernate.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>ENTORN CLIENT</th>
+<th>DESCRIPCIÓ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JavaScript</td>
+<td>És el llenguatge per excel·lència en el desenvolupament d'entorn client. Existeix un desenvolupament continu de frameworks i llibreries al voltant d'aquest llenguatge, ja no només en la programació client, sinó en el costat servidor (com s'ha vist anteriorment). Els principals frameworks per al desenvolupament d'aplicacions reactives basats en JavaScript són: React.js, Vue.js, Angular i Svelte.</td>
+</tr>
+<tr>
+<td>TypeScript</td>
+<td>TypeScript és un llenguatge de programació lliure i de codi obert desenvolupat i mantingut per Microsoft. És un superconjunt de JavaScript, que essencialment afegeix tipus estàtics i objectes basats en classes. Els principals frameworks de programació client reactius (mencionats anteriorment) suporten el desenvolupament tant en JavaScript com TypeScript.</td>
+</tr>
+<tr>
+<td>Python</td>
+<td>Encara que moltíssim menys popular, també existeix la possibilitat d'executar Python en el navegador, com s'il·lustra amb el projecte <a href="https://www.genbeta.com/actualidad/ano-python-navegador-este-nuevo-proyecto-permite-ejecutar-python-tu-html">PyScript</a>.</td>
+</tr>
+</tbody>
+</table>
+<p>Per tant, veiem que existeix gran varietat de llenguatges de programació, tant en client com servidor, i és un àmbit en contínua evolució.</p>
+<p>Quin és el millor llenguatge de programació? Aquesta és l'eterna pregunta que escoltaràs al llarg de la teua carrera com a programador/a, i no hi ha una resposta fàcil. Potser la resposta més adequada siga la de: cadascun d'ells és bo per a una cosa, i el millor és tenir una mentalitat oberta, no lligar-se a cap d'ells, i tenir les bases de la programació clares.</p>
+<p>Aquesta reflexió és de especial interès si desenvolupes els teus propis projectes: l'elecció d'un llenguatge (o framework) o altre et pot portar a l'èxit o fracàs, que un projecte et resulte rendible o no, optimització de costos o no... Per tant, mantingues una ment oberta i pensa que els llenguatges i tecnologies tenen caràcter passatger, estan per ser utilitzats i no per casar-se amb ells.</p>
+<h3 id="execucio">Execució<a class="headerlink" href="#execucio" title="Permanent link">&para;</a></h3>
+<p>La lògica de la nostra aplicació es distribueix entre el client i el servidor, cadascun d'ells compleix la seua funció específica. Així, la plataforma d'execució en aquests dos àmbits ha de ser diferent:</p>
+<ul>
+<li>Costat servidor: la lògica programada s'executa en el sistema operatiu en el qual resideix el codi.</li>
+<li>Costat client: la lògica s'executa en el navegador web.</li>
+</ul>
+<p>A més de l'àmbit en què s'executa el codi, també cal particularitzar el mecanisme d'execució al llenguatge específic utilitzat (com s'ha esmentat en la discussió inicial d'aquest apartat, sobre l'"entorn d'execució").</p>
+<p>A continuació es detalla com es dispara l'execució del codi programat, ja siga en el costat servidor davant una petició HTTP que prové del client web, o en el propi navegador web davant una acció de l'usuari.</p>
+<p>Abans de veure aquests exemples, cal esmentar que el propòsit d'un servidor web és rebre peticions HTTP i enviar la resposta a aquestes peticions. És possible que aquestes respostes les proporcione el propi servidor web, o haja de recórrer a extensions (o mòduls) pròpies, o servidors d'aplicacions externs que executen el codi i retornen la resposta al servidor web (que la utilitzarà per enviar la resposta final al client). Tot això es detallarà exhaustivament en el mòdul de <strong>Desplegament d'Aplicacions Web</strong>.</p>
+<p>En els següents exemples es pressuposa que l'entorn d'execució és el de <em>producció</em> (el que utilitzen els usuaris finals). En l'entorn de desenvolupament se solen emprar servidors web més lleugers que els propis frameworks de desenvolupament proporcionen.</p>
+<h4 id="php">PHP<a class="headerlink" href="#php" title="Permanent link">&para;</a></h4>
+<p>Depenent del servidor web, aquest llenguatge es pot executar de les següents maneres:</p>
+<ul>
+<li>
+<p>Apache:</p>
+<ul>
+<li>Activació de mòdul intern (mod_php)</li>
+<li>Mitjançant servidor d'aplicacions (phpFPM)</li>
+</ul>
+</li>
+<li>
+<p>Nginx: només existeix la possibilitat de delegar la tasca d'execució del codi a un servidor d'aplicacions, phpFPM en aquest cas.</p>
+</li>
+</ul>
+<h4 id="python">Python<a class="headerlink" href="#python" title="Permanent link">&para;</a></h4>
+<p>Igual que en el cas anterior, dependrà del servidor web que estiguem utilitzant:</p>
+<ul>
+<li>
+<p>Apache:</p>
+<ul>
+<li>Activació de mòdul intern (libapache2-mod-wsgi-py3, per a python3)</li>
+<li>Mitjançant servidor d'aplicacions (gunicorn)</li>
+</ul>
+</li>
+<li>
+<p>Nginx: només existeix la possibilitat de delegar la tasca d'execució del codi a un servidor d'aplicacions (gunicorn).</p>
+</li>
+</ul>
+<h4 id="javascript">JavaScript<a class="headerlink" href="#javascript" title="Permanent link">&para;</a></h4>
+<p>Com s'ha esmentat anteriorment, aquest llenguatge, a dia d'avui, es pot executar tant en el costat client com en el costat servidor:</p>
+<ul>
+<li>En client (navegador web): els diferents navegadors actuals incorporen un entorn d'execució mitjançant el qual és possible executar codi JavaScript, no existeix comunicació directa amb el sistema operatiu. L'execució del codi sol respondre a les accions del usuari, i el navegador proporciona tots els recursos perquè es puga executar.</li>
+<li>En servidor: per poder executar codi JavaScript directament en un sistema operatiu, s'ha d'instal·lar prèviament l'entorn d'execució de Node.js. Aquest framework incorpora el seu propi servidor web per ser utilitzat en un servidor de producció, encara que és possible utilitzar Apache o Nginx com a <a href="https://www.cloudflare.com/es-es/learning/cdn/glossary/reverse-proxy/">reverse proxy</a>.</li>
+</ul>
+<h3 id="integracio-amb-els-llenguatges-de-marques">Integració amb els llenguatges de marques<a class="headerlink" href="#integracio-amb-els-llenguatges-de-marques" title="Permanent link">&para;</a></h3>
+<p>Durant el primer curs hem après sobre els llenguatges de marques (HTML, entre altres) i programació de propòsit general. Qüestions:</p>
+<ul>
+<li>Hi ha alguna relació entre aquests dos tipus de llenguatges?</li>
+<li>Per a què voldríem relacionar-los en una aplicació web?</li>
+</ul>
+<p>Una possible resposta seria: cada tipus té un objectiu diferent, i la combinació d'ambdós ens proporciona la possibilitat de crear <em>pàgines web dinàmiques</em>.</p>
+<p>Prenem com a exemple la següent pàgina web:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/ud1-Pictures/Pictures/10000000000006C5000003B22B05DD42B220D6D5.png" />
+Cada un dels productes es visualitza en l'HTML segons el següent codi HTML:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/ud1-Pictures/Pictures/1000000000000778000003FCE5C40890249A4445.png" /></p>
+<p>Creus que el programador web ha creat tants blocs <div> com productes s'han recuperat? Es pot saber a priori quants productes tornarà la cerca?</p>
+<p>La resposta a les dues preguntes és: no. Per tant, la pàgina s'ha de comportar de manera dinàmica, en algun moment s'ha de programar la següent lògica: per cada producte a mostrar crea un bloc <div> amb aquestes característiques determinades, siga quin siga el nombre de productes a visualitzar en la pantalla.</p>
+<p>És ací on entra la màgia del binomi "llenguatge de programació" + "llenguatge de marques", mitjançant el qual podrem afegir sentències d'un llenguatge de programació a codi HTML, aportant-li un caràcter dinàmic al document web.</p>
+<p>Aquesta combinació es produirà en el costat servidor o en el costat client, depenent de si:</p>
+<ul>
+<li>És una aplicació web basada en <strong>MVC</strong> (Model-Vista-Controlador): la combinació dels dos llenguatges es durà a terme en el costat <strong>servidor</strong>. El llenguatge de programació serà l'emprat en el costat servidor (PHP o Python), i el document web serà enviat al costat client des del servidor.</li>
+<li>És una aplicació web basada en <strong>serveis REST</strong>: en aquest cas, la combinació dels dos llenguatges es durà a terme en el costat <strong>client</strong>. El llenguatge de programació serà l'emprat en el costat client, JavaScript en el nostre cas (també podria ser TypeScript). El client consumirà els serveis web del servidor i intercanviaran informació en format JSON. El client serà l'encarregat de modificar l'HTML de manera dinàmica.</li>
+</ul>
+<p>Vegem un exemple amb una llista simple de productes, per al cas de MVC. En l'exemple de l'esquerra veiem que hem de crear tants blocs de productes com productes a representar; en l'exemple de la dreta, s'ha introduït un bucle mitjançant PHP que farà que, per cada producte de l'array de productes, es visualitze un bloc amb les seues dades corresponents:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/ud1-Pictures/Pictures/1000000000000510000001EBE84B30CC5B56B020.png" />
+En aquest cas, veiem que s'ha introduït codi PHP amb un etiquetatge especial, que indica que aquest bloc del fitxer de marques conté codi PHP.</p>
+<p>A continuació es mostra un altre exemple, en aquest cas d'integració d'un llenguatge de programació del costat client amb el llenguatge de marques HTML. Es tracta d'un component programat mitjançant el framework Vue.js:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/ud1-Pictures/Pictures/10000000000002B600000150EBA8AD7A69F1E974.png" style="display:block; margin:auto;" width="50%" /></p>
+<p><img alt="" src="../../../../modulos/01-Servidor/ud1-Pictures/Pictures/100000000000028D000002A3FECBC1077FE72179.png" style="display:block; margin:auto;" width="50%" /></p>
+<p>En aquest cas també veiem que existeixen atributs amb símbols com ":" o "@" en l'etiquetatge que apunten a variables del codi JavaScript.</p>
+<p>Aquests exemples només exemplifiquen la integració dels llenguatges de marques amb un llenguatge de programació, sense ànim d'aprofundir més en aquest moment del curs.</p>
+<h2 id="eines-de-programacio-client-i-servidor-ides-editors-compiladors">EINES DE PROGRAMACIÓ (CLIENT I SERVIDOR). IDEs, EDITORS, COMPILADORS<a class="headerlink" href="#eines-de-programacio-client-i-servidor-ides-editors-compiladors" title="Permanent link">&para;</a></h2>
+<p>L'ecosistema d'eines en l'entorn web és ampli, ric i en constant evolució. És per això que fer una llista exhaustiva es fa difícil, i pot quedar obsoleta en uns pocs mesos. En aquest <a href="https://kinsta.com/es/blog/herramientas-desarrollo-web/">enllaç</a> es proposa una mostra d'aquestes eines.</p>
+<p>Algunes d'aquestes eines et resultaran familiars, altres les utilitzaràs en la teua futura vida professional o no (depenent del camp en què t'especialitzes), i moltes altres seran substituïdes o deixaran de ser usades.</p>
+<p>Durant aquest curs podràs utilitzar l'IDE o editor de text de la teua elecció. Visual Studio Code (per a qualsevol llenguatge de programació) o PyCharm (per a Python) són l'opció recomanada.</p>
+<p>Com a fonts de consulta de problemes específics, <a href="https://stackoverflow.com/">StackOverflow</a> és una de les plataformes més utilitzades.</p>
+<p>Finalment, com a base per a llenguatges de programació i de marcatge, o com a repàs del primer curs del cicle, et pots recolzar en els manuals de <a href="https://www.w3schools.com/">W3CSchools</a>.</p>
+<h2 id="tecnologies">TECNOLOGIES<a class="headerlink" href="#tecnologies" title="Permanent link">&para;</a></h2>
+<p>Igual que en les eines de programació, l'ecosistema de tecnologies al voltant de les aplicacions web també és molt variat, ric, i en constant evolució. Continuament sorgeixen noves versions de les tecnologies existents (que trenquen amb les anteriors), o tecnologies/frameworks/llibreries novedoses als quals s'adhereixen multitud de professionals. Tot això fa que la corba d'aprenentatge inicial en l'àmbit de les aplicacions web siga més acusada en un principi.</p>
+<p>A continuació es presenten algunes d'aquestes tecnologies, agrupades per tipologia.</p>
+<h3 id="virtualitzacio">Virtualització<a class="headerlink" href="#virtualitzacio" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../../../../modulos/01-Servidor/ud1-Pictures/Pictures/100000010000026400000168EA01C536DC97F40F.png" width="25%" /> <img alt="" src="../../../../modulos/01-Servidor/ud1-Pictures/Pictures/10000001000001560000014A31D372184F54C090.png" width="25%" /> <img alt="" src="../../../../modulos/01-Servidor/ud1-Pictures/Pictures/100000000000025800000190A5E54BEE0567110E.png" width="25%" /></p>
+<h3 id="servidors-web">Servidors web<a class="headerlink" href="#servidors-web" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../../../../modulos/01-Servidor/ud1-Pictures/Pictures/10000000000003390000017B940567EE5DFBC8E6.png" width="50%" /></p>
+<h3 id="servidors-daplicacions">Servidors d'aplicacions<a class="headerlink" href="#servidors-daplicacions" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../../../../modulos/01-Servidor/ud1-Pictures/Pictures/10000001000001720000008EB49C2B4C6876D6B4.png" width="25%" /> <img alt="" src="../../../../modulos/01-Servidor/ud1-Pictures/Pictures/100000010000015C000000FA01C31AFA90279429.png" width="25%" /> <img alt="" src="../../../../modulos/01-Servidor/ud1-Pictures/Pictures/100000010000019200000132522843D9A3D73861.png" width="25%" /> <img alt="" src="../../../../modulos/01-Servidor/ud1-Pictures/Pictures/10000000000005780000018CB1CA9B91FF3FF9B5.png" width="25%" /> <img alt="" src="../../../../modulos/01-Servidor/ud1-Pictures/Pictures/100000000000014A000000992C1BF84B20D4AD6A.png" width="25%" /></p>
+<h3 id="contenidors-servlets">Contenidors servlets<a class="headerlink" href="#contenidors-servlets" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../../../../modulos/01-Servidor/ud1-Pictures/Pictures/100000010000048800000186029F3D132F256C4E.png" width="25%" /></p>
+<h3 id="gestors-de-bbdd">Gestors de BBDD<a class="headerlink" href="#gestors-de-bbdd" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../../../../modulos/01-Servidor/ud1-Pictures/Pictures/100000010000058A0000031C06D4B231690568B3.png" /></p>
+<h3 id="frameworks-servidor">Frameworks servidor<a class="headerlink" href="#frameworks-servidor" title="Permanent link">&para;</a></h3>
+<p><a href="https://www.youtube.com/watch?v=-RTaFJAgWSU">Frameworks</a> backend més populars.</p>
+<h3 id="frameworks-client">Frameworks client<a class="headerlink" href="#frameworks-client" title="Permanent link">&para;</a></h3>
+<p><a href="https://www.monocubed.com/best-front-end-frameworks/">Frameworks</a> frontend més populars.</p>
+<h2 id="navegadors-tipus-i-caracteristiques">NAVEGADORS. TIPUS I CARACTERÍSTIQUES<a class="headerlink" href="#navegadors-tipus-i-caracteristiques" title="Permanent link">&para;</a></h2>
+<p>Atès que l'entorn d'execució en el costat client és el navegador web, s'ha dedicat un apartat exclusivament per caracteritzar aquest tipus de programari.</p>
+<p>Els navegadors representen un programari complex, en constant evolució, i en què les diferents opcions del mercat estan recolzades per motivacions diverses (darrere d'alguns existeix una empresa multinacional, altres estan recolzats per una comunitat de desenvolupadors, etc.), així com diferents principis de desenvolupament.</p>
+<p>En la següent taula es resumeixen algunes de les característiques que diferencien diferents navegadors:</p>
+<table>
+<thead>
+<tr>
+<th>Criteri</th>
+<th>Comparativa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Etiquetatge HTML</td>
+<td><a href="https://www.w3schools.com/tags/ref_html_browsersupport.asp">HTML Reference - Browser Support</a></td>
+</tr>
+<tr>
+<td>Etiquetatge CSS</td>
+<td><a href="https://www.w3schools.com/cssref/css3_browsersupport.asp">CSS Browser Support Reference</a></td>
+</tr>
+<tr>
+<td>Rendiment</td>
+<td><a href="https://www.webfx.com/blog/web-design/browser-performance/">Browser performance</a></td>
+</tr>
+<tr>
+<td>Velocitat</td>
+<td><a href="https://www.cloudwards.net/fastest-browser/">The Fastest Browser Options in 2022</a></td>
+</tr>
+<tr>
+<td>Seguretat</td>
+<td><a href="https://www.ionos.es/digitalguide/online-marketing/vender-en-internet/comparativa-de-navegadores-seguros/">Navegadors segurs: comparativa de Chrome, Firefox, Edge i altres</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="especificacions-oficials">ESPECIFICACIONS OFICIALS<a class="headerlink" href="#especificacions-oficials" title="Permanent link">&para;</a></h2>
+<p>Donada la gran quantitat de tecnologies i navegadors utilitzats en el costat client, existeix la voluntat d'estandarditzar determinats aspectes que governen aquestes tecnologies, en forma d'especificacions emeses per organismes reconeguts com a oficials. Es tracta que els diferents desenvolupadors tinguen suficient llibertat per ser competitius, però sense que el panorama es disperse excessivament.</p>
+<p>A continuació es citen diversos d'aquests estàndards:</p>
+<ul>
+<li><a href="https://html.spec.whatwg.org/multipage/">HTML5</a>: del W3C (Consorci de la World Wide Web)</li>
+<li><a href="https://www.w3.org/TR/CSS2/">CSS</a>: també del W3C</li>
+<li><a href="https://www.ecma-international.org/publications-and-standards/standards/ecma-262/">ECMAScript</a>: aplicat a JavaScript, i desenvolupat per ECMA International (organització internacional basada en membresies d'estàndards per a la comunicació i la informació)</li>
+</ul>
+<p>En aquest <a href="https://developer.mozilla.org/es/docs/Learn/Getting_started_with_the_web/The_web_and_web_standards">article</a> es discuteix la necessitat dels estàndards web, com a visió general.</p>
+<h2 id="protocol-http">PROTOCOL HTTP<a class="headerlink" href="#protocol-http" title="Permanent link">&para;</a></h2>
+<p>En el mòdul de Desplegament d'aplicacions web trobaràs els fonaments d'aquest protocol, base per a la comunicació entre client i servidor.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Torna a l'inici
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "toc.integrate"], "search": "../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>

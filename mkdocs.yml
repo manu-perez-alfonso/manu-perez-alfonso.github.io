@@ -1,0 +1,80 @@
+site_name: Apuntes de Desarrollo de aplicaciones web
+site_description: Apuntes y recursos de Formación Profesional
+site_author: Manuel Pérez Alfonso
+site_url: https://mperezalf.github.io/
+
+# Tema Material
+theme:
+  name: material
+  language: es
+  features:
+    - navigation.instant       # carga rápida
+    - navigation.tracking      # resalta la sección actual
+    - navigation.tabs          # pestañas superiores
+    - navigation.top           # botón para volver arriba
+    - search.suggest           # sugerencias en búsqueda
+    - search.highlight         # resaltar resultados
+    - content.code.copy        # botón copiar código
+    - toc.integrate            # TOC en la barra lateral
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: deep orange
+      toggle:
+        icon: material/weather-night
+        name: Cambiar a modo oscuro
+    - scheme: slate
+      primary: indigo
+      accent: deep orange
+      toggle:
+        icon: material/weather-sunny
+        name: Cambiar a modo claro
+  font:
+    text: Roboto
+    code: Fira Code
+
+# Plugins
+plugins:
+  - search
+  - tags
+  - i18n:
+      docs_structure: suffix
+      languages:
+        - locale: es
+          name: Castellano
+          default: true   # <- idioma por defecto
+          build: true     # <- se compila
+        - locale: ca
+          name: Valencià
+          build: true     # <- se compila
+          site_name: Apunts de Desenvolupament d'aplicacions web
+          site_description: Apunts i recursos de Formació Professional
+          nav_translations:
+            Inicio: Inici
+            Sobre mí: Sobre mi
+            Módulos: Mòduls
+            Desarrollo en entorno servidor: Desenvolupament web en entorn servidor
+            Introducción: Introducció
+
+# Extensiones Markdown (opcional, muy útiles)
+markdown_extensions:
+  - admonition          # cuadros de información
+  - codehilite          # resaltado de código
+  - footnotes           # notas a pie
+  - meta                # metadatos en cada página
+  - toc:
+      permalink: true   # enlaces directos en títulos
+  - def_list
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+# Menú de navegación
+nav:
+  - Inicio: index.md
+  - Módulos:
+      - Desarrollo en entorno servidor:
+        - Introducción: modulos/01-Servidor/index.md
+        - UD1: modulos/01-Servidor/ud1.md
+  - Sobre mí: about.md
