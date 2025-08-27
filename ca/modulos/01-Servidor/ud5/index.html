@@ -1,0 +1,2619 @@
+
+<!doctype html>
+<html lang="ca" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Apunts i recursos de Formació Professional">
+      
+      
+        <meta name="author" content="Manuel Pérez Alfonso">
+      
+      
+        <link rel="canonical" href="https://mperezalf.github.io/ca/modulos/01-Servidor/ud5/">
+      
+      
+        <link rel="prev" href="../ud4_ext/">
+      
+      
+        <link rel="next" href="../ud6/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>UD5. (Multicapa) Dades i model d'objectes del document - Apunts de Desenvolupament d'aplicacions web</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ud6-multicapa-dades-i-model-dobjectes-del-document" class="md-skip">
+          Salta el contingut
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Capçalera">
+    <a href="../../../" title="Apunts de Desenvolupament d&#39;aplicacions web" class="md-header__button md-logo" aria-label="Apunts de Desenvolupament d'aplicacions web" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Apunts de Desenvolupament d'aplicacions web
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              UD5. (Multicapa) Dades i model d'objectes del document
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-orange"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="deep-orange"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Selecciona la llengua">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../../../modulos/01-Servidor/ud5/" hreflang="es" class="md-select__link">
+              Castellano
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="ca" class="md-select__link">
+              Valencià
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Neteja" aria-label="Neteja" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicialitzant cerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestanyes" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Inici
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Mòduls
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Sobre mi
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegació" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../" title="Apunts de Desenvolupament d&#39;aplicacions web" class="md-nav__button md-logo" aria-label="Apunts de Desenvolupament d'aplicacions web" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Apunts de Desenvolupament d'aplicacions web
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inici
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Mòduls
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Mòduls
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Desarrollo web en entorno servidor
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Desarrollo web en entorno servidor
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducció
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD1. Arquitectures i tecnologies web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD2. Fonaments de programació web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD3. (Portfoli) Estructures de control
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD4. (Portfoli) Estructures de dades i formularis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud4_ext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD4 EXTENSIÓ. (Portfoli) Accés a dades
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    UD5. (Multicapa) Dades i model d'objectes del document
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD5. (Multicapa) Dades i model d'objectes del document
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Taula de continguts">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Taula de continguts
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccio" class="md-nav__link">
+    <span class="md-ellipsis">
+      INTRODUCCIÓ
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#avaluacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      AVALUACIÓ
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entorns-virtuals-en-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      ENTORNS VIRTUALS EN PYTHON
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ENTORNS VIRTUALS EN PYTHON">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creacio-dun-entorn-virtual" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creació d'un entorn virtual
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestio-de-paquets-mitjancant-pip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestió de paquets mitjançant pip
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creacio-del-primer-projecte-django" class="md-nav__link">
+    <span class="md-ellipsis">
+      CREACIÓ DEL PRIMER PROJECTE DJANGO
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#portafolis-amb-django" class="md-nav__link">
+    <span class="md-ellipsis">
+      PORTAFOLIS AMB DJANGO
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuració
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aplicacions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aplicacions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Models
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definicio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definició
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#migracio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Migració
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imagefield" class="md-nav__link">
+    <span class="md-ellipsis">
+      ImageField
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#administrador-de-django" class="md-nav__link">
+    <span class="md-ellipsis">
+      Administrador de Django
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plantilles-en-django" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plantilles en Django
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Plantilles en Django">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jerarquia-de-plantilles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jerarquia de plantilles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fitxers-estatics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fitxers estàtics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plantilles-derror" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plantilles d'error
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vistes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vistes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pagines-de-laplicacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pàgines de l'aplicació
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pàgines de l&#39;aplicació">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#home" class="md-nav__link">
+    <span class="md-ellipsis">
+      Home
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Home">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vista" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vista
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template" class="md-nav__link">
+    <span class="md-ellipsis">
+      Template
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url" class="md-nav__link">
+    <span class="md-ellipsis">
+      URL
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#projecte" class="md-nav__link">
+    <span class="md-ellipsis">
+      Projecte
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Projecte">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vista_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vista
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Template
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      URL
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contacte" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contacte
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Contacte">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vista_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vista
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Template
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      URL
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filtrat-per-categoria" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filtrat per categoria
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desplegable-de-categories-inclusion-tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desplegable de categories: inclusion tags
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navegacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Navegació
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bonus-track-dockeritzacio-del-projecte" class="md-nav__link">
+    <span class="md-ellipsis">
+      BONUS TRACK: DOCKERITZACIÓ DEL PROJECTE
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BONUS TRACK: DOCKERITZACIÓ DEL PROJECTE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creacio-de-la-imatge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creació de la imatge
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker compose
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verificacio-de-lexemple-guiat" class="md-nav__link">
+    <span class="md-ellipsis">
+      VERIFICACIÓ DE L'EXEMPLE GUIAT
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD6. (Multicapa) Vistes i controladors, esdeveniments i interactivitat
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD7. (Multicapa) Autenticació i seguretat
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD8. (Serveis web) Introducció i consum
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD9. (Serveis web) Aplicacions web reactives
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD10. (Serveis web) Autenticació i seguretat
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD11. Aplicacions web híbrides
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Despliegue de aplicaciones web
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Despliegue de aplicaciones web
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../modulos/02-Despliegue/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducció
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../modulos/02-Despliegue/ud1.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../modulos/02-Despliegue/ud2.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../modulos/02-Despliegue/ud3.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../modulos/02-Despliegue/ud4.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../modulos/02-Despliegue/ud5.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../modulos/02-Despliegue/ud6.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD6
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../modulos/02-Despliegue/ud7.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD7
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../modulos/02-Despliegue/ud8.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD8
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../modulos/02-Despliegue/ud9.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD9
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../modulos/02-Despliegue/ud10.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD10
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sobre mi
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Taula de continguts">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Taula de continguts
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccio" class="md-nav__link">
+    <span class="md-ellipsis">
+      INTRODUCCIÓ
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#avaluacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      AVALUACIÓ
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entorns-virtuals-en-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      ENTORNS VIRTUALS EN PYTHON
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ENTORNS VIRTUALS EN PYTHON">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creacio-dun-entorn-virtual" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creació d'un entorn virtual
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestio-de-paquets-mitjancant-pip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestió de paquets mitjançant pip
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creacio-del-primer-projecte-django" class="md-nav__link">
+    <span class="md-ellipsis">
+      CREACIÓ DEL PRIMER PROJECTE DJANGO
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#portafolis-amb-django" class="md-nav__link">
+    <span class="md-ellipsis">
+      PORTAFOLIS AMB DJANGO
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuració
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aplicacions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aplicacions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Models
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definicio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definició
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#migracio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Migració
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imagefield" class="md-nav__link">
+    <span class="md-ellipsis">
+      ImageField
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#administrador-de-django" class="md-nav__link">
+    <span class="md-ellipsis">
+      Administrador de Django
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plantilles-en-django" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plantilles en Django
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Plantilles en Django">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jerarquia-de-plantilles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jerarquia de plantilles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fitxers-estatics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fitxers estàtics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plantilles-derror" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plantilles d'error
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vistes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vistes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pagines-de-laplicacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pàgines de l'aplicació
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pàgines de l&#39;aplicació">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#home" class="md-nav__link">
+    <span class="md-ellipsis">
+      Home
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Home">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vista" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vista
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template" class="md-nav__link">
+    <span class="md-ellipsis">
+      Template
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url" class="md-nav__link">
+    <span class="md-ellipsis">
+      URL
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#projecte" class="md-nav__link">
+    <span class="md-ellipsis">
+      Projecte
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Projecte">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vista_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vista
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Template
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      URL
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contacte" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contacte
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Contacte">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vista_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vista
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Template
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      URL
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filtrat-per-categoria" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filtrat per categoria
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desplegable-de-categories-inclusion-tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desplegable de categories: inclusion tags
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navegacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Navegació
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bonus-track-dockeritzacio-del-projecte" class="md-nav__link">
+    <span class="md-ellipsis">
+      BONUS TRACK: DOCKERITZACIÓ DEL PROJECTE
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BONUS TRACK: DOCKERITZACIÓ DEL PROJECTE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creacio-de-la-imatge" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creació de la imatge
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker compose
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verificacio-de-lexemple-guiat" class="md-nav__link">
+    <span class="md-ellipsis">
+      VERIFICACIÓ DE L'EXEMPLE GUIAT
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ud6-multicapa-dades-i-model-dobjectes-del-document">UD6: MULTICAPA - DADES I MODEL D'OBJECTES DEL DOCUMENT<a class="headerlink" href="#ud6-multicapa-dades-i-model-dobjectes-del-document" title="Permanent link">&para;</a></h1>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/100000010000020A000001576ACAE4B0B36135B8.png" /></p>
+<h2 id="introduccio">INTRODUCCIÓ<a class="headerlink" href="#introduccio" title="Permanent link">&para;</a></h2>
+<p>En aquesta unitat començarem a utilitzar el framework de desenvolupament web anomenat Django, basat en el llenguatge de programació Python.</p>
+<p>En primer lloc desenvoluparem, de manera guiada, un portafolis semblant al de les unitats anteriors, per tal de veure les similituds i diferències entre els dos processos. També utilitzarem la tecnologia Docker per executar el nostre codi en un contenidor de Python.</p>
+<p>Finalment, utilitzarem tots els recursos exposats per començar el segon projecte del curs, que abastarà tres unitats.</p>
+<h2 id="avaluacio">AVALUACIÓ<a class="headerlink" href="#avaluacio" title="Permanent link">&para;</a></h2>
+<p>El present document, juntament amb el seu corresponent butlletí d'activitats (publicat addicionalment), cobreix els següents criteris d'avaluació:</p>
+<table>
+<thead>
+<tr>
+<th>RESULTATS D'APRENENTATGE</th>
+<th>CRITERIS D'AVALUACIÓ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RA5. Desenvolupa aplicacions Web identificant i aplicant mecanismes per a separar el codi de presentació de la lògica de negoci.</td>
+<td>a) S'han identificat els avantatges de separar la lògica de negoci dels aspectes de presentació de l'aplicació.<br>b) S'han analitzat i utilitzat mecanismes i frameworks que permeten realitzar aquesta separació i les seues característiques principals.<br>e) S'han identificat i aplicat els paràmetres relatius a la configuració de l'aplicació web.<br>f) S'han escrit aplicacions web amb manteniment d'estat i separació de la lògica de negoci.<br>g) S'han aplicat els principis i patrons de disseny de la programació orientada a objectes.<br>h) S'ha provat i documentat el codi.</td>
+</tr>
+<tr>
+<td>RA6. Desenvolupa aplicacions web d'accés a magatzems de dades, aplicant mesures per a mantindre la seguretat i la integritat de la informació.</td>
+<td>a) S'han analitzat les tecnologies que permeten l'accés mitjançant programació a la informació disponible en magatzems de dades.<br>b) S'han creat aplicacions que establisquen connexions amb bases de dades.<br>c) S'ha recuperat informació emmagatzemada en bases de dades.<br>d) S'ha publicat en aplicacions web la informació recuperada.<br>e) S'han utilitzat conjunts de dades per a emmagatzemar la informació.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="entorns-virtuals-en-python">ENTORNS VIRTUALS EN PYTHON<a class="headerlink" href="#entorns-virtuals-en-python" title="Permanent link">&para;</a></h2>
+<p>En les aplicacions basades en Python és freqüent utilitzar paquets i mòduls que no formen part de la llibreria estàndard. Moltes vegades, determinades aplicacions necessiten de <strong>determinades versions</strong> de llibreries específiques, i això implica que la instal·lació local de Python pot no arribar a complir les especificacions de totes les aplicacions.</p>
+<p>La solució a aquest problema són els <strong>entorns virtuals</strong>: es tracta d'un arbre "autònom" de directoris que conté una instal·lació de Python, per a una determinada <strong>versió</strong> i amb una sèrie de <strong>paquets addicionals</strong>.</p>
+<p>D'aquesta manera, diferents aplicacions poden utilitzar diferents entorns virtuals, depenent de la versió, tant de Python, com dels paquets addicionals perquè l'aplicació funcione correctament. La següent imatge il·lustra un mateix equip en el qual existeixen diferents entorns virtuals, amb diferents versions de Python, per a projectes diferents:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/10000001000003920000022C9461133E381CFAF1.png" /></p>
+<h3 id="creacio-dun-entorn-virtual">Creació d'un entorn virtual<a class="headerlink" href="#creacio-dun-entorn-virtual" title="Permanent link">&para;</a></h3>
+<p>El mòdul utilitzat per a la creació d'entorns virtuals és <strong>venv</strong>.
+Per a instal·lar-lo en Ubuntu, l'ordre és:</p>
+<div class="highlight"><pre><span></span><code>sudo apt install python3-venv
+</code></pre></div>
+<p>L'ordre per a crear un entorn virtual en un directori determinat és:</p>
+<div class="highlight"><pre><span></span><code>python3 -m venv app-env
+</code></pre></div>
+<p>Aquest ordre crearà el directori "app-env" amb un arbre de directoris que contenen l'intèrpret de Python i arxius de suport. El paràmetre "-m" indica a l'intèrpret de Python que s'executarà un mòdul, en aquest cas "venv", com a script. Si vols saber més sobre els mòduls en Python, <a href="https://docs.python.org/es/3/tutorial/modules.html">ací</a> tens més informació.</p>
+<p>En aquest <a href="https://medium.com/datacat/a-simple-guide-to-creating-a-virtual-environment-in-python-for-windows-and-mac-1079f40be518">enllaç</a> es poden trobar instruccions per instal·lar un entorn virtual en Windows i Mac.</p>
+<p>Per a activar l'entorn virtual de Python, s'utilitzarà una d'aquestes ordres, depenent del sistema operatiu (des de la ruta en què es trobe la carpeta "app-env"):</p>
+<ul>
+<li>En Windows:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>app-env/Scripts/activate.bat
+</code></pre></div>
+<ul>
+<li>En Linux o MacOS:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>source app-env/bin/activate
+</code></pre></div>
+<p>Després d'executar aquesta ordre, sabrem que estem utilitzant l'entorn virtual perquè la línia d'ordres passarà a tindre el nom de l'entorn virtual entre parèntesis:</p>
+<p><strong>(app-env)</strong> usuari:$</p>
+<h3 id="gestio-de-paquets-mitjancant-pip">Gestió de paquets mitjançant pip<a class="headerlink" href="#gestio-de-paquets-mitjancant-pip" title="Permanent link">&para;</a></h3>
+<p>Es poden instal·lar, actualitzar o eliminar paquets utilitzant el programa pip, que instal·la paquets, per defecte, de l'índex de Paquets de Python (https://pypi.org), que pot ser explorat manualment mitjançant un navegador web.</p>
+<p>pip té una sèrie d'ordres (install, freeze, uninstall, etc.), que poden ser consultades en la <a href="https://docs.python.org/es/3/installing/index.html#installing-index">documentació oficial</a>.</p>
+<p>Es pot instal·lar l'<strong>última versió</strong> d'un paquet utilitzant el seu nom, de la forma:</p>
+<div class="highlight"><pre><span></span><code>(app-env) $ pip install flask
+</code></pre></div>
+<p>És possible també instal·lar la <strong>versió específica</strong> d'un paquet, especificant el seu nom, seguit de "==" i finalment la versió. Exemple:</p>
+<p><div class="highlight"><pre><span></span><code>(app-env) $ pip install requests==2.6.0
+</code></pre></div>
+Si es re-executa l'ordre, pip detectarà que la versió ja està instal·lada i no farà res. Es pot ingressar un número de versió diferent per instal·lar-lo, o es pot executar pip install --upgrade per <strong>actualitzar el paquet</strong> a l'última versió:
+<div class="highlight"><pre><span></span><code>(app-env) $ pip install --upgrade requests
+</code></pre></div>
+<strong>pip uninstall</strong> seguit d'un o diverses noms de paquets eliminarà els paquets de l'entorn virtual.</p>
+<p><strong>pip show</strong> mostrarà informació d'un paquet en particular.</p>
+<p><strong>pip list</strong> mostrarà tots els paquets instal·lats en l'entorn virtual.</p>
+<p><strong>pip freeze</strong> mostra una llista similar a pip list, però en un format tal que es puga utilitzar per pip install per instal·lar aquesta llista de paquets en una sola ordre. Com a pràctica comunament acceptada, es bolca el resultat de pip freeze en un fitxer "requirements.txt", de la forma:
+<div class="highlight"><pre><span></span><code>(app-env) $ pip freeze &gt; requirements.txt
+</code></pre></div>
+D'aquesta manera, es pot recollir en aquest fitxer les versions concretes necessàries per al projecte, que poden ser exportades com a part de l'aplicació i instal·lades posteriorment:
+<div class="highlight"><pre><span></span><code>(app-env) $ pip install -r requirements.txt
+</code></pre></div></p>
+<h2 id="creacio-del-primer-projecte-django">CREACIÓ DEL PRIMER PROJECTE DJANGO<a class="headerlink" href="#creacio-del-primer-projecte-django" title="Permanent link">&para;</a></h2>
+<p>Anem a crear el nostre primer projecte amb Django.</p>
+<p>Creem un primer entorn virtual anomenat "portfolio-venv" en una carpeta de la nostra elecció, on llancem la següent ordre mitjançant consola:
+<div class="highlight"><pre><span></span><code>python3 -m venv portfolio-env
+</code></pre></div>
+A continuació l'activem:
+<div class="highlight"><pre><span></span><code>source portfolio-env/bin/activate
+</code></pre></div>
+Sabem que està actiu perquè al començament de la línia d'ordres es mostra el nom de l'entorn virtual entre parèntesis:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/10000001000001AE000000643372953077A8B7E2.png" /></p>
+<p>Abans d'executar la instal·lació de Django, anem a esbrinar quina és l'última versió LTS (Long-term Support), que és la que ens proporcionarà major duració en el suport (amb altres avantatges). Consultem el següent <a href="https://www.djangoproject.com/download/#supported-versions">enllaç</a>, i veiem que la més recent és la 5.2 i a més és LTS, amb la qual cosa és la candidata ideal per al nostre nou projecte. Tot i això, cal valorar també que la 4.2 (també LTS) tindrà suport fins a març de 2026. Les versions existents en aquest moment es poden consultar en la imatge de l'enllaç anterior:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/versiones.png" /></p>
+<p>L'avantatge d'elegir l'última versió serà que tindrem accés a les últimes funcionalitats; els desavantatges seran que ens podrem trobar més bugs (errors), i que potser molts paquets que ens proporcionen funcionalitat addicional, no siguen compatibles amb aquesta versió. Els avantatges/desavantatges d'elegir l'última versió LTS són les inverses a les mencionades per a l'última versió.</p>
+<p>Encara que és una elecció no sempre òbvia, ens decantarem per instal·lar l'última LTS (la 5.2) perquè és l'última versió i a més LTS.</p>
+<p>Amb tot això, l'ordre per instal·lar la versió 4.2 serà la següent:
+<div class="highlight"><pre><span></span><code>pip install Django==5.2
+</code></pre></div>
+<img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/1000000100000537000000CF4F2085D731F22E5A.png" /></p>
+<p>Creem el fitxer requirements.txt:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/100000010000056A00000067F82EEE374B510E1F.png" /></p>
+<p>Estem preparats per crear el nostre primer projecte Django, que anomenarem portfolioDjango. Executem la següent ordre:
+<div class="highlight"><pre><span></span><code>django-admin startproject portfolioDjango
+</code></pre></div>
+Veiem que s'ha creat una nova carpeta portfolioDjango:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/10000001000005E200000078F85CBEB5CDE3B83E.png" /></p>
+<p>Si obrim aquest directori amb Visual Studio Code (o un altre IDE, com PyCharm), veurem l'estructura de directoris que s'ha creat (creem també el workspace):</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/100000010000015A00000116305901964A91FAA4.png" /></p>
+<p>Per a llançar aquesta aplicació, llançarem la següent ordre, des del directori on es troba el fitxer manage.py:
+<div class="highlight"><pre><span></span><code>python manage.py runserver
+</code></pre></div>
+<img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/10000001000005EC000000FAEC78D465D19074C3.png" /></p>
+<p>Ens informa (entre altres coses que ignorarem en aquests moments) que la nostra aplicació s'ha llançat en el port 8000. Ho provem, i obtenim el següent:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/100000010000077B000003C9A530A413B48AE3D9.png" /></p>
+<p>Per tant, hem pogut llançar la nostra primera aplicació Django.</p>
+<h2 id="portafolis-amb-django">PORTAFOLIS AMB DJANGO<a class="headerlink" href="#portafolis-amb-django" title="Permanent link">&para;</a></h2>
+<p>En aquesta secció, desenvoluparem un portafolis utilitzant Django, seguint una estructura similar a la de les unitats anteriors, però aprofitant les funcionalitats que ofereix aquest framework.</p>
+<h2 id="configuracio">Configuració<a class="headerlink" href="#configuracio" title="Permanent link">&para;</a></h2>
+<p>El primer fitxer en què ens hem de fixar, dels que s'han creat automàticament en generar el projecte, és el denominat <strong>settings.py</strong>. En aquest fitxer residirà gran part de la configuració de la nostra aplicació. Les parts més importants a destacar en aquests moments són les següents (en aquest <a href="https://docs.djangoproject.com/es/5.2/ref/settings/#core-settings">enllaç</a> les tens totes, per a la versió 5.2):</p>
+<ul>
+<li>
+<p><strong>SECRET_KEY</strong>: és una cadena autogenerada que mai hem de compartir públicament si volem desplegar la nostra aplicació web en un entorn de producció (caldria ocultar-la si la pugem públicament a Github, per exemple). El valor d'aquesta variable s'utilitza per proporcionar criptografia en la signatura de sessions d'usuaris, i si es coneix el seu valor, es podrien alterar les cookies que envia el servidor i atacar la nostra aplicació.</p>
+</li>
+<li>
+<p><strong>DEBUG</strong>: indica si estem en mode debug. Si és True, en cas que es produïsca un error en la nostra aplicació, es mostrarà al navegador informació per poder depurar aquest error. Entre aquests detalls es mostra informació molt sensible, que només és convenient mostrar en un entorn de desenvolupament. Per tant, en un entorn de producció, aquesta variable ha de tindre el valor False.</p>
+</li>
+<li>
+<p><strong>ALLOWED_HOSTS</strong>: és una llista amb els noms de host/dominis que aquesta aplicació pot servir com a part de la URL, utilitzada en entorns de producció per evitar determinats tipus d'atacs HTTP. Típicament, per a desenvolupament tindrà els valors "localhost" i "127.0.0.1". Per a un entorn de producció, introduirem el nom del nostre domini, amb i sense "www" al principi.</p>
+</li>
+<li>
+<p><strong>INSTALLED_APPS</strong>: són els paquets addicionals que s'utilitzen en l'aplicació web. Segons la nomenclatura de Django, aquests paquets s'anomenen "aplicacions". Ho veurem amb més detall en un dels següents apartats, on crearem una nova aplicació i descobrirem com trobar aplicacions ja desenvolupades que facen determinades coses per nosaltres.</p>
+</li>
+<li>
+<p><strong>TEMPLATES</strong>: Mitjançant aquest array configurarem els tipus de plantilles i els directoris on es troben. Les plantilles són fitxers HTML amb codi Python incrustat, la qual cosa les fa dinàmiques.</p>
+</li>
+<li>
+<p><strong>DATABASES</strong>: En generar el projecte es preconfigura la utilització d'una base de dades <a href="https://www.sqlite.org/index.html">sqlite3</a>, una base de dades lleugera i adequada per a tasques de desenvolupament web amb pocs dades. Però es podria establir una altra base de dades, de major envergadura, en un entorn de producció (per exemple, Postgresql).</p>
+</li>
+<li>
+<p><strong>LANGUAGE_CODE</strong>: Idioma per defecte en què volem servir per defecte el contingut de l'aplicació web.</p>
+</li>
+<li>
+<p><strong>TIME_ZONE</strong>: Fus horari en què està basada la nostra aplicació web.</p>
+</li>
+<li>
+<p><strong>STATIC_URL</strong> i <strong>STATIC_ROOT</strong>: S'utilitzen per configurar la ruta on es serviran els fitxers estàtics de la nostra aplicació web.</p>
+</li>
+</ul>
+<p>Amb tot això, anem a canviar els valors d'algunes d'aquestes variables:
+<div class="highlight"><pre><span></span><code><span class="n">LANGUAGE_CODE</span> <span class="o">=</span> <span class="s1">&#39;ca&#39;</span>
+<span class="n">TIME_ZONE</span> <span class="o">=</span> <span class="s1">&#39;Europe/Madrid&#39;</span>
+<span class="n">STATIC_URL</span> <span class="o">=</span> <span class="s1">&#39;/static/&#39;</span>
+<span class="n">STATIC_ROOT</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s1">&#39;static&#39;</span><span class="p">)</span>
+</code></pre></div>
+La variable STATIC_ROOT no apareix en el fitxer settings.py per defecte, cal definir-la.</p>
+<p>A més, modificarem la variable TEMPLATES, mitjançant la qual especificarem que les nostres plantilles es localitzaran en el directori templates. Creem aquesta carpeta, <em>al mateix nivell que el fitxer manage.py</em>:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/100000010000012600000095E2844CD1C9854CE5.png" /></p>
+<p>I canviem la variable TEMPLATES de settings.py de manera que l'element DIRS tinga el següent valor:
+<div class="highlight"><pre><span></span><code><span class="s1">&#39;DIRS&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s1">&#39;templates&#39;</span><span class="p">)],</span>
+</code></pre></div>
+NOTA: hauràs d'importar el mòdul "os" (Operating System, per a funcions del sistema operatiu) perquè això funcione. Només has d'inserir aquesta línia al principi del fitxer settings.py:
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+</code></pre></div></p>
+<h2 id="aplicacions">Aplicacions<a class="headerlink" href="#aplicacions" title="Permanent link">&para;</a></h2>
+<p>En primer lloc, cal diferenciar dos conceptes clau en Django:</p>
+<ul>
+<li><strong>Projecte</strong>: s'identifica amb el conjunt de l'aplicació web desenvolupada, i el seu directori arrel es troba al nivell (normalment) del fitxer manage.py.</li>
+<li><strong>Aplicacions</strong> (o app): són paquets escrits en Python que proveeixen al projecte de funcionalitats particulars. Són prou <strong>independents</strong> entre si per poder ser reutilitzades.</li>
+</ul>
+<p>Les aplicacions poden ser reutilitzades en diferents projectes.</p>
+<p>En el següent enllaç es troba una recopilació (no exhaustiva) d'algunes aplicacions en Django que pots reutilitzar en els teus projectes:</p>
+<p><a href="https://djangopackages.org/">Django packages</a></p>
+<p>Algunes de les aplicacions que utilitzarem durant la resta del curs seran:</p>
+<ul>
+<li><a href="https://djangopackages.org/packages/p/django-crispy-forms/">Django Crispy Forms</a>: ens servirà per controlar millor l'aspecte i funcionament dels formularis.</li>
+<li><a href="https://djangopackages.org/packages/p/django-rest-framework/">Django Rest Framework</a>: utilitzat per a la creació de serveis REST.</li>
+</ul>
+<p>Per què necessitem saber què és una aplicació en aquests moments? Per desenvolupar mòduls de funcionalitats noves per al nostre projecte, les hem de crear en forma d'aplicacions. Podem crear aplicacions noves, cadascuna amb un propòsit particular (de manera que modularitzem la nostra aplicació web amb blocs independents) o també podem utilitzar aplicacions existents, com s'ha explicat abans.</p>
+<p>Algunes d'aquestes aplicacions pertanyen al propi nucli (core) de Django, i el projecte ve configurat per defecte amb algunes d'elles. Si ens fixem en la llista INSTALLED_APPS, veurem que conté 6 entrades:
+<div class="highlight"><pre><span></span><code><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;django.contrib.admin&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.auth&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.contenttypes&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.sessions&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.messages&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.staticfiles&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+</code></pre></div>
+Cadascuna d'aquestes aplicacions dota el nostre projecte de funcionalitats diferents, però no entrarem ara en el detall de cadascuna d'elles.</p>
+<p>Volem crear ja la nostra pròpia aplicació, perquè volem començar a desenvolupar el nostre portafolis. Per això, crearem una nova aplicació amb la següent ordre, que executem des de la carpeta on es trobe manage.py (amb l'entorn virtual <em>activat</em>):</p>
+<div class="highlight"><pre><span></span><code>python manage.py startapp portfolioapp
+</code></pre></div>
+<p>Revisem l'estructura del projecte, i podem veure que s'ha creat una carpeta nova amb nom "portfolioapp", amb molts fitxers nous:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/1000000100000128000001545B796B6818C4FD16.png" /></p>
+<p>Encara no sabem per a què serveixen aquests fitxers, ho anirem descobrint al llarg de la unitat. Cal mencionar que, cada vegada que creem una app per a un projecte, es crearà una carpeta diferent, amb els mateixos fitxers inicials.</p>
+<p>Recapitulant: hem creat una aplicació nova, encara no fa res, però ja té el seu lloc en el nostre projecte. És suficient amb el que hem fet per connectar-la al nostre projecte? Falta un petit detall: en la llista INSTALLED_APPS citada anteriorment, hem d'afegir la nostra nova app perquè els canvis tinguen efecte. Després de la modificació, aquesta variable queda de la següent manera:
+<div class="highlight"><pre><span></span><code><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;django.contrib.admin&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.auth&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.contenttypes&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.sessions&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.messages&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.staticfiles&#39;</span><span class="p">,</span>
+
+    <span class="s1">&#39;portfolioapp&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+</code></pre></div></p>
+<p>Quasi hem acabat, anem a alçar el projecte:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/10000001000005F2000000E52E442C4F60ED3D3C.png" /></p>
+<p>Recordes aquell missatge en roig que ens apareixia en alçar l'aplicació web? Diu exactament:</p>
+<blockquote>
+<p>You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): <strong>admin, auth, contenttypes, sessions</strong>.</p>
+<p>Run 'python manage.py migrate' to apply them.</p>
+</blockquote>
+<p>El missatge fa referència a migracions d'apps, algunes de les quals, "casualment", apareixen en la llista INSTALLED_APPS. I ens proporciona una ordre per solucionar el problema.</p>
+<p>Sembla que el que hem vist en aquest apartat no era tot el que necessitàvem per acabar de configurar les nostres apps. Aquesta qüestió la resoldrem en el següent apartat, quan implementem els models de la nostra nova aplicació "portfolioapp".</p>
+<h2 id="models">Models<a class="headerlink" href="#models" title="Permanent link">&para;</a></h2>
+<p>En el projecte anterior en PHP vam implementar la connexió a la base de dades en l'última fase. Ara ho farem al revés, començarem a utilitzar la BBDD des de l'inici del projecte. Per a això necessitem taules on emmagatzemar la informació, com les crearem amb Django? Molt fàcil: les crearem mitjançant el fitxer models.py que es troba dins de la nostra aplicació, mitjançant els anomenats "models" de Django.</p>
+<p>Un model representa una font d'informació única de dades, conté els camps i el comportament de les dades a emmagatzemar, i generalment un model es transforma en una taula de base de dades.</p>
+<p>Pots trobar tota la informació sobre els models de Django en aquest <a href="https://docs.djangoproject.com/en/5.2/topics/db/models/">enllaç</a>.</p>
+<h3 id="definicio">Definició<a class="headerlink" href="#definicio" title="Permanent link">&para;</a></h3>
+<p>Començarem creant dos models: el de projecte i el de categoria. Introduïm el següent en portfolioapp/models.py:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/10000001000003A4000001286C1C1730C2F62297.png" /></p>
+<p>Cal destacar que:</p>
+<ul>
+<li>Per fer un camp opcional, s'estableixen els atributs null i blank a True.</li>
+<li>També es poden donar valors per defecte, com el cas de data_creacio.</li>
+<li>És convenient definir l'atribut verbose_name en tots els camps, la qual cosa serà molt important quan vegem l'administrador de Django.</li>
+</ul>
+<p>En aquest <a href="https://docs.djangoproject.com/en/5.2/ref/models/fields/#field-types">enllaç</a> tens una descripció de tots els tipus de camps.</p>
+<p>Cal notar que no hem definit cap columna "id" per a les nostres taules. Django s'ocupa directament de fer això per nosaltres, segons es detalla en aquest <a href="https://docs.djangoproject.com/en/5.2/topics/db/models/#automatic-primary-key-fields">enllaç</a>. A aquesta columna la podem referenciar amb "id" o "pk", indistintament.</p>
+<p>Dedicarem un apartat exclusiu per a la definició del camp que contindrà la imatge del projecte.</p>
+<h3 id="migracio">Migració<a class="headerlink" href="#migracio" title="Permanent link">&para;</a></h3>
+<p>En l'apartat anterior hem definit els models. Això és una declaració d'intencions, no hem creat realment encara res en la base de dades sqlite3 (configurada en settings.py). Com traslladem aquesta definició de models a la base de dades? Molt fàcil: mitjançant les ordres <strong>makemigrations</strong> i <strong>migrate</strong>.</p>
+<p>Podem aplicar aquestes ordres a totes les aplicacions del nostre projecte, o les podem realitzar per a una app en particular. Anem a migrar només l'aplicació que hem creat "portfolioapp".</p>
+<p>Executem la primera ordre:
+<div class="highlight"><pre><span></span><code>python manage.py makemigrations portfolioapp
+</code></pre></div>
+<img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/1000000100000693000000647F397C3FA81552C0.png" /></p>
+<p>Observem que s'ha creat un nou directori en la carpeta portfolioapp anomenat "migrations", i dins tenim un fitxer 0001_initial.py:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/10000001000001630000015DD2DBF0BA76C10468.png" /></p>
+<p>Si obrim aquest fitxer de migració veurem com s'ha traduït la definició dels models a sentències SQL.</p>
+<p><strong>IMPORTANT</strong>: no modifiques res d'aquest fitxer, es genera automàticament.</p>
+<p>Anem a migrar aquests canvis perquè es facen efectius en la BBDD (perquè siguen executats realment pel gestor de base de dades). Per a això executem la següent ordre:
+<div class="highlight"><pre><span></span><code>python manage.py migrate portfolioapp
+</code></pre></div>
+<img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/10000001000006630000006124AE2C925FFDCA33.png" /></p>
+<p>Ara podem assegurar que les taules corresponents s'han creat en la base de dades.</p>
+<p>Però, tenim encara un problema pendent des del principi. És el problema que s'indica cada vegada que iniciem la nostra aplicació web, assenyalat pel següent missatge:</p>
+<blockquote>
+<p>You have 18 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): <strong>admin, auth, contenttypes, sessions</strong>.</p>
+<p>Run 'python manage.py migrate' to apply them.</p>
+</blockquote>
+<p>Aquest missatge es deu al fet que totes aquelles apps que venien per defecte en Django quan vam crear el projecte (especificades a INSTALLED_APPS, de settings.py), també necessiten que es creen les seues taules en la base de dades. Més endavant (en una altra unitat) veurem com crear fitxers de migració inicials per a les nostres pròpies apps, de manera que puguem crear dades inicials en la nostra BBDD de forma automàtica.</p>
+<p>Per tant, per solucionar aquest error d'una vegada per totes, executarem l'ordre migrate, però per a totes les apps. Per a això, simplement no especifiquem el nom de l'app:</p>
+<div class="highlight"><pre><span></span><code>python manage.py migrate
+</code></pre></div>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/10000001000005E700000192B386D813896B3041.png" /></p>
+<p>Ara iniciem l'aplicació:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/10000001000005EC000000B46FE9EDE79557D9E9.png" /></p>
+<p>I ja no ens apareix el missatge d'error anterior.</p>
+<h3 id="imagefield">ImageField<a class="headerlink" href="#imagefield" title="Permanent link">&para;</a></h3>
+<p>En aquest apartat modificarem el model Projecte per poder incloure un nou camp al qual associar una imatge.</p>
+<p>Django ofereix dos tipus de camps de model que impliquen pujar un fitxer mitjançant l'aplicació web: FileField i ImageField. Cadascun d'aquests tipus de camps té particularitats, però tots dos necessiten una ruta en la qual emmagatzemar els fitxers que s'envien des del costat client (agent d'usuari). Aquesta ruta es determina mitjançant les variables MEDIA_ROOT i MEDIA_URL, especificades en settings.py.</p>
+<p>En aquests moments no tenim configurades aquestes variables, anem a incloure-les en aquest fitxer amb els següents valors (sota la configuració de STATIC_URL):
+<div class="highlight"><pre><span></span><code><span class="n">MEDIA_ROOT</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s1">&#39;media/&#39;</span><span class="p">)</span>
+<span class="n">MEDIA_URL</span> <span class="o">=</span> <span class="s1">&#39;/media/&#39;</span>
+</code></pre></div>
+A més, perquè les imatges associades a l'ImageField es puguen referenciar en les plantilles, cal modificar el fitxer <strong>urls.py</strong>, i que quede de la següent manera:
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">django.contrib</span><span class="w"> </span><span class="kn">import</span> <span class="n">admin</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.urls</span><span class="w"> </span><span class="kn">import</span> <span class="n">path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.conf</span><span class="w"> </span><span class="kn">import</span> <span class="n">settings</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.conf.urls.static</span><span class="w"> </span><span class="kn">import</span> <span class="n">static</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;admin/&#39;</span><span class="p">,</span> <span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">urls</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="k">if</span> <span class="n">settings</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">:</span>
+    <span class="n">urlpatterns</span> <span class="o">+=</span> <span class="n">static</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">MEDIA_URL</span><span class="p">,</span> <span class="n">document_root</span><span class="o">=</span><span class="n">settings</span><span class="o">.</span><span class="n">MEDIA_ROOT</span><span class="p">)</span>
+</code></pre></div></p>
+<p>Només ens queda una dependència per poder modificar el model Projecte: hem d'instal·lar el paquet Pillow perquè Django puga gestionar les imatges que pugem. Per això executem la següent ordre (amb l'entorn virtual activat):
+<div class="highlight"><pre><span></span><code>pip install Pillow
+</code></pre></div>
+<img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/10000001000005BF00000072A020166679E93844.png" /></p>
+<p><strong><em>MOLT IMPORTANT</em></strong>: Recorda congelar el fitxer requirements.txt amb les dependències del projecte.</p>
+<blockquote>
+<p>NOTA: Normalment aquestes són configuracions que es realitzaran al principi del projecte i després patiran lleugers canvis (o cap).</p>
+</blockquote>
+<p>Ara anem a modificar el model Projecte, i afegim el següent atribut (el fem opcional):
+<div class="highlight"><pre><span></span><code><span class="n">imagen</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ImageField</span><span class="p">(</span><span class="n">verbose_name</span> <span class="o">=</span> <span class="s1">&#39;Imatge&#39;</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+Després de modificar-lo, llancem l'ordre makemigrations:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/10000001000006130000004D7FE6CA65FBFD3803.png" /></p>
+<p>Consultem la carpeta migrations i veiem que hi ha un nou fitxer amb seqüència 0002:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/1000000100000114000000DDC42684D27F68C065.png" /></p>
+<p>Cada vegada que fem un canvi en els nostres models que implique un canvi en la BBDD, es crearà un nou fitxer en aquesta carpeta. No manipules mai aquests fitxers manualment, Django conserva una traça de quins ha processat ja i quins no. Alterar la seqüència pot implicar inconsistències en la BBDD i haver de perdre totes les dades.</p>
+<p>Finalment, apliquem les migracions amb migrate:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/10000001000005D300000063C51602918DA67E7D.png" /></p>
+<p>Ara, el nostre nou camp es troba en la BBDD.</p>
+<h3 id="administrador-de-django">Administrador de Django<a class="headerlink" href="#administrador-de-django" title="Permanent link">&para;</a></h3>
+<p>Hem creat dos nous models en la nostra nova aplicació portfolioapp. Com podem gestionar les dades associades a cada model des d'una interfície amigable? Resposta: programant l'administrador de Django.</p>
+<p>Django ve amb una aplicació que ens permet gestionar els nostres models de forma visual, a més de moltes altres coses. Es tracta de la primera app continguda en la llista INSTALLED_APPS, anomenada "django.contrib.admin". Però perquè els nostres models es puguen gestionar mitjançant l'administrador de Django, primer hem de configurar el fitxer admin.py de cada app.</p>
+<p>Anem a fer-ho. Introduïm el següent en el fitxer admin.py dins de portfolioapp:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/10000001000002B00000013E7AACF219ACEDDBB6.png" /></p>
+<p>Totes aquestes classes i atributs estan especificats en aquest <a href="https://docs.djangoproject.com/en/5.2/ref/contrib/admin/">enllaç</a>, encara que en classe comentem els més rellevants.</p>
+<p>Després d'això, tornem a llançar l'aplicació web. Consultem localhost:8000 però res sembla haver canviat. Anem a localhost:8000/admin i veiem el següent:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/10000001000005760000020A94CE862706E08FF7.png" /></p>
+<p>Sembla que ha funcionat, però (com és lògic), l'aplicació ens demana un usuari per poder accedir a l'administrador.</p>
+<p>És evident que necessitem unes credencials, però, quines? Hem de crear un usuari administrador per a la nostra aplicació web, i el podem crear amb la següent ordre (amb l'entorn virtual activat):
+<div class="highlight"><pre><span></span><code>python manage.py createsuperuser
+</code></pre></div>
+Després de llançar l'ordre la consola ens demana una sèrie de dades (fonamentalment nom d'usuari i contrasenya, el correu electrònic és opcional):</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/1000000100000619000000BF8A436B41BE25F5C8.png" /></p>
+<p>El procés verifica que la nostra contrasenya tinga una mínima complexitat, encara que podem saltar aquestes restriccions (comentant determinades línies en settings.py).</p>
+<p>Tornem a llançar l'aplicació web i ara utilitzem el nostre usuari i contrasenya per accedir a l'administrador:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/1000000100000774000001AA965C8310FC65D8D7.png" /></p>
+<p><strong>TASCA</strong>: En classe, utilitzarem aquest administrador per introduir registres de prova en l'aplicació.</p>
+<p><strong>RECAPITULEM</strong>: Tenim la base de dades, tenim taules i dades en elles.</p>
+<p>Què ens queda? Hem d'aconseguir ara la part visual de la nostra aplicació web, poder fer-la dinàmica amb les dades que tenim en la BBDD, i a més establir la navegació pel nostre lloc web.</p>
+<p>Per a això necessitarem els següents apartats: <em>plantilles</em> HTML, les <em>vistes</em> (que implementaran la nostra lògica de negoci) i la configuració de les <em>URLs</em> del nostre lloc web (que invocaran la lògica de negoci i navegaran). Anem a per això en els següents apartats.</p>
+<h2 id="plantilles-en-django">Plantilles en Django<a class="headerlink" href="#plantilles-en-django" title="Permanent link">&para;</a></h2>
+<p>Django ve amb un motor de plantilles anomenat DTL (Django Template Language), encara que és possible utilitzar altres com <a href="https://jinja.palletsprojects.com/en/3.1.x/">Jinja2</a>. Un projecte Django pot configurar-se per utilitzar un motor de plantilles o més, o fins i tot cap.</p>
+<p>Aquest motor de plantilles ens permet construir la part visual de l'aplicació, amb codi HTML (estàtic) i una sintaxi especial que el fa dinàmic. En aquest <a href="https://docs.djangoproject.com/en/5.2/topics/templates/">enllaç</a> trobaràs tot el relatiu al motor de plantilles de Django.</p>
+<h3 id="jerarquia-de-plantilles">Jerarquia de plantilles<a class="headerlink" href="#jerarquia-de-plantilles" title="Permanent link">&para;</a></h3>
+<p>Les plantilles en Django segueixen una estructura jeràrquica. Això vol dir que es defineixen de manera que unes es poden utilitzar de base per a altres plantilles. Les plantilles permeten ser esteses si s'utilitza la sintaxi adequada.</p>
+<p>Per a aquest projecte utilitzarem la jerarquia de plantilles següent:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/10000001000004000000020A5774E3DD8E056D77.png" /></p>
+<p>Descarrega aquestes plantilles (incompletes) <a download="templates.zip" href="../../../../modulos/01-Servidor/ud5_estaticos/templates.zip">templates.zip</a> en una nova carpeta "portfolio", dins d'una altra carpeta "templates", segons aquesta estructura:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/10000001000000EF000001208BE953EFACC6CE00.png" /></p>
+<p>En classe les revisarem i explicarem la sintaxi bàsica que apareix en elles. Pren notes.</p>
+<h3 id="fitxers-estatics">Fitxers estàtics<a class="headerlink" href="#fitxers-estatics" title="Permanent link">&para;</a></h3>
+<p>Les aplicacions web normalment necessiten utilitzar el que s'anomena fitxers estàtics (imatges, fitxers JavaScript, CSS, etc.).</p>
+<p>Si, per exemple, naveguem a l'administrador de Django en localhost:8000/admin, veurem en la consola el log del servidor de Django. Algunes de les línies que apareixen fan referència a recursos estàtics que aquest administrador necessita:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/10000001000005ED000001C9FA7730E3EB961D16.png" /></p>
+<p>No aprofundirem més en els fitxers estàtics. <a href="https://docs.djangoproject.com/en/5.2/howto/static-files/">Ací</a> tens tota la documentació.</p>
+<p>Només mencionarem tres aspectes:</p>
+<ul>
+<li>
+<p>Configuració de fitxers estàtics: ja ha sigut realitzada en l'apartat 5.1.</p>
+</li>
+<li>
+<p>Càrrega d'estàtics en una plantilla, es realitza mitjançant:</p>
+<p><code>{% load static %}</code></p>
+</li>
+<li>
+<p>Referència a un recurs estàtic en una plantilla, exemple:</p>
+<p><code>&lt;img src="{% static 'my_app/example.jpg' %}" alt="My image"&gt;</code></p>
+</li>
+</ul>
+<p>Perquè els fitxers estàtics es guarden en la ruta especificada en les variables STATIC_URL i STATIC_ROOT, hem d'executar la següent ordre:
+<div class="highlight"><pre><span></span><code>python manage.py collectstatic
+</code></pre></div>
+Ho fem i veiem el resultat:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/10000001000006070000003CAF161C7541D959B8.png" /></p>
+<p>Ara veiem la carpeta static en el nostre projecte:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/100000010000012A0000013EFFF1474E49D9FB34.png" /></p>
+<p>Els únics fitxers estàtics que tenim en aquests moments pertanyen a l'app d'administrador.</p>
+<p>Cal mencionar també que la tendència actual és emmagatzemar els fitxers estàtics d'una aplicació web en servidors CDN.</p>
+<h3 id="plantilles-derror">Plantilles d'error<a class="headerlink" href="#plantilles-derror" title="Permanent link">&para;</a></h3>
+<p>Tots hem vist el típic error 404 en teclejar incorrectament una URL en el navegador:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/10000000000002000000017FA5756466870EEAE2.png" /></p>
+<p>Nosaltres, que som programadors web avantatjats, ja sabem què significa aquest codi d'error, retornat pel protocol HTTP (segons s'explica en el mòdul de Desplegament d'aplicacions web). Però un usuari normal pot arribar a alarmar-se en obtenir aquest codi, sense saber exactament què ha passat. Podríem, d'alguna manera, retornar a l'usuari un missatge d'error més significatiu que l'ajude a saber què ha passat i què pot fer per solucionar el problema? Per a això Django ens proporciona una forma fàcil de retornar respostes a l'usuari en cas que es reben determinades respostes d'error del servidor.</p>
+<p>Tot el que hem de fer és crear una plantilla per cada codi d'error, amb el número d'error corresponent, i situar-la en el directori templates, com es mostra a continuació:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/100000010000012B0000014A36949D70E430F4E4.png" /></p>
+<p>Descarrega aquestes plantilles d'Aules a la carpeta del projecte corresponent.</p>
+<p><strong>IMPORTANT</strong>: Aquestes pàgines d'error es mostraran quan la variable DEBUG de settings.py tinga el valor False.</p>
+<h2 id="vistes">Vistes<a class="headerlink" href="#vistes" title="Permanent link">&para;</a></h2>
+<p>Les vistes són l'element de la nostra aplicació en què residirà la <em>lògica de negoci</em>, i es defineixen en el fitxer views.py, dins de cada app. Bàsicament prendran una petició HTTP com a entrada (<strong>request</strong>) i retornaran una resposta HTTP (<strong>response</strong>), que pot ser:</p>
+<ul>
+<li>Un document HTML</li>
+<li>Una redirecció a una altra URL</li>
+<li>Un error</li>
+<li>Un document XML o JSON</li>
+<li>Una imatge</li>
+<li>O qualsevol altra cosa</li>
+</ul>
+<p>Les vistes se situen darrere de les URLs de la nostra aplicació web, com veurem en l'exemple guiat, i determinen (segons el MVC) l'aspecte visual de la resposta (mitjançant l'ús de plantilles), així com l'accés i manipulació a la BBDD.</p>
+<p>D'aquesta manera, haurem de construir un mapa de URLs per a la nostra aplicació web, de manera que es definisca:</p>
+<ul>
+<li>Estructura de la URL: identificació de la URL perquè la faça única de les altres.</li>
+<li>Paràmetres: es definiran quins paràmetres s'accepten a través de la URL, poden ser opcionals.</li>
+<li>Vista: definida en views.py, que tractarà la petició HTTP rebuda a través de la URL.</li>
+</ul>
+<p>Una vegada definides les URLs de la nostra aplicació, les utilitzarem fonamentalment en dos llocs:</p>
+<ul>
+<li>En les plantilles HTML, per establir la navegació pel lloc web.</li>
+<li>En les pròpies vistes, per a la redirecció a altres parts de l'aplicació, després d'aplicar la lògica de negoci.</li>
+</ul>
+<h2 id="pagines-de-laplicacio">Pàgines de l'aplicació<a class="headerlink" href="#pagines-de-laplicacio" title="Permanent link">&para;</a></h2>
+<p>En aquest apartat utilitzarem tot l'anterior per desenvolupar el portafolis. Veurem el procés per a cadascuna de les pàgines de la nostra aplicació web.</p>
+<p>Implementarem les vistes de les dues formes possibles per veure les diferències, és a dir: FBV i CBV.</p>
+<h3 id="home">Home<a class="headerlink" href="#home" title="Permanent link">&para;</a></h3>
+<p>Aquesta serà la pàgina de benvinguda, amb el llistat de tots els projectes. Necessitarem una vista, que recupere de la BBDD tots els projectes i retorne la resposta en forma d'HTML acabat; la plantilla HTML (formada per codi HTML i codi incrustat) retornarà l'aspecte visual de la pàgina; finalment, la URL connectarà la ruta "/" arrel amb la vista.</p>
+<p>Després de finalitzar els següents subapartats, la pàgina de benvinguda de l'aplicació quedarà de la següent manera:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/10000001000003630000026016E78569E93BD628.png" /></p>
+<h4 id="vista">Vista<a class="headerlink" href="#vista" title="Permanent link">&para;</a></h4>
+<p>El tipus de vista FBV (Function Based View) podria ser de la següent manera:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">django.shortcuts</span><span class="w"> </span><span class="kn">import</span> <span class="n">render</span> <span class="c1"># Per a FBV</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Projecte</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">home_view</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="n">projectes</span> <span class="o">=</span> <span class="n">Projecte</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="n">context</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;projecte&#39;</span><span class="p">:</span> <span class="n">projectes</span><span class="p">}</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;portfolio/home.html&#39;</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+</code></pre></div>
+<p>Cal fer notar que el nom de la vista va en minúscules, per convenció, perquè es tracta d'un mètode, no una classe.</p>
+<p>Una possible versió d'aquesta vista en CBV (Class Based View) seria de la següent manera:
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">django.views.generic</span><span class="w"> </span><span class="kn">import</span> <span class="n">TemplateView</span> <span class="c1"># Per a CBV</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Projecte</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">HomeView</span><span class="p">(</span><span class="n">TemplateView</span><span class="p">):</span>
+    <span class="n">template_name</span> <span class="o">=</span> <span class="s1">&#39;portfolio/home.html&#39;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_context_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">context</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">HomeView</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">get_context_data</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;projectes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Projecte</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">context</span>
+</code></pre></div></p>
+<p>En aquest cas, el nom de la vista és el nom d'una classe, per tant es segueix la convenció "camel case".</p>
+<p>Aquest segon mètode sembla una forma més complicada d'implementar la mateixa vista. En aquest cas estem heretant de la classe TemplateView, que es tracta d'una classe dedicada exclusivament a visualitzar una template, i passar-li uns determinats paràmetres.</p>
+<p>Hi ha més tipus de vistes basades en CBV, cadascuna amb un propòsit particular. Anem a revisar aquest <a href="https://docs.djangoproject.com/en/5.2/ref/class-based-views/">enllaç</a> i comentar les <strong>vistes més destacades</strong>.</p>
+<p>En els dos casos hem recuperat els projectes mitjançant Projecte.objects.all(), no hem hagut de realitzar cap sentència SQL. Això és gràcies a l'<strong>ORM de Django</strong>, que ens permet utilitzar una sintaxi per manipular la BBDD sense necessitat d'escriure sentències SQL específiques de la BBDD que subjau en l'aplicació. D'aquesta manera podem tindre una base de dades sqlite3 per a desenvolupament, una postgresql per a altres entorns, i no hem de canviar les expressions SQL.</p>
+<p>Per saber més sobre l'ORM de Django, consulta aquest <a href="https://docs.djangoproject.com/en/5.2/topics/db/queries/">enllaç</a>, o també <a href="https://tutorial.djangogirls.org/es/django_orm/">aquest altre</a>.</p>
+<p>La variable resultant d'utilitzar l'ORM de Django "projectes" s'anomena <strong>queryset</strong>, i és un conjunt de dades agregat amb tot el necessari per capturar les dades recuperades per la consulta a BBDD.</p>
+<p>Finalment, les dues vistes fan referència a un objecte "<strong>context</strong>". Per a què serveix aquest objecte? Precisament es tracta d'un diccionari que més endavant utilitzarà la template per representar els diferents valors en la interfície d'usuari. Aquest objecte s'injecta en la template, la qual, mitjançant codi incrustat, el manipularà i representarà els seus diferents valors. Es tracta, doncs, de la forma que tenim de fer dinàmiques les diferents pàgines de la nostra aplicació web.</p>
+<p>Si no injectàrem els projectes a la template via context, es tractaria d'una pàgina estàtica, que és el propòsit de la classe TemplateView.</p>
+<h4 id="template">Template<a class="headerlink" href="#template" title="Permanent link">&para;</a></h4>
+<p>La plantilla a utilitzar en aquesta pàgina s'anomena home.html, i tindrà el següent contingut:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/1000000100000336000001BCA2B25A79AD91DE94.png" /></p>
+<p>En classe comentarem les diferents parts de què es compon.</p>
+<p>Com veiem, es maneja la variable "projectes" mitjançant codi incrustat. Com ha arribat ací aquesta variable? Mitjançant l'objecte "context" proporcionat per la vista (ja siga FBV o CBV).</p>
+<h4 id="url">URL<a class="headerlink" href="#url" title="Permanent link">&para;</a></h4>
+<p>La configuració de la URL canviarà lleugerament si decidim implementar la vista mitjançant FBV o mitjançant CBV.</p>
+<p>Per al cas de FBV, cal afegir el següent element en la llista urlpatterns del fitxer:
+<div class="highlight"><pre><span></span><code><span class="n">path</span><span class="p">(</span><span class="s1">&#39;fbv/&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">home_view</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;home&#39;</span><span class="p">),</span>
+</code></pre></div>
+Per al cas de CBV, cal substituir la línia anterior per la següent:
+<div class="highlight"><pre><span></span><code><span class="n">path</span><span class="p">(</span><span class="s1">&#39;cbv/&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">HomeView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;home&#39;</span><span class="p">),</span>
+</code></pre></div></p>
+<p>NOTA: En CBV és necessari cridar al mètode <a href="https://docs.djangoproject.com/en/5.2/ref/class-based-views/base/#django.views.generic.base.View.as_view">as_view</a> que converteix la classe en una vista invocable.</p>
+<p>En ambdós casos, cal importar les vistes del fitxer views.py en el fitxer urls.py:
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">portfolioapp</span><span class="w"> </span><span class="kn">import</span> <span class="n">views</span>
+</code></pre></div></p>
+<h3 id="projecte">Projecte<a class="headerlink" href="#projecte" title="Permanent link">&para;</a></h3>
+<p>A la pàgina de projecte s'arribarà després d'haver fet clic sobre un projecte en la llista de la pàgina de benvinguda. Per a això cal omplir l'atribut href de la línia 11 en home.html (ara té el valor "#"). Això ho farem una vegada configurem la URL per a la fitxa del projecte.</p>
+<p>Anem a configurar els fitxers que ens fan falta per a aquesta pàgina.</p>
+<h4 id="vista_1">Vista<a class="headerlink" href="#vista_1" title="Permanent link">&para;</a></h4>
+<p>Aquesta vista tindrà una particularitat: ha de rebre un paràmetre de la URL, que serà l'id del projecte.</p>
+<p>Una possible forma de fer-ho mitjançant FBV és la següent:
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">projecte_view</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="n">pk</span><span class="p">):</span>
+    <span class="n">projecte</span> <span class="o">=</span> <span class="n">Projecte</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="n">pk</span><span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;projecte&#39;</span><span class="p">:</span> <span class="n">projecte</span><span class="p">}</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="s1">&#39;portfolio/projecte.html&#39;</span><span class="p">,</span><span class="n">context</span><span class="p">)</span>  
+</code></pre></div>
+Mitjançant CBV podríem fer-ho de la següent manera:
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">ProjecteView</span><span class="p">(</span><span class="n">TemplateView</span><span class="p">):</span>
+    <span class="n">template_name</span> <span class="o">=</span> <span class="s1">&#39;portfolio/projecte.html&#39;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_context_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">context</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">ProjecteView</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">get_context_data</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;projecte&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Projecte</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;pk&#39;</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">context</span>
+</code></pre></div>
+En els dos casos hem realitzat la consulta del projecte particular mitjançant Projecte.objects.get. El mètode get serveix per recuperar un sol registre de la BBDD, no un queryset, com en el cas de la vista de home.</p>
+<p>En els dos tipus de vista es fa referència a <strong>context</strong>, que és un diccionari amb atributs que estaran disponibles en la template (com s'ha comentat anteriorment). La modificació del context serà primordial quan vulguem injectar dades dinàmiques en les templates, ja siga mitjançant CBV o FBV.</p>
+<p>Si manipulem la URL per modificar el paràmetre id i introduir un número de projecte que no existeix, tindríem un problema, ja que el mètode get retornaria un error i no estem contemplant aquest cas en el codi. Hauríem d'introduir un bloc try/catch per contemplar aquesta excepció.</p>
+<p>És per això que, en aquest cas, és més convenient utilitzar el mètode <a href="https://docs.djangoproject.com/en/5.2/topics/http/shortcuts/#get-object-or-404">get_object_or_404</a>, de la següent manera. Consulta l'enllaç per veure un exemple.</p>
+<p><strong>ACTIVITAT</strong>: modifica la teua vista per utilitzar get_object_or_404.</p>
+<blockquote>
+<p>NOTA: en Django es pot utilitzar "pk" o "id" indistintament per referir-nos a l'identificador de clau única assignat automàticament a cada nou objecte que es crea en una taula de BBDD. Totes les taules generades per Django tindran una columna "id" a la qual ens podem referir també per "pk".</p>
+</blockquote>
+<h4 id="template_1">Template<a class="headerlink" href="#template_1" title="Permanent link">&para;</a></h4>
+<p>La plantilla que podem utilitzar és la següent:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/10000001000003B6000001897714B22FD715051A.png" /></p>
+<p><strong>NOTA</strong>: l'href de la línia 7 està incomplet, ho resoldrem en un apartat més endavant.</p>
+<p><strong>NOTA</strong>: També podem veure que, una vegada tenim l'objecte "projecte" podem accedir a les seues categories simplement mitjançant la següent expressió en la template (gràcies a la clau forana entre el model Projecte i el model Categoria):
+<div class="highlight"><pre><span></span><code>proyecto.categorias.all
+</code></pre></div>
+<strong>NOTA</strong>: Utilitzem un <strong>punt</strong> "." per passar d'un objecte relacionat a un altre. El mateix ocorre per a l'atribut "src" de la imatge, que ha de fer referència a la URL de la imatge associada al projecte. Aconseguim accedir a l'atribut "url" de la imatge partint del projecte, passant al seu atribut "imatge" (que és al seu torn un altre objecte amb diferents atributs) i recuperant finalment l'atribut "url" d'aquesta imatge.</p>
+<p><strong>NOTA</strong>: En la template aquesta expressió no acaba amb els <strong>parèntesis</strong>, com sí succeiria si estiguérem cridant aquesta funció de l'ORM des de, per exemple, una vista.</p>
+<h4 id="url_1">URL<a class="headerlink" href="#url_1" title="Permanent link">&para;</a></h4>
+<p>Finalment, configurem la URL per a aquesta pàgina.</p>
+<p>Per al cas de FBV afegim la següent línia a la llista urlpatterns de urls.py:
+<div class="highlight"><pre><span></span><code><span class="n">path</span><span class="p">(</span><span class="s1">&#39;projecte_fbv/&lt;int:pk&gt;/&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">projecte_view</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;projecte&#39;</span><span class="p">),</span>
+</code></pre></div>
+I per a CBV:
+<div class="highlight"><pre><span></span><code><span class="n">path</span><span class="p">(</span><span class="s1">&#39;projecte_cbv/&lt;int:pk&gt;/&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">ProjecteView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;projecte&#39;</span><span class="p">),</span>
+</code></pre></div></p>
+<p>És necessari modificar l'estructura de la URL per poder rebre el paràmetre que identifique el projecte (en aquest cas, el seu id).</p>
+<p>Ara podem completar la línia 11 de home.html, que quedaria de la següent manera:
+<div class="highlight"><pre><span></span><code>&lt;a href=&quot;{% url &#39;projecte&#39; pk=projecte.id %}&quot; class=&quot;p-5&quot;&gt;
+</code></pre></div>
+En haver assignat un valor a l'atribut "name" de la URL, som capaços de referenciar aquesta URL mitjançant el seu nom 'projecte', siga quina siga la seua ruta.</p>
+<p>NOTA: Segons la sintaxi de Python, es requereixen cometes simples dins de cometes dobles, o viceversa.</p>
+<h3 id="contacte">Contacte<a class="headerlink" href="#contacte" title="Permanent link">&para;</a></h3>
+<p>Aquesta serà la vista més senzilla de totes, perquè no necessitarem consultar cap dada de la BBDD, per tant no passarem cap valor en el context.</p>
+<h4 id="vista_2">Vista<a class="headerlink" href="#vista_2" title="Permanent link">&para;</a></h4>
+<p>Si optem per FBV:
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">contacte_view</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="s1">&#39;portfolio/contacte.html&#39;</span><span class="p">,</span><span class="n">context</span><span class="p">)</span> 
+</code></pre></div>
+En cas de CBV:
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">ContacteView</span><span class="p">(</span><span class="n">TemplateView</span><span class="p">):</span>
+    <span class="n">template_name</span> <span class="o">=</span> <span class="s1">&#39;portfolio/contacte.html&#39;</span>
+</code></pre></div>
+Aquest és un clar exemple en què CBV és molt adequat quan el tipus de vista que utilitzem s'ajusta molt al que pretenem fer, i només caldrà fer unes poques modificacions, si és necessari.</p>
+<h4 id="template_2">Template<a class="headerlink" href="#template_2" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/100000010000048D00000184B2DD3650777E7643.png" /></p>
+<p>Modifica el valor "Nom i cognoms" del h3 per introduir les teues dades particulars.</p>
+<p><strong>ACTIVITAT DE CLASSE</strong>: passa com a context a la template el teu nom i cognoms en forma d'objecte, i modifica la template perquè en l'h3 mostre el teu nom i cognoms, passats per context.</p>
+<h4 id="url_2">URL<a class="headerlink" href="#url_2" title="Permanent link">&para;</a></h4>
+<p>Per al cas de FBV:
+<div class="highlight"><pre><span></span><code><span class="n">path</span><span class="p">(</span><span class="s1">&#39;contacte/&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">contacte_view</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;contacte&#39;</span><span class="p">),</span>
+</code></pre></div></p>
+<p>Per a CBV:
+<div class="highlight"><pre><span></span><code><span class="n">path</span><span class="p">(</span><span class="s1">&#39;contacte/&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">ContacteView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;contacte&#39;</span><span class="p">),</span>
+</code></pre></div></p>
+<h3 id="filtrat-per-categoria">Filtrat per categoria<a class="headerlink" href="#filtrat-per-categoria" title="Permanent link">&para;</a></h3>
+<p>Anem a resoldre el filtrat per categoria. Volem que en fer clic sobre alguna de les categories de la fitxa del projecte, anem a la pàgina d'inici, i es mostren només els projectes amb eixa categoria.</p>
+<p>Per a això, hem d'enviar a la URL "home" l'id de la categoria. Primer completem l'atribut href de la línia 7 de projecte.html de la següent manera:
+<div class="highlight"><pre><span></span><code>href=&quot;{% url &#39;home&#39; categoria.id %}&quot;
+</code></pre></div>
+A continuació hem de crear una nova URL que puga rebre el paràmetre de categoria. Per al cas de CBV:
+<div class="highlight"><pre><span></span><code><span class="n">path</span><span class="p">(</span><span class="s1">&#39;&lt;int:cat_id&gt;/&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">HomeView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;home&#39;</span><span class="p">),</span>
+</code></pre></div>
+És important definir aquesta nova URL sota de la que havíem definit inicialment per a la pàgina home, ja que Django buscarà per ordre quina és la URL que s'adequa més a la petició que estem fent.</p>
+<p>Finalment, en la vista de home hem de rebre el paràmetre, i filtrar els projectes, no prendre'ls tots, depenent de si s'ha passat el paràmetre cat_id:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/100000010000040B000000B4E69A8FA5D370125B.png" /></p>
+<p>NOTA: kwargs (key-word arguments) és un diccionari (del tipus clau:valor) mitjançant el qual es poden passar paràmetres als mètodes. És una convenció pròpia de Python, i en aquest <a href="https://python-intermedio.readthedocs.io/es/latest/args_and_kwargs.html#uso-de-kwargs">enllaç</a> pots consultar més detalls. Per recuperar un valor del diccionari podríem escriure-ho de la forma kwargs['cat_id'], però utilitzar el mètode get és més convenient per evitar excepcions si eixa clau no es trobara en el diccionari.</p>
+<h3 id="desplegable-de-categories-inclusion-tags">Desplegable de categories: inclusion tags<a class="headerlink" href="#desplegable-de-categories-inclusion-tags" title="Permanent link">&para;</a></h3>
+<p>Ens queda un detall, i és que volem que el desplegable de categories ens mostre totes les categories i puguem filtrar en fer clic sobre alguna d'elles, però de manera dinàmica segons els valors que es troben en BBDD.</p>
+<p>Però existeix un problema, i és que el dropdown de categories està en el template header.html, i aquest template no està associat directament a cap vista, que és precisament l'element que li proporcionaria les dades. Llavors: com podrem proporcionar a una template dades sense passar per una vista? Per a això s'utilitzen els anomenats <a href="https://docs.djangoproject.com/en/5.2/howto/custom-template-tags/#inclusion-tags">inclusion tags</a>.</p>
+<p>En primer lloc, hem de crear un <strong>mètode</strong> la funció del qual serà retornar un diccionari. Aquest diccionari servirà de <strong>context</strong> per a l'inclusion tag. Per a això, crearem una estructura de directoris per a emmagatzemar els possibles inclusion tags de l'app portfolioapp, de la següent manera:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/10000001000001120000008AB05B2BE6499ACD2F.png" /></p>
+<p>És molt important que el fitxer <strong>init</strong>.py (està buit) estiga dins de la carpeta templatetags. Dins de la carpeta templatetags també hi haurà un altre fitxer categorias_dropdown.py amb el següent contingut:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">django</span><span class="w"> </span><span class="kn">import</span> <span class="n">template</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Categoria</span>
+<span class="n">register</span> <span class="o">=</span> <span class="n">template</span><span class="o">.</span><span class="n">Library</span><span class="p">()</span>
+
+<span class="nd">@register</span><span class="o">.</span><span class="n">inclusion_tag</span><span class="p">(</span><span class="s1">&#39;portfolio/categorias_dropdown.html&#39;</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">categorias_dropdown</span><span class="p">():</span>
+    <span class="n">categories</span> <span class="o">=</span> <span class="n">Categoria</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;categories&#39;</span><span class="p">:</span> <span class="n">categories</span><span class="p">}</span>
+</code></pre></div>
+<p>Això associarà el mètode categorias_dropdown a una nova plantilla categorias_dropdown.html, i el registrarà en la llibreria de templates, perquè estiga disponible al llarg de l'aplicació web i es puga utilitzar sempre que ho necessitem.</p>
+<p>NOTA: s'anteposen dos punts .. a models per pujar un nivell en la jerarquia de directoris, des de categorias_dropdown.py, i així trobar el fitxer models.py. Es tracta d'una ruta relativa al fitxer actual, i és la forma de pujar un nivell.</p>
+<p>A continuació, creem una nova plantilla categorias_dropdown.html amb el següent contingut:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/1000000100000486000000EE24F25C4ECC4C857B.png" /></p>
+<p>Donem per suposat que tindrem un objecte categories que podrem recórrer, ja que ens el proporcionarà l'inclusion tag que hem definit i registrat en categorias_dropdown.py.</p>
+<p>Cada entrada en el dropdown serà un enllaç a la pàgina "home" passant-li com a paràmetre l'id de categoria, que processarà correctament segons el que hem desenvolupat en l'apartat anterior.</p>
+<p>Finalment, l'únic que hem de fer és carregar aquest inclusion tag en header.html, i referenciar-lo (línies 1 i 12):</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/10000001000003C40000014DD598709AA87AFCE9.png" /></p>
+<p>En refrescar l'aplicació i fer clic sobre el dropdown, ens apareixeran totes les categories que hem donat d'alta mitjançant l'administrador de Django.</p>
+<h3 id="navegacio">Navegació<a class="headerlink" href="#navegacio" title="Permanent link">&para;</a></h3>
+<p>És el moment d'enllaçar les opcions de navegació de l'aplicació, una vegada tenim configurades totes les URLs.</p>
+<p>En header.html, completem els tres atributs href de la següent manera (línies 4, 10 i 14):</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/1000000100000447000001556AEB04C9B4C9093D.png" /></p>
+<h2 id="bonus-track-dockeritzacio-del-projecte">BONUS TRACK: DOCKERITZACIÓ DEL PROJECTE<a class="headerlink" href="#bonus-track-dockeritzacio-del-projecte" title="Permanent link">&para;</a></h2>
+<p>Tenim el projecte funcionant mitjançant un entorn virtual, però ens hem aficionat a que la nostra vida siga més senzilla mitjançant els contenidors de Docker. Teníem la nostra anterior versió del portafolis (en PHP) dockeritzada, podríem fer el mateix amb el nostre projecte en Django?</p>
+<p>Per descomptat que sí, i en aquest apartat veurem com fer-ho.</p>
+<h3 id="creacio-de-la-imatge">Creació de la imatge<a class="headerlink" href="#creacio-de-la-imatge" title="Permanent link">&para;</a></h3>
+<p>Creem primer un fitxer Dockerfile al mateix nivell que el fitxer requirements.txt. Aquest nou fitxer tindrà el següent contingut:
+<div class="highlight"><pre><span></span><code>FROM python:3.10
+ENV PYTHONUNBUFFERED 1
+
+RUN mkdir /code
+WORKDIR /code
+ADD requirements.txt /code/
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt
+</code></pre></div></p>
+<h3 id="docker-compose">Docker compose<a class="headerlink" href="#docker-compose" title="Permanent link">&para;</a></h3>
+<p>Finalment creem el fitxer docker-compose.yml al nivell del Dockerfile:
+<div class="highlight"><pre><span></span><code>version: &#39;3&#39;
+
+services:
+
+web:
+    build: . 
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - &quot;80:8000&quot;      
+    volumes:
+      - ./portfolioDjango/:/code    
+</code></pre></div></p>
+<p>Només queda executar docker-compose up, i comprovar que l'aplicació s'està executant en localhost, port 80.</p>
+<h2 id="verificacio-de-lexemple-guiat">VERIFICACIÓ DE L'EXEMPLE GUIAT<a class="headerlink" href="#verificacio-de-lexemple-guiat" title="Permanent link">&para;</a></h2>
+<p>Durant les classes presencials es durà a terme la verificació que s'ha desenvolupat l'exemple guiat, per a cobrir els criteris d'avaluació a) i b) del RA5, i l'a) del RA6.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Torna a l'inici
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.expand", "navigation.tracking", "navigation.tabs", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>

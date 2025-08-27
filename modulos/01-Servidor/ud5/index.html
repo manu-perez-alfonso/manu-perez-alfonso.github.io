@@ -1,0 +1,3138 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Apuntes y recursos de Formación Profesional">
+      
+      
+        <meta name="author" content="Manuel Pérez Alfonso">
+      
+      
+        <link rel="canonical" href="https://mperezalf.github.io/modulos/01-Servidor/ud5/">
+      
+      
+        <link rel="prev" href="../ud4_ext/">
+      
+      
+        <link rel="next" href="../ud6/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>UD5. (Multicapa) Datos y modelo de objetos del documento - Apuntes de Desarrollo de aplicaciones web</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ud6-multicapa-datos-y-modelo-de-objetos-del-documento" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../../.." title="Apuntes de Desarrollo de aplicaciones web" class="md-header__button md-logo" aria-label="Apuntes de Desarrollo de aplicaciones web" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Apuntes de Desarrollo de aplicaciones web
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              UD5. (Multicapa) Datos y modelo de objetos del documento
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-orange"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="deep-orange"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Seleccionar idioma">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="es" class="md-select__link">
+              Castellano
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../../ca/modulos/01-Servidor/ud5/" hreflang="ca" class="md-select__link">
+              Valencià
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Módulos
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Sobre mí
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Apuntes de Desarrollo de aplicaciones web" class="md-nav__button md-logo" aria-label="Apuntes de Desarrollo de aplicaciones web" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Apuntes de Desarrollo de aplicaciones web
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Módulos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Módulos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Desarrollo web en entorno servidor
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Desarrollo web en entorno servidor
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD1. Arquitecturas y tecnologías web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD2. Fundamentos de programación web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD3. (Portfolio) Estructuras de control
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD4. (Portfolio) Estructuras de datos y formularios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud4_ext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD4 EXTENSIÓN. (Portfolio) Acceso a datos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    UD5. (Multicapa) Datos y modelo de objetos del documento
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD5. (Multicapa) Datos y modelo de objetos del documento
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      INTRODUCCIÓN
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evaluacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      EVALUACIÓN
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entornos-virtuales-en-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      ENTORNOS VIRTUALES EN PYTHON
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ENTORNOS VIRTUALES EN PYTHON">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creacion-de-un-entorno-virtual" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación de un entorno virtual
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-paquetes-mediante-pip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestión de paquetes mediante pip
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-del-primer-proyecto-django" class="md-nav__link">
+    <span class="md-ellipsis">
+      CREACIÓN DEL PRIMER PROYECTO DJANGO
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#portfolio-con-django" class="md-nav__link">
+    <span class="md-ellipsis">
+      PORTFOLIO CON DJANGO
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PORTFOLIO CON DJANGO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aplicaciones
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modelos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modelos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modelos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definicion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definición
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#migracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Migración
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imagefield" class="md-nav__link">
+    <span class="md-ellipsis">
+      ImageField
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#administrador-de-django" class="md-nav__link">
+    <span class="md-ellipsis">
+      Administrador de Django
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plantillas-en-django" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plantillas en Django
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Plantillas en Django">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jerarquia-de-plantillas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jerarquía de plantillas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ficheros-estaticos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ficheros estáticos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plantillas-de-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plantillas de error
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vistas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vistas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#urls" class="md-nav__link">
+    <span class="md-ellipsis">
+      URLs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paginas-de-la-aplicacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Páginas de la aplicación
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Páginas de la aplicación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#home" class="md-nav__link">
+    <span class="md-ellipsis">
+      Home
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Home">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vista" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vista
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template" class="md-nav__link">
+    <span class="md-ellipsis">
+      Template
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url" class="md-nav__link">
+    <span class="md-ellipsis">
+      URL
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proyecto
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Proyecto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vista_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vista
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Template
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      URL
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contacto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contacto
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Contacto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vista_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vista
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Template
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      URL
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filtrado-por-categoria" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filtrado por categoría
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desplegable-de-categorias-inclusion-tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desplegable de categorías: inclusion tags
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navegacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Navegación
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bonus-track-dockerizacion-del-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      BONUS TRACK: DOCKERIZACIÓN DEL PROYECTO
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BONUS TRACK: DOCKERIZACIÓN DEL PROYECTO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creacion-de-la-imagen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación de la imagen
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker compose
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verificacion-del-ejemplo-guiado" class="md-nav__link">
+    <span class="md-ellipsis">
+      VERIFICACIÓN DEL EJEMPLO GUIADO
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD6. (Multicapa) Vistas y controladores, eventos e interactividad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD7. (Multicapa) Autentificación y seguridad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD8. (Servicios web) Introducción y consumo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD9. (Servicios web) Aplicaciones web reactivas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD10. (Servicios web) Autentificación y seguridad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ud11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD11. Aplicaciones web híbridas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Despliegue de aplicaciones web
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Despliegue de aplicaciones web
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-Despliegue/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-Despliegue/ud1.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-Despliegue/ud2.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-Despliegue/ud3.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-Despliegue/ud4.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-Despliegue/ud5.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-Despliegue/ud6.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD6
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-Despliegue/ud7.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD7
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-Despliegue/ud8.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD8
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-Despliegue/ud9.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD9
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-Despliegue/ud10.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UD10
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sobre mí
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      INTRODUCCIÓN
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evaluacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      EVALUACIÓN
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entornos-virtuales-en-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      ENTORNOS VIRTUALES EN PYTHON
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ENTORNOS VIRTUALES EN PYTHON">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creacion-de-un-entorno-virtual" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación de un entorno virtual
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-paquetes-mediante-pip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestión de paquetes mediante pip
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creacion-del-primer-proyecto-django" class="md-nav__link">
+    <span class="md-ellipsis">
+      CREACIÓN DEL PRIMER PROYECTO DJANGO
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#portfolio-con-django" class="md-nav__link">
+    <span class="md-ellipsis">
+      PORTFOLIO CON DJANGO
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PORTFOLIO CON DJANGO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplicaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aplicaciones
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modelos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modelos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modelos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definicion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definición
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#migracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Migración
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imagefield" class="md-nav__link">
+    <span class="md-ellipsis">
+      ImageField
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#administrador-de-django" class="md-nav__link">
+    <span class="md-ellipsis">
+      Administrador de Django
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plantillas-en-django" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plantillas en Django
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Plantillas en Django">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jerarquia-de-plantillas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jerarquía de plantillas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ficheros-estaticos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ficheros estáticos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plantillas-de-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plantillas de error
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vistas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vistas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#urls" class="md-nav__link">
+    <span class="md-ellipsis">
+      URLs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paginas-de-la-aplicacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Páginas de la aplicación
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Páginas de la aplicación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#home" class="md-nav__link">
+    <span class="md-ellipsis">
+      Home
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Home">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vista" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vista
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template" class="md-nav__link">
+    <span class="md-ellipsis">
+      Template
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url" class="md-nav__link">
+    <span class="md-ellipsis">
+      URL
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proyecto
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Proyecto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vista_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vista
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Template
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      URL
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contacto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contacto
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Contacto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vista_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vista
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Template
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#url_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      URL
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filtrado-por-categoria" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filtrado por categoría
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desplegable-de-categorias-inclusion-tags" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desplegable de categorías: inclusion tags
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navegacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Navegación
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bonus-track-dockerizacion-del-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      BONUS TRACK: DOCKERIZACIÓN DEL PROYECTO
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="BONUS TRACK: DOCKERIZACIÓN DEL PROYECTO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creacion-de-la-imagen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación de la imagen
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker compose
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verificacion-del-ejemplo-guiado" class="md-nav__link">
+    <span class="md-ellipsis">
+      VERIFICACIÓN DEL EJEMPLO GUIADO
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ud6-multicapa-datos-y-modelo-de-objetos-del-documento">UD6: MULTICAPA - DATOS Y MODELO DE OBJETOS DEL DOCUMENTO<a class="headerlink" href="#ud6-multicapa-datos-y-modelo-de-objetos-del-documento" title="Permanent link">&para;</a></h1>
+<p><img alt="" src="../Pictures/ud5/100000010000020A000001576ACAE4B0B36135B8.png" /></p>
+<h2 id="introduccion">INTRODUCCIÓN<a class="headerlink" href="#introduccion" title="Permanent link">&para;</a></h2>
+<p>En esta unidad vamos a empezar a utilizar el framework de desarrollo web
+llamado Django, basado en el lenguaje de programación Python.</p>
+<p>En primer lugar desarrollaremos, de forma guiada, un portfolio similar
+al de las unidades anteriores, de forma que podamos ver las similitudes
+y diferencias entre los dos procesos. También vamos a utilizar la
+tecnología Docker para ejecutar nuestro código en un contenedor de
+Python.</p>
+<p>Finalmente, emplearemos todos los recursos expuestos para empezar el
+segundo proyecto del curso, que abarcará tres unidades.</p>
+<h2 id="evaluacion">EVALUACIÓN<a class="headerlink" href="#evaluacion" title="Permanent link">&para;</a></h2>
+<p>El presente documento, junto con sus correspondiente boletín de
+actividades (publicado adicionalmente), cubren los siguientes criterios
+de evaluación:</p>
+<table>
+<thead>
+<tr>
+<th>RESULTADOS DE APRENDIZAJE</th>
+<th>CRITERIOS DE EVALUACIÓN</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RA5. Desarrolla aplicaciones Web identificando y aplicando mecanismos para separar el código de presentación de la lógica de negocio.</td>
+<td>a) Se han identificado las ventajas de separar la lógica de negocio de los aspectos de presentación de la aplicación.<br>b) Se han analizado y utilizado mecanismos y frameworks que permiten realizar esta separación y sus características principales.<br>e) Se han identificado y aplicado los parámetros relativos a la configuración de la aplicación web.<br>f) Se han escrito aplicaciones web con mantenimiento de estado y separación de la lógica de negocio.<br>g) Se han aplicado los principios y patrones de diseño de la programación orientada a objetos.<br>h) Se ha probado y documentado el código.</td>
+</tr>
+<tr>
+<td>RA6. Desarrolla aplicaciones web de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información.</td>
+<td>a) Se han analizado las tecnologías que permiten el acceso mediante programación a la información disponible en almacenes de datos.<br>b) Se han creado aplicaciones que establezcan conexiones con bases de datos.<br>c) Se ha recuperado información almacenada en bases de datos.<br>d) Se ha publicado en aplicaciones web la información recuperada.<br>e) Se han utilizado conjuntos de datos para almacenar la información.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="entornos-virtuales-en-python">ENTORNOS VIRTUALES EN PYTHON<a class="headerlink" href="#entornos-virtuales-en-python" title="Permanent link">&para;</a></h2>
+<p>En las aplicaciones basadas en Python es frecuente utilizar paquetes y
+módulos que no forman parte de la librería estándar. Muchas veces,
+determinadas aplicaciones necesitan de <strong>determinadas versiones</strong> de
+librerías específicas, y esto implica que la instalación local de Python
+puede no llegar a cumplir las especificaciones de todas las
+aplicaciones.</p>
+<p>La solución a este problema son los <strong>entornos virtuales</strong>: se trata de
+un árbol "autónomo" de directorios que contiene una instalación de
+Python, para una determinada <strong>versión</strong> y con una serie de <strong>paquetes
+adicionales</strong>.</p>
+<p>De esta forma, diferentes aplicaciones pueden utilizar diferentes
+entornos virtuales, dependiendo de la versión, tanto de Python, como de
+los paquetes adicionales para que la aplicación funcione correctamente.
+La siguiente imagen ilustra un mismo equipo en el que existen diferentes
+entornos virtuales, con diferentes versiones de Python, para proyectos
+diferentes:</p>
+<p><img alt="" src="../Pictures/ud5/10000001000003920000022C9461133E381CFAF1.png" /></p>
+<h3 id="creacion-de-un-entorno-virtual">Creación de un entorno virtual<a class="headerlink" href="#creacion-de-un-entorno-virtual" title="Permanent link">&para;</a></h3>
+<p>El módulo utilizado para la creación de entornos virtuales es <strong>venv</strong>.
+Para instalarlo en Ubuntu, el comando es:</p>
+<p>sudo apt install python3-venv</p>
+<p>El comando para crear un entorno virtual en un directorio determinado
+es:</p>
+<p>python3 -m venv app-env</p>
+<p>Este comando creará el directorio "app-env" con un árbol de
+directorios que contienen el intérprete de Python y archivos de soporte.
+El parámetro "-m" indica al intérprete de Python que se va a ejecutar
+un módulo, en este caso "venv", como un script. Si quieres saber más
+sobre los módulos en Python,
+<a href="https://docs.python.org/es/3/tutorial/modules.html">aquí</a> tienes más
+información.</p>
+<p>En este
+<a href="https://medium.com/datacat/a-simple-guide-to-creating-a-virtual-environment-in-python-for-windows-and-mac-1079f40be518">enlace</a>
+se pueden encontrar instrucciones para instalar un entorno virtual en
+Windows y Mac.</p>
+<p>Para activar el entorno virtual de Python, se utilizará uno de los
+siguientes comandos, dependiendo del sistema operativo (desde la ruta en
+la que se encuentre la carpeta "app-env"):</p>
+<ul>
+<li>En Windows:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>app-env/Scripts/activate.bat
+</code></pre></div>
+<ul>
+<li>En Linux o MacOS:</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code>source app-env/bin/activate
+</code></pre></div>
+Tras ejecutar este comando, sabremos que estamos utilizando el entorno
+virtual porque la línea de comandos pasará a tener el nombre del entorno
+virtual entre paréntesis:</p>
+<p><strong>(app-env)</strong> usuario:\$</p>
+<h3 id="gestion-de-paquetes-mediante-pip">Gestión de paquetes mediante pip<a class="headerlink" href="#gestion-de-paquetes-mediante-pip" title="Permanent link">&para;</a></h3>
+<p>Se pueden instalar, actualizar o quitar paquetes utilizando el programa
+pip, que instala paquetes, por defecto, del índice de Paquetes de Python
+(https://pypi.org), que puede ser explorado manualmente mendiante un
+navegador web.</p>
+<p>pip tiene una serie de comandos (install, freeze, uninstall, etc.), que
+pueden ser consultados en la <a href="https://docs.python.org/es/3/installing/index.html#installing-index">documentación
+oficial</a>.</p>
+<p>Se puede instalar la <strong>última versión</strong> de un paquete utilizando su
+nombre, de la forma:</p>
+<div class="highlight"><pre><span></span><code>(app-env) $ pip install flask
+</code></pre></div>
+<p>Es posible también instalar la <strong>versión específica </strong>de un paquete,
+especificando su nombre, seguido de "==" y finalmente la versión.
+Ejemplo:</p>
+<p><div class="highlight"><pre><span></span><code>(app-env) $ pip install requests==2.6.0
+</code></pre></div>
+Si se re-ejecuta el comando, pip detectará que la versión ya está
+instalada y no hará nada. Se puede ingresar un número de versión
+diferente para instalarlo, o se puede ejecutar pip install --upgrade
+para <strong>actualizar el paquete</strong> a la última versión:
+<div class="highlight"><pre><span></span><code>(app-env) $ pip install --upgrade requests
+</code></pre></div>
+<strong>pip uninstall</strong> seguido de uno o varios nombres de paquetes eliminará
+los paquetes del entorno virtual.</p>
+<p><strong>pip show</strong> mostrará información de un paquete en particular.</p>
+<p><strong>pip list </strong>mostrará todos los paquetes instalados en el entorno
+virtual.</p>
+<p><strong>pip freeze</strong> muestra una lista similar a pip list, pero en un formato
+tal que se pueda utilizar por pip install para instalar esta lista de
+paquetes en un solo comando. Como práctica comúnmente aceptada, se
+vuelca el resultado de pip freeze en un fichero \"requirements.txt\", de
+la forma:
+<div class="highlight"><pre><span></span><code>(app-env) $ pip freeze &gt; requirements.txt
+</code></pre></div>
+De esta forma, se puede recoger en este fichero las versiones concretas
+necesarias para el proyecto, que pueden ser exportadas como parte de la
+aplicación e instaladas posteriormente:
+<div class="highlight"><pre><span></span><code>(app-env) $ pip install -r requirements.txt
+</code></pre></div></p>
+<h2 id="creacion-del-primer-proyecto-django">CREACIÓN DEL PRIMER PROYECTO DJANGO<a class="headerlink" href="#creacion-del-primer-proyecto-django" title="Permanent link">&para;</a></h2>
+<p>Vamos a crear nuestro primer proyecto con Django.</p>
+<p>Creamos un primer entorno virtual llamado \"portfolio-venv\" en una
+carpeta de nuestra elección, donde lanzamos el siguiente comando
+mediante consola:
+<div class="highlight"><pre><span></span><code>python3 -m venv portfolio-env
+</code></pre></div>
+A continuación lo activamos:
+<div class="highlight"><pre><span></span><code>source portfolio-env/bin/activate
+</code></pre></div>
+Sabemos que está activo porque al comienzo de la línea de comandos se
+muestra el nombre del entorno virtual entre paréntesis:</p>
+<p><img alt="" src="../Pictures/ud5/10000001000001AE000000643372953077A8B7E2.png" /></p>
+<p>Antes de ejecutar la instalación de Django, vamos a
+averiguar cuál es la última versión LTS (Long-term Support), que es la
+que nos va a proporcionar mayor duración en el soporte (con otras
+ventajas). Consultamos el siguiente
+<a href="https://www.djangoproject.com/download/#supported-versions">enlace</a>, y
+vemos que la más reciente es la 5.2 y además es LTS, con lo cual es la
+candidata ideal para nuestro nuevo proyecto. Aún así, hay que valorar
+también que la 4.2 (también LTS) va a tener soporte hasta marzo de 2026.
+Las versiones existentes en este momento se pueden consultar en la
+imagen del enlace anterior:</p>
+<p><img alt="" src="../Pictures/ud5/versiones.png" /></p>
+<p>La ventaja de elegir la última versión va a ser que vamos a tener acceso
+a las últimas funcionalidades; las desventajas van a ser que nos vamos a
+poder encontrar más bugs (errores), y que puede que muchos paquetes que
+nos proporcionan funcionalidad adicional, no sean compatibles con esta
+versión. Las ventajas/desventajas de elegir la última versión LTS son
+las inversas a las mencionadas para la última versión.</p>
+<p>Aunque es una elección no siempre obvia, nos decantaremos por instalar
+la última LTS (la 5.2) porque es la última versión y además LTS.</p>
+<p>Con todo ello, el comando para instalar la versión 4.2 será el
+siguiente:
+<div class="highlight"><pre><span></span><code>pip install Django==5.2
+</code></pre></div>
+<img alt="" src="../Pictures/ud5/1000000100000537000000CF4F2085D731F22E5A.png" /></p>
+<p>Creamos el fichero requirements.txt:</p>
+<p><img alt="" src="../Pictures/ud5/100000010000056A00000067F82EEE374B510E1F.png" /></p>
+<p>Estamos preparados para crear nuestro primer proyecto
+Django, que vamos a llamar portfolioDjango. Ejecutamos el siguiente
+comando:
+<div class="highlight"><pre><span></span><code>django-admin startproject portfolioDjango
+</code></pre></div>
+Vemos que se ha creado una nueva carpeta portfolioDjango:</p>
+<p><img alt="" src="../Pictures/ud5/10000001000005E200000078F85CBEB5CDE3B83E.png" /></p>
+<p>Si abrimos dicho directorio con Visual Studio Code (u otro IDE, como
+PyCharm), veremos la estructura de directorios que se ha creado (creamos
+también el workspace):</p>
+<p><img alt="" src="../Pictures/ud5/100000010000015A00000116305901964A91FAA4.png" /></p>
+<p>Para que se lance esta aplicación, lanzamos el
+siguiente comando, desde el directorio donde se encuentra el fichero
+manage.py:
+<div class="highlight"><pre><span></span><code>python manage.py runserver
+</code></pre></div>
+<img alt="" src="../Pictures/ud5/10000001000005EC000000FAEC78D465D19074C3.png" /></p>
+<p>Nos informa (entre otras cosas que vamos a ignorar en
+estos momentos) de que nuestra aplicación se ha lanzado en el puerto
+8000. Lo probamos, y tenemos lo siguiente:</p>
+<p><img alt="" src="../Pictures/ud5/100000010000077B000003C9A530A413B48AE3D9.png" /></p>
+<p>Por tanto, hemos podido lanzar nuestra primera
+aplicación Django.</p>
+<h2 id="portfolio-con-django">PORTFOLIO CON DJANGO<a class="headerlink" href="#portfolio-con-django" title="Permanent link">&para;</a></h2>
+<p>Continuamos donde lo dejamos en el apartado anterior, y vamos a
+construir un portfolio parecido al de las unidades anteriores (en este
+mismo documento).</p>
+<h3 id="configuracion">Configuración<a class="headerlink" href="#configuracion" title="Permanent link">&para;</a></h3>
+<p>El primer fichero en el que nos hemos de fijar, de los que se ha creado
+automáticamente al generar el proyecto, es el llamado <strong>settings.py</strong>.
+En este fichero va a residir mucha de la configuración de nuestra
+aplicación. Las partes más importantes a destacar en estos momentos son
+las siguientes (en este
+<a href="https://docs.djangoproject.com/es/5.2/ref/settings/#core-settings">enlace</a>
+las tienes todas, para la versión 5.2):</p>
+<ul>
+<li><strong>SECRET_KEY</strong>: es un string autogenerado, que nunca hemos de
+    compartir públicamente, si pretendemos desplegar nuestra aplicación
+    web en un entorno de producción (deberíamos ocultarlo si lo subimos
+    públicamente a Github, por ejemplo). El valor de esta variable se
+    utiliza para proporcionar criptografía en la firma de sesiones de
+    usuarios, y si se conoce su valor, se podrían alterar las cookies
+    que envía el servidor y atacar nuestra aplicación.</li>
+</ul>
+<!-- -->
+
+<ul>
+<li><strong>DEBUG</strong>: indica si estamos en modo debug. Si es True, en caso de
+    que se produzca un error en nuestra aplicación, se mostrará en el
+    navegador información para poder depurar dicho error. Entre estos
+    detalles se muestra información muy sensible, que solo es
+    conveniente mostrar en un entorno de desarrollo. Por tanto, en un
+    entorno de producción, esta variable ha de tomar el valor False.</li>
+<li><strong>ALLOWED_HOSTS</strong>: se trata de una lista con los nombres de
+    host/dominios que esta aplicación puede servir como parte de la URL,
+    utilizada en entornos de producción para evitar determinados tipos
+    de ataques HTTP. Típicamente, para desarrollo tendrá los valores
+    "localhost" y "127.0.0.1". Para un entorno de producción,
+    introduciremos el nombre de nuestro dominio, con y sin "www" al
+    principio.</li>
+<li><strong>INSTALLED_APPS</strong>: son los paquetes adicionales que se utilizan en
+    la aplicación web. Según la nomenclatura de Django, estos paquetes
+    se llaman "aplicaciones". Lo veremos con más detalle en uno de los
+    siguientes apartados, donde crearemos una nueva aplicación, y
+    descubriremos cómo encontrar aplicaciones ya desarrolladas que hagan
+    determinadas cosas por nosotros.</li>
+<li><strong>TEMPLATES</strong>: Mediante este array configuraremos los tipos de
+    plantillas y los directorios donde se encuentran. Las plantillas son
+    ficheros HTML con código Python incrustado, lo cual las convierte en
+    dinámicas.</li>
+<li><strong>DATABASES</strong>: Al generar el proyecto se preconfigura la utilización
+    de una base de datos <a href="https://www.sqlite.org/index.html">sqlite3</a>,
+    una base de datos ligera y adecuada para tareas de desarrollo web,
+    con pocos datos. Pero se podría establecer otra base de datos, de
+    mayor envergadura, en un entorno de producción (por ejemplo,
+    Postgresql).</li>
+<li><strong>LANGUAGE_CODE</strong>: Idioma por defecto en el que queremos servir por
+    defecto el contenido de la aplicación web.</li>
+<li><strong>TIME_ZONE</strong>: Uso horario en el que está basado nuestra aplicación
+    web.</li>
+<li><strong>STATIC_URL </strong>y <strong>STATIC_ROOT</strong>: Se utilizan para configurar la
+    ruta donde se servirán los ficheros estáticos de nuestra aplicación
+    web.</li>
+</ul>
+<p>Con todo ello, vamos a cambiar los valores para algunas de estas
+variables:
+<div class="highlight"><pre><span></span><code><span class="n">LANGUAGE_CODE</span> <span class="o">=</span> <span class="s1">&#39;es&#39;</span>
+<span class="n">TIME_ZONE</span> <span class="o">=</span> <span class="s1">&#39;Europe/Madrid&#39;</span>
+<span class="n">STATIC_URL</span> <span class="o">=</span> <span class="s1">&#39;/static/&#39;</span>
+<span class="n">STATIC_ROOT</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s1">&#39;static&#39;</span><span class="p">)</span>
+</code></pre></div>
+La variable STATIC_ROOT no viene en el fichero settings.py por defecto,
+es necesario definirla.</p>
+<p>Además, vamos a modificar la variable TEMPLATES, mediante la que vamos a
+especificar que nuestras plantillas se localizarán en el directorio
+templates. Creamos esta carpeta, <em>a la misma altura que el fichero
+manage.py</em>:</p>
+<p><img alt="" src="../Pictures/ud5/100000010000012600000095E2844CD1C9854CE5.png" /></p>
+<p>Y cambiamos la variable TEMPLATES de settings.py de
+forma que el elemento DIRS tenga el siguiente valor:
+<div class="highlight"><pre><span></span><code><span class="s1">&#39;DIRS&#39;</span><span class="p">:</span> <span class="p">[</span><span class="o">**</span><span class="n">os</span><span class="o">**.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s1">&#39;templates&#39;</span><span class="p">)],</span>
+</code></pre></div>
+NOTA: tendrás que importar el módulo "os" (Operating System, para
+funciones del sistema operativo) para que esto funcione. Solo has de
+insertar esta línea al principio del fichero settings.py:
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+</code></pre></div></p>
+<h3 id="aplicaciones">Aplicaciones<a class="headerlink" href="#aplicaciones" title="Permanent link">&para;</a></h3>
+<p>En primer lugar, cabe diferenciar dos conceptos clave en Django:</p>
+<ul>
+<li><strong>Proyecto</strong>: se identifica con el conjunto de la aplicación web
+    desarrollada, y su directorio raíz se encuentra a la altura
+    (normalmente) del fichero manage.py.</li>
+<li><strong>Aplicaciones</strong> (o app): se trata de paquetes escritos en Python
+    que proveen al proyecto de unas funcionalidades particulares. Son
+    suficientemente <strong>independientes</strong> entre sí para poder ser
+    reutilizadas en diferentes proyectos.</li>
+</ul>
+<p>En el siguiente enlace se encuentra una recopilación (no exhaustiva) de
+algunas aplicaciones en Django que puedes reutilizar en tus proyectos:</p>
+<p><a href="https://djangopackages.org/">Django packages</a></p>
+<p>Algunas de las aplicaciones que utilizaremos durante el resto del curso
+serán:</p>
+<ul>
+<li><a href="https://djangopackages.org/packages/p/django-crispy-forms/">Django Crispy
+    Forms</a>:
+    nos servirá para controlar mejor el aspecto y funcionamiento de los
+    formularios.</li>
+<li><a href="https://djangopackages.org/packages/p/django-rest-framework/">Django Rest
+    Framework</a>:
+    utilizado para la creación de servicios REST.</li>
+</ul>
+<p>¿Por qué necesitamos saber qué es una aplicación en estos momentos? Para
+desarrollar módulos de funcionalidades nuevas para nuestro proyecto, las
+tenemos que crear en forma de aplicaciones. Podemos crear aplicaciones
+nuevas, cada una de ellas con un propósito particular (de forma que
+modularizamos nuestra aplicación web con bloques independientes) o
+también podemos utilizar aplicaciones existentes, como se ha explicado
+antes.</p>
+<p>Algunas de estas aplicaciones pertenecen al propio núcleo (core) de
+Django, y el proyecto viene configurado por defecto con algunas de
+ellas. Si nos fijamos en la lista INSTALLED_APPS, veremos que contiene 6
+entradas:
+<div class="highlight"><pre><span></span><code><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;django.contrib.admin&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.auth&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.contenttypes&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.sessions&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.messages&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.staticfiles&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+</code></pre></div>
+Cada una de estas aplicaciones dota a nuestro proyecto de unas
+funcionalidades diferentes, pero no vamos a entrar ahora en el detalle
+de cada una de ellas.</p>
+<p>Queremos crear ya nuestra propia aplicación, porque queremos empezar a
+desarrollar nuestro portfolio. Para ello, vamos a crear una nueva
+aplicación con el siguiente comando, que ejecutamos desde la carpeta
+donde esté manage.py (con el entorno virtual <em>activado</em>):</p>
+<p>python manage.py startapp portfolioapp</p>
+<p>Revisamos la estructura del proyecto, y podemos ver que se ha creado una
+carpeta nueva con nombre \"portfolioapp\", con multitud de ficheros
+nuevos:</p>
+<p><img alt="" src="../Pictures/ud5/1000000100000128000001545B796B6818C4FD16.png" /></p>
+<p>Aún no sabemos para qué sirven estos ficheros, lo
+iremos descubriendo a lo largo de la unidad. Cabe mencionar que, cada
+vez que creemos una app para un proyecto, se creará una carpeta
+diferente, con los mismos archivos iniciales.</p>
+<p>Recapitulando: hemos creado una aplicación nueva, aún no hace nada, pero
+ya tiene su lugar en nuestro proyecto. ¿Es suficiente con lo que hemos
+hecho para conectarla a nuestro proyecto? Falta un pequeño detalle: en
+la lista INSTALLED_APPS citada anteriormente, hemos de añadir nuestra
+nueva app para que los cambios tomen efecto. Tras la modificación, dicha
+variable queda del siguiente modo:
+<div class="highlight"><pre><span></span><code><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;django.contrib.admin&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.auth&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.contenttypes&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.sessions&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.messages&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;django.contrib.staticfiles&#39;</span><span class="p">,</span>
+
+    <span class="s1">&#39;portfolioapp&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+</code></pre></div>
+Casi hemos acabado, vamos a levantar el proyecto:</p>
+<p><img alt="" src="../Pictures/ud5/10000001000005F2000000E52E442C4F60ED3D3C.png" /></p>
+<p>¿Te acuerdas de aquel mensaje en rojo que nos aparecía
+al levantar la aplicación web? Dice exactamente:</p>
+<blockquote>
+<p>You have 18 unapplied migration(s). Your project may not work properly
+until you apply the migrations for app(s): <strong>admin, auth, contenttypes,
+sessions</strong>.</p>
+<p>Run \'python manage.py migrate\' to apply them.</p>
+</blockquote>
+<p>El mensaje hace referencia a migraciones de apps, algunas de las cuales,
+"casualmente", aparecen en la lista INSTALLED_APPS. Y nos proporciona
+un comando para solventar el problema.</p>
+<p>Parece ser que lo que hemos visto en este apartado no era todo lo que
+necesitábamos para acabar de configurar nuestras apps. Esta disyuntiva
+la resolveremos en el siguiente apartado, cuando implementemos los
+modelos de nuestra nueva aplicación "portfolioapp".</p>
+<h3 id="modelos">Modelos<a class="headerlink" href="#modelos" title="Permanent link">&para;</a></h3>
+<p>En el anterior proyecto en PHP implementamos la conexión a la base de
+datos en la última fase. Ahora vamos a hacerlo al revés, vamos a empezar
+a utilizar la BBDD desde el inicio del proyecto. Para ello necesitamos
+tablas donde almacenar la información, ¿cómo las vamos a crear con
+Django? Muy fácil: las vamos a crear mediante el fichero models.py que
+se encuentra dentro de nuestra aplicación, mediante los llamados
+"modelos" de Django.</p>
+<p>Un modelo representa una fuente de información única de datos, contiene
+los campos y comportamiento de los datos a almacenar, y generalmente un
+modelo se transforma en una tabla de base de datos.</p>
+<p>Puedes encontrar toda la información sobre los modelos de Django en este
+<a href="https://docs.djangoproject.com/en/5.2/topics/db/models/">enlace</a>.</p>
+<h4 id="definicion">Definición<a class="headerlink" href="#definicion" title="Permanent link">&para;</a></h4>
+<p>Vamos a empezar a crear dos modelos: el de proyecto y el de categoría.
+Vamos a introducir lo siguiente en portfolioapp/models.py:</p>
+<p><img alt="" src="../Pictures/ud5/10000001000003A4000001286C1C1730C2F62297.png" /></p>
+<p>Hay que hacer notar que:</p>
+<ul>
+<li>Para hacer un campo opcional, se establecen los atributos null y
+    blank a True.</li>
+<li>También se pueden dar valores por defecto, como el caso de
+    fecha_creacion.</li>
+<li>Es conveniente definir el atributo verbose_name en todos los campos,
+    lo cual será muy importante cuando veamos el administrador de
+    Django.</li>
+</ul>
+<p>En este
+<a href="https://docs.djangoproject.com/en/5.2/ref/models/fields/#field-types">enlace</a>
+tienes una descripción de todos los tipos de campos.</p>
+<p>Cabe hacer notar que no hemos definido ninguna columna \"id\" para
+nuestras tablas. Django se ocupa directamente de hacer esto por
+nosotros, según se detalla en este
+<a href="https://docs.djangoproject.com/en/5.2/topics/db/models/#automatic-primary-key-fields">enlace</a>.
+A esta columna la podemos referenciar con "id" o "pk",
+indistintamente.</p>
+<p>Vamos a dedicar un apartado exclusivo para la definición del campo que
+contendrá la imagen del proyecto.</p>
+<h4 id="migracion">Migración<a class="headerlink" href="#migracion" title="Permanent link">&para;</a></h4>
+<p>En el apartado anterior hemos definido los modelos. Esto es una
+declaración de intenciones, no hemos creado realmente aún nada en la
+base de datos sqlite3 (configurada en settings.py). ¿Cómo trasladamos
+esta definición de modelos a la base de datos entonces? Facilísimo:
+mediante los comandos <strong>makemigrations</strong> y <strong>migrate</strong>.</p>
+<p>Podemos aplicar estos comandos a todas las aplicaciones de nuestro
+proyecto, o lo podemos realizar para una app en particular. Vamos a
+migrar solo la aplicación que hemos creado "portfolioapp".</p>
+<p>Ejecutamos el primer comando:
+<div class="highlight"><pre><span></span><code>python manage.py makemigrations portfolioapp
+</code></pre></div>
+<img alt="" src="../Pictures/ud5/1000000100000693000000647F397C3FA81552C0.png" /></p>
+<p>Nos fijamos que se ha creado un nuevo directorio en la
+carpeta portfolioapp llamado "migrations", y dentro tenemos un fichero
+0001_initial.py:</p>
+<p><img alt="" src="../Pictures/ud5/10000001000001630000015DD2DBF0BA76C10468.png" /></p>
+<p>Si abrimos este fichero de migración veremos cómo se ha traducido la
+definición de los modelos a sentencias SQL.</p>
+<p><strong>IMPORTANTE</strong>: no modifiques
+nada de este fichero, se genera automáticamente.</p>
+<p>Vamos a migrar estos cambios para que se hagan efectivos en la BBDD
+(para que sean ejecutados realmente por el gestor de base de datos).
+Para ello ejecutamos el siguiente comando:
+<div class="highlight"><pre><span></span><code>python manage.py migrate portfolioapp
+</code></pre></div>
+<img alt="" src="../Pictures/ud5/10000001000006630000006124AE2C925FFDCA33.png" /></p>
+<p>Ahora podemos asegurar que las tablas correspondientes
+se han creado en la base de datos.</p>
+<p>Pero, tenemos aún un problema pendiente desde el principio. Es el
+problema que se señala cada vez que iniciamos nuestra aplicación web,
+señalado por el siguiente mensaje:</p>
+<blockquote>
+<p>You have 18 unapplied migration(s). Your project may not work properly
+until you apply the migrations for app(s): <strong>admin, auth, contenttypes,
+sessions</strong>.</p>
+<p>Run 'python manage.py migrate' to apply them.</p>
+</blockquote>
+<p>Este mensaje se debe a que todas aquellas apps que venían por defecto en
+la variable INSTALLED_APPS (en settings.py) vienen con migraciones
+iniciales que aún es necesario trasladar a la base de datos. Más
+adelante (en otra unidad) veremos cómo crear ficheros de migración
+iniciales para nuestras propias apps, de forma que podamos crear datos
+iniciales en nuestra BBDD de forma automática.</p>
+<p>Por tanto, para solventar este error de una vez por todas, vamos a
+ejecutar el comando migrate, pero para todas las apps. Para ello,
+simplemente no especificamos el nombre de la app:</p>
+<p>python manage.py migrate</p>
+<p><img alt="" src="../Pictures/ud5/10000001000005E700000192B386D813896B3041.png" /></p>
+<p>Ahora iniciamos la aplicación:</p>
+<p><img alt="" src="../Pictures/ud5/10000001000005EC000000B46FE9EDE79557D9E9.png" /></p>
+<p>Y ya no nos aparece el mensaje de error anterior.</p>
+<h4 id="imagefield">ImageField<a class="headerlink" href="#imagefield" title="Permanent link">&para;</a></h4>
+<p>En este apartado vamos a modificar el modelo Proyecto para poder incluir
+un nuevo campo al cual asociar una imagen.</p>
+<p>Django ofrece dos tipos de campos de modelo que implican subir un
+archivo mediante la aplicación web: FileField y ImageField. Cada uno de
+estos tipos de campos tiene particularidades, pero los dos necesitan una
+ruta en la cual almacenar los archivos que se envían desde el lado
+cliente (agente de usuario). Esta ruta se determinan mediante las
+variables MEDIA_ROOT y MEDIA_URL, especificadas en settings.py.</p>
+<p>En estos momentos no tenemos configuradas estas variables, vamos a
+incluirlas en dicho fichero con los siguientes valores (debajo de la
+configuración de STATIC_URL):
+<div class="highlight"><pre><span></span><code><span class="n">MEDIA_ROOT</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s1">&#39;media/&#39;</span><span class="p">)</span>
+
+<span class="n">MEDIA_URL</span> <span class="o">=</span> <span class="s1">&#39;/media/&#39;</span>
+</code></pre></div>
+Además, para que las imágenes asociadas al ImageField se puedan
+referenciar en las plantillas, es necesario modificar el fichero
+<strong>urls.py</strong>, y que quede del siguiente modo:
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">django.contrib</span><span class="w"> </span><span class="kn">import</span> <span class="n">admin</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.urls</span><span class="w"> </span><span class="kn">import</span> <span class="n">path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.conf</span><span class="w"> </span><span class="kn">import</span> <span class="n">settings</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.conf.urls.static</span><span class="w"> </span><span class="kn">import</span> <span class="n">static</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;admin/&#39;</span><span class="p">,</span> <span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">urls</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="k">if</span> <span class="n">settings</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">:</span>
+    <span class="n">urlpatterns</span> <span class="o">+=</span> <span class="n">static</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">MEDIA_URL</span><span class="p">,</span> <span class="n">document_root</span><span class="o">=</span><span class="n">settings</span><span class="o">.</span><span class="n">MEDIA_ROOT</span><span class="p">)</span>
+</code></pre></div></p>
+<p>Solo nos queda una dependencia para poder modificar el modelo Proyecto:
+hemos de instalar el paquete Pillow para que Django pueda manejar las
+imágenes que subimos. Por eso ejecutamos el siguiente comando (con el
+entorno virtual activado):
+<div class="highlight"><pre><span></span><code>pip install Pillow
+</code></pre></div>
+<img alt="" src="../Pictures/ud5/10000001000005BF00000072A020166679E93844.png" /></p>
+<p><strong><em>IMPORTANTÍSIMO</em></strong>: Acuérdate de congelar el fichero requirements.txt con
+las dependencias del proyecto.</p>
+<blockquote>
+<p>NOTA: Normalmente éstas son configuraciones que se realizarán al
+principio del proyecto y después sufrirán ligeros cambios (o ninguno).</p>
+</blockquote>
+<p>Ahora vamos a modificar el modelo Proyecto, y añadimos el siguiente
+atributo (lo hacemos opcional):
+<div class="highlight"><pre><span></span><code><span class="n">imagen</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ImageField</span><span class="p">(</span><span class="n">verbose_name</span> <span class="o">=</span> <span class="s1">&#39;Imagen&#39;</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+Tras modificarlo, lanzamos el comando makemigrations:</p>
+<p><img alt="" src="../Pictures/ud5/10000001000006130000004D7FE6CA65FBFD3803.png" /></p>
+<p>Consultamos la carpeta migrations y vemos que hay un
+nuevo fichero con secuencia 0002:</p>
+<p><img alt="" src="../Pictures/ud5/1000000100000114000000DDC42684D27F68C065.png" /></p>
+<p>Cada vez que hagamos un cambio en nuestros modelos que
+implique un cambio en la BBDD, se creará un nuevo fichero en esta
+carpeta. No manipules nunca estos ficheros manualmente, Django conserva
+una traza de cuáles ha procesado ya y cuáles no. Alterar la secuencia
+puede implicar inconsistencias en la BBDD y tener que perder todos los
+datos.</p>
+<p>Por último, aplicamos las migraciones con migrate:</p>
+<p><img alt="" src="../Pictures/ud5/10000001000005D300000063C51602918DA67E7D.png" /></p>
+<p>Ahora, nuestro nuevo campo se encuentra en la BBDD.</p>
+<h4 id="administrador-de-django">Administrador de Django<a class="headerlink" href="#administrador-de-django" title="Permanent link">&para;</a></h4>
+<p>Hemos creado dos nuevos modelos en nuestra nueva aplicación de
+portfolioapp. ¿Cómo podemos gestionar los datos asociados a cada modelo
+desde una interfaz amigable? Respuesta: programando el administrador de
+Django.</p>
+<p>Django viene con una aplicación que nos permite gestionar nuestros
+modelos de forma visual, además de muchas otras cosas. Se trata de la
+primera app contenida en la lista INSTALLED_APPS, llamada
+"django.contrib.admin". Pero para que nuestros modelos se puedan
+gestionar mediante el administrador de Django, primero hemos de
+configurar el fichero admin.py de cada app.</p>
+<p>Vamos a ello. Introducimos lo siguiente en el fichero admin.py dentro de
+portfolioapp:</p>
+<p><img alt="" src="../Pictures/ud5/10000001000002B00000013E7AACF219ACEDDBB6.png" /></p>
+<p>Todas estas clases y atributos vienen especificados en
+el siguiente
+<a href="https://docs.djangoproject.com/en/5.2/ref/contrib/admin/">enlace</a>,
+aunque en clase comentamos los más relevantes.</p>
+<p>Tras esto, volvemos a lanzar la aplicación web. Consultamos
+localhost:8000 pero nada parece haber cambiado. Vamos a
+localhost:8000/admin y vemos lo siguiente:</p>
+<p><img alt="" src="../Pictures/ud5/10000001000005760000020A94CE862706E08FF7.png" /></p>
+<p>Parece que ha funcionado, pero (como resulta lógico),
+la aplicación nos pide un usuario para poder acceder al administrador.</p>
+<p>Es evidente que necesitamos unas credenciales, pero, ¿cuáles? Hemos de
+crear un usuario administrador para nuestra aplicación web, y lo podemos
+crear con el siguiente comando (con el entorno virtual activado):
+<div class="highlight"><pre><span></span><code>python manage.py createsuperuser
+</code></pre></div>
+Tras lanzar el comando la consola nos pide una serie de datos
+(fundamentalmente nombre de usuario y contraseña, el e-mail es
+opcional):</p>
+<p><img alt="" src="../Pictures/ud5/1000000100000619000000BF8A436B41BE25F5C8.png" /></p>
+<p>El proceso verifica que nuestra contraseña tenga una
+mínima complejidad, aunque podemos saltar estas restricciones
+(comentando determinadas líneas en settings.py).</p>
+<p>Volvemos a lanzar la aplicación web y ahora utilizamos nuestro usuario y
+contraseña para acceder al administrador:</p>
+<p><img alt="" src="../Pictures/ud5/1000000100000774000001AA965C8310FC65D8D7.png" /></p>
+<p><strong>TAREA</strong>: En clase, vamos a utilizar este administrador
+para introducir registros de prueba en la aplicación.</p>
+<p><strong>RECAPITULAMOS</strong>: Tenemos la base de datos, tenemos tablas y datos en
+ellas.</p>
+<p>¿Qué nos queda? Tenemos que conseguir ahora la parte visual de nuestra
+aplicación web, poder hacerla dinámica con los datos que tenemos en la
+BBDD, y además establecer la navegación por nuestro sitio web.</p>
+<p>Para ello vamos a necesitar los siguientes apartados: <em>plantillas</em> HTML,
+las <em>vistas</em> (que implementarán nuestra lógica de negocio) y la
+configuración de las <em>URLs</em> de nuestro sitio web (que invocarán la
+lógica de negocio y navegar). Vamos a por ello en los siguientes
+apartados.</p>
+<h3 id="plantillas-en-django">Plantillas en Django<a class="headerlink" href="#plantillas-en-django" title="Permanent link">&para;</a></h3>
+<p>Django viene con un motor de plantillas llamado DTL (Django Template
+Language), aunque es posible utilizar otros como
+<a href="https://jinja.palletsprojects.com/en/3.1.x/">Jinja2</a>. Un proyecto
+Django puede configurarse para utilizar un motor de plantillas o más, o
+incluso ninguno.</p>
+<p>Este motor de plantillas nos permite construir la parte visual de la
+aplicación, con código HTML (estático) y una sintaxis especial que lo
+convierte en dinámico. En este
+<a href="https://docs.djangoproject.com/en/5.2/topics/templates/">enlace</a>
+encontrarás todo lo relativo al motor de plantillas de Django.</p>
+<h4 id="jerarquia-de-plantillas">Jerarquía de plantillas<a class="headerlink" href="#jerarquia-de-plantillas" title="Permanent link">&para;</a></h4>
+<p>Las plantillas en Django siguen una estructura jerárquica. Esto quiere
+decir que se definen de forma que unas se pueden utilizar de base para
+otras plantillas. Las plantillas permiten ser extendidas si se utiliza
+la sintaxis adecuada.</p>
+<p>Para este proyecto vamos a utilizar la jerarquía de plantillas
+siguiente:</p>
+<p><img alt="" src="../Pictures/ud5/10000001000004000000020A5774E3DD8E056D77.png" /></p>
+<p>Descarga estas plantillas (incompletas) <a download="templates.zip" href="../ud5_estaticos/templates.zip">templates.zip</a> en una
+nueva carpeta "portfolio", dentro de otra carpeta "templates", según
+esta estructura:</p>
+<p><img alt="" src="../Pictures/ud5/10000001000000EF000001208BE953EFACC6CE00.png" /></p>
+<p>En clase las revisamos y explicamos la sintaxis básica
+que aparece en ellas. Toma notas.</p>
+<h4 id="ficheros-estaticos">Ficheros estáticos<a class="headerlink" href="#ficheros-estaticos" title="Permanent link">&para;</a></h4>
+<p>Las aplicaciones web normalmente van a necesitar utilizar lo que se
+llama ficheros estáticos (imágenes, ficheros JavaScript, CSS, etc.).</p>
+<p>Si, por ejemplo, navegamos al administrador de Django en
+localhost:8000/admin, veremos en la consola el log del servidor de
+Django. Algunas de las líneas que aparecen hacen referencia a recursos
+estáticos que dicho administrador necesita:</p>
+<p><img alt="" src="../Pictures/ud5/10000001000005ED000001C9FA7730E3EB961D16.png" /></p>
+<p>No vamos a ahondar más en los ficheros estáticos.
+<a href="https://docs.djangoproject.com/en/5.2/howto/static-files/">Aquí</a> tienes
+toda la documentación.</p>
+<p>Solo vamos a mencionar tres aspectos:</p>
+<ul>
+<li>
+<p>Configuración de ficheros estáticos: ya ha sido realizada en el
+    apartado 5.1.</p>
+</li>
+<li>
+<p>Carga de estáticos en una plantilla, se realiza mediante:</p>
+<p><code>{% load static %}</code></p>
+</li>
+<li>
+<p>Referencia a un recurso estático en una plantilla, ejemplo:</p>
+<p><code>&lt;img src="{% static 'my_app/example.jpg' %}" alt="My image"&gt;</code></p>
+</li>
+</ul>
+<p>Para que los ficheros estáticos se guarden en la ruta especificada en
+las variables STATIC_URL y STATIC_ROOT, hemos de ejecutar el siguiente
+comando:
+<div class="highlight"><pre><span></span><code>python manage.py collectstatic
+</code></pre></div>
+Lo hacemos y vemos el resultado:</p>
+<p><img alt="" src="../Pictures/ud5/10000001000006070000003CAF161C7541D959B8.png" /></p>
+<p>Ahora vemos la carpeta static en nuestro proyecto:</p>
+<p><img alt="" src="../Pictures/ud5/100000010000012A0000013EFFF1474E49D9FB34.png" /></p>
+<p>Los únicos ficheros estáticos que tenemos en estos momentos pertenecen a
+la app de administrador.</p>
+<p>Cabe mencionar también que la tendencia actual es almacenar los ficheros
+estáticos de una aplicación web en servidores CDN.</p>
+<h4 id="plantillas-de-error">Plantillas de error<a class="headerlink" href="#plantillas-de-error" title="Permanent link">&para;</a></h4>
+<p>Todos hemos visto el típico error 404 al teclear incorrectamente una URL
+en el navegador:</p>
+<p><img alt="" src="../Pictures/ud5/10000000000002000000017FA5756466870EEAE2.png" /></p>
+<p>Nosotros, que somos programadores web aventajados, ya
+sabemos qué significa este código de error, devuelto por el
+protocolo HTTP (según se explica en el módulo de Despliegue de aplicaciones web). Pero un usuario normal puede llegar a alarmarse al
+obtener dicho código, sin saber exactamente qué ha sucedido. ¿Podríamos,
+de alguna forma, devolver al usuario un mensaje de error más
+significativo que le ayudase a saber qué ha sucedido y qué puede hacer
+para solucionar el problema? Para esto Django nos proporciona una forma
+fácil de devolver respuestas al usuario en caso de que se reciban
+determinas respuestas de error del servidor.</p>
+<p>Todo lo que hemos de hacer es crear una plantilla por cada código de
+error, con el número de error correspondiente, y situarla en el
+directorio templates, como se muestra a continuación:</p>
+<p><img alt="" src="../Pictures/ud5/100000010000012B0000014A36949D70E430F4E4.png" /></p>
+<p>Descarga estas plantillas de Aules a la carpeta del
+proyecto correspondiente.</p>
+<p><strong>IMPORTANTE</strong>: Estas páginas de error se mostrarán cuando la variable
+DEBUG de settings.py tenga el valor False.</p>
+<h3 id="vistas">Vistas<a class="headerlink" href="#vistas" title="Permanent link">&para;</a></h3>
+<p>Las vistas suponen el elemento de nuestra aplicación en la que va a
+residir la <em>lógica de negocio</em>, y se definen en el fichero views.py,
+dentro de cada app. Básicamente tomarán una petición HTTP como entrada
+(<strong>request</strong>) y devolverán una respuesta HTTP (<strong>response</strong>), que puede
+ser:</p>
+<ul>
+<li>Un documento HTML</li>
+<li>Una redirección a otra URL</li>
+<li>Un error</li>
+<li>Un documento XML o JSON</li>
+<li>Una imagen</li>
+<li>O cualquier otra cosa</li>
+</ul>
+<p>Las vistas se sitúan detrás de las URLs de nuestra aplicación web, como
+veremos en el ejemplo guiado, y determinan (según el MVC) el aspecto
+visual de la respuesta (mediante el uso de templates), así como el
+acceso y manipulación a la BBDD.</p>
+<p>Es importante hacer notar que las vistas en Django pueden ser de dos
+tipos:</p>
+<ul>
+<li><strong>FBV</strong> (Function Based Views): son las primeras que empezaron a
+    utilizarse en Django. Son más sencillas a priori, pero no utilizan
+    los principios de la programación orientada a objetos, lo cual las
+    hace más difíciles de extender y propiciar así la reutilización de
+    código. Tienen la ventaja de que se entiende de forma más clara las
+    operaciones que realiza la vista.</li>
+<li><strong>CBV</strong> (Class Based Views): se trata de clases que ya cubren los
+    casos más usuales, con lo que su utilización tiende a ser más
+    simple, solo es necesario extender determinados atributos/funciones.
+    Como desventaja, cabe mencionar que son menos explícitas en las
+    acciones (mucha de la lógica se hereda de una clase superior). Para
+    adaptar su funcionamiento, se hace necesario sobreescribir/extender
+    determinados métodos.</li>
+</ul>
+<p><img alt="" src="../Pictures/ud5/1000000000000400000002775850B3C76DF738DE.jpg" /></p>
+<p>Veremos ejemplos de ambos tipos.</p>
+<h3 id="urls">URLs<a class="headerlink" href="#urls" title="Permanent link">&para;</a></h3>
+<p>Una URL (Uniform Resource Locator), en el mundo web, es una dirección
+que apunta a un recurso en la red de redes (Internet). Este recurso
+puede ser de muchos tipos: documentos HTML, XML, JSON, CSS... contenido
+multimedia como una imagen, un vídeo, etc.</p>
+<p>Particularizando para el framework Django (y generalmente para cualquier
+otro tipo de framework de desarrollo web), las URLs representan el punto
+de entrada a la lógica de una aplicación web, detrás de la interfaz de
+usuario.</p>
+<p>Por tanto, a las URLs se accede a través de la interfaz de usuario, y
+dan (a su vez), acceso a la lógica de negocio (vistas). Las vistas a su
+vez, procesan la petición web, realizan acciones en la BBDD (si fuese
+necesario) y determinan el tipo de respuesta (en forma de HTML, etc.)
+utilizando, o no, templates.</p>
+<p>De esta forma, deberemos construir un mapa de URLs para nuestra
+aplicación web, de forma que se defina:</p>
+<ul>
+<li>Estructura de la URL: identificación de la URL para que la haga
+    única de las demás.</li>
+<li>Parámetros: se definirán qué parámetros se aceptan a través de la
+    URL, pueden ser opcionales.</li>
+<li>Vista: definida en views.py, que tratará la petición HTTP recibida a
+    través de la URL.</li>
+</ul>
+<p>Una vez definidas las URLs de nuestra aplicación, las utilizaremos
+fundamentalmente en dos lugares:</p>
+<ul>
+<li>En las plantillas HTML, para establecer la navegación por el sitio
+    web.</li>
+<li>En las propias vistas, para la redirección a otras partes de la
+    aplicación, tras aplicar la lógica de negocio.</li>
+</ul>
+<h3 id="paginas-de-la-aplicacion">Páginas de la aplicación<a class="headerlink" href="#paginas-de-la-aplicacion" title="Permanent link">&para;</a></h3>
+<p>En este apartado vamos a utilizar todo lo anterior para desarrollar el
+portfolio. Vamos a ver el proceso para cada una de las páginas de
+nuestra aplicación web.</p>
+<p>Implementaremos las vistas de las dos formas posibles para ver las
+diferencias, es decir: FBV y CBV.</p>
+<h4 id="home">Home<a class="headerlink" href="#home" title="Permanent link">&para;</a></h4>
+<p>Ésta será la página de bienvenida, con el listado de todos los
+proyectos. Necesitaremos una vista, que recupere de la BBDD todos los
+proyectos y devuelva la respuesta en forma de HTML acabado; la plantilla
+HTML (formada por código HTML y código embebido) devolverá el aspecto
+visual de la página ; finalmente, la URL conectará la ruta \"/\" raíz
+con la vista.</p>
+<p>Tras finalizar los siguientes subapartados, la página de bienvenida de
+la aplicación quedará del siguiente modo:</p>
+<p><img alt="" src="../Pictures/ud5/10000001000003630000026016E78569E93BD628.png" /></p>
+<h5 id="vista">Vista<a class="headerlink" href="#vista" title="Permanent link">&para;</a></h5>
+<p>El tipo de vista FBV (Function Based View) podría ser del siguiente
+modo:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">django.shortcuts</span><span class="w"> </span><span class="kn">import</span> <span class="n">render</span> <span class="c1"># Para FBV</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Proyecto</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">home_view</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="n">proyectos</span> <span class="o">=</span> <span class="n">Proyecto</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="n">context</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;proyecto&#39;</span><span class="p">:</span> <span class="n">proyectos</span><span class="p">}</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;portfolio/home.html&#39;</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+</code></pre></div>
+<p>Cabe hacer notar que el nombre de la vista va en minúsculas, por
+convención, porque se trata de un método, no una clase.</p>
+<p>Una posible versión de esta vista en CBV (Class Based View) sería del
+siguiente modo:
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">django.views.generic</span><span class="w"> </span><span class="kn">import</span> <span class="n">TemplateView</span> <span class="c1"># Para CBV</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Proyecto</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">HomeView</span><span class="p">(</span><span class="n">TemplateView</span><span class="p">):</span>
+    <span class="n">template_name</span> <span class="o">=</span> <span class="s1">&#39;portfolio/home.html&#39;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_context_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">context</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">HomeView</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">get_context_data</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+       <span class="n">context</span><span class="p">[</span><span class="s1">&#39;proyectos&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Proyecto</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+       <span class="k">return</span> <span class="n">context</span>
+</code></pre></div></p>
+<p>En este caso, el nombre de la vista es el nombre de una clase, por tanto
+se sigue la convención "camel case".</p>
+<p>Este segundo método parece una forma más complicada de implementar la
+misma vista. En este caso estamos heredando de la clase TemplateView,
+que se trata de una clase dedicada exclusivamente para visualizar una
+template, y pasarle unos determinados parámetros.</p>
+<p>Existen más tipos de vistas basadas en CBV, cada una de ellas con un
+propósito particular. Vamos a revisar este
+<a href="https://docs.djangoproject.com/en/5.2/ref/class-based-views/">enlace</a> y
+comentar las <strong>vistas más destacadas</strong>.</p>
+<p>En los dos casos hemos recuperado los proyectos mediante
+Proyecto.objects.all(), no hemos tenido que realizar ninguna sentencia
+SQL. Esto es gracias al <strong>ORM de Django</strong>, que nos permite utilizar una
+sintaxis para manipular la BBDD sin necesidad de escribir sentencias SQL
+específicas de la BBDD que subyace en la aplicación. De esta forma
+podemos tener una base de datos sqlite3 para desarrollo, una postgresql
+para otros entornos, y no hemos de cambiar las expresiones SQL.</p>
+<p>Para saber más sobre el ORM de Django, consultamos este
+<a href="https://docs.djangoproject.com/en/5.2/topics/db/queries/">enlace</a>, o
+también <a href="https://tutorial.djangogirls.org/es/django_orm/">este otro</a>.</p>
+<p>La variable resultante de utilizar el ORM de Django "proyectos" se
+denomina <strong>queryset</strong>, y es un conjunto de datos agregado con todo lo
+necesario para capturar los datos recuperados por la consulta a BBDD.</p>
+<p>Por último, las dos vistas hacen referencia a un objeto "<strong>context</strong>".
+¿Para qué sirve este objeto? Precisamente se trata de un diccionario que
+más adelante utilizará la template para representar los diferentes
+valores en la interfaz de usuario. Este objeto se inyecta en la
+template, la cual, mediante código embebido, lo manipulará y
+representará sus diferentes valores. Se trata, pues, de la forma que
+tenemos de hacer dinámicas las diferentes páginas de nuestra aplicación
+web.</p>
+<p>Si no inyectásemos los proyectos a la template vía context, se trataría de una página estática, que es el propósito de la clase TemplateView.</p>
+<h5 id="template">Template<a class="headerlink" href="#template" title="Permanent link">&para;</a></h5>
+<p>La plantilla a utilizar en esta página se llama home.html, y tendrá el
+siguiente contenido:</p>
+<p><img alt="" src="../Pictures/ud5/1000000100000336000001BCA2B25A79AD91DE94.png" /></p>
+<p>En clase comentamos las diferentes partes de las que
+se compone.</p>
+<p>Como vemos, se maneja la variable "proyectos" mediante código
+embebido. ¿Cómo ha llegado aquí esta variable? Mediante el objeto
+"context" proporcionado por la vista (ya sea FBV o CBV).</p>
+<h5 id="url">URL<a class="headerlink" href="#url" title="Permanent link">&para;</a></h5>
+<p>La configuración de la URL va a cambiar ligeramente si decidimos
+implementar la vista mediante FBV o mediante CBV.</p>
+<p>Para el caso de FBV, habrá que añadir el siguiente elemento en la lista
+urlpatterns del fichero:
+<div class="highlight"><pre><span></span><code><span class="n">path</span><span class="p">(</span><span class="s1">&#39;fbv/&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">home_view</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;home&#39;</span><span class="p">),</span>
+</code></pre></div>
+Para el caso de CBV, habrá que sustituir la línea anterior por la
+siguiente:
+<div class="highlight"><pre><span></span><code><span class="n">path</span><span class="p">(</span><span class="s1">&#39;cbv/&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">HomeView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;home&#39;</span><span class="p">),</span>
+</code></pre></div></p>
+<p>NOTA: En CBV es necesario llamar al método
+<a href="https://docs.djangoproject.com/en/5.2/ref/class-based-views/base/#django.views.generic.base.View.as_view">as_view</a>
+que convierte la clase en una vista invocable.</p>
+<p>En ambos casos, habrá que importar las vistas del fichero views.py en el
+fichero urls.py:
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">portfolioapp</span><span class="w"> </span><span class="kn">import</span> <span class="n">views</span>
+</code></pre></div></p>
+<h4 id="proyecto">Proyecto<a class="headerlink" href="#proyecto" title="Permanent link">&para;</a></h4>
+<p>A la página de proyecto se llegará después de haber pulsado sobre un
+proyecto en la lista de la página de bienvenida. Para ello necesitamos
+rellenar el atributo href de la línea 11 en home.html (ahora tiene el
+valor "#"). Esto lo haremos una vez configuremos la URL para la ficha
+del proyecto.</p>
+<p>Vamos a configurar los ficheros que nos hacen falta para esta página.</p>
+<h5 id="vista_1">Vista<a class="headerlink" href="#vista_1" title="Permanent link">&para;</a></h5>
+<p>Esta vista va a tener una particularidad: ha de recibir un parámetro de
+la URL, que será el id del proyecto.</p>
+<p>Una posible forma de hacerlo mediante FBV es la siguiente:
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">proyecto_view</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="n">pk</span><span class="p">):</span>
+    <span class="n">proyecto</span> <span class="o">=</span> <span class="n">Proyecto</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="n">pk</span><span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;proyecto&#39;</span><span class="p">:</span> <span class="n">proyecto</span><span class="p">}</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="s1">&#39;portfolio/proyecto.html&#39;</span><span class="p">,</span><span class="n">context</span><span class="p">)</span>  
+</code></pre></div>
+Mediante CBV podríamos hacerlo del siguiente modo:
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">ProyectoView</span><span class="p">(</span><span class="n">TemplateView</span><span class="p">):</span>
+    <span class="n">template_name</span> <span class="o">=</span> <span class="s1">&#39;portfolio/proyecto.html&#39;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_context_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">context</span> <span class="o">=</span> <span class="nb">super</span><span class="p">(</span><span class="n">ProyectoView</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">get_context_data</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">context</span><span class="p">[</span><span class="s1">&#39;proyecto&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Proyecto</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;pk&#39;</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">context</span>
+</code></pre></div>
+En los dos casos hemos realizado la consulta del proyecto particular
+mediante Proyecto.objects.get. El método get sirve para recuperar un
+solo registro de la BBDD, no un queryset, como en el caso de la vista de
+home.</p>
+<p>En los dos tipos de vista se hace referencia a <strong>context</strong>, que se
+trata de un diccionario con atributos que van a estar disponible en la
+template (como se ha comentado anteriormente). La modificación del
+contexto será primordial cuando queramos inyectar datos dinámicos en las
+templates, ya sea mediante CBV o FBV.</p>
+<p>Si manipulásemos la URL para modificar el parámetro id e introducir un
+número de proyecto que no existe, tendríamos un problema, ya que el
+método get devolvería un error y no estamos contemplando ese caso en el
+código. Tendríamos que introducir un bloque try/catch para contemplar
+esta excepción.</p>
+<p>Es por ello que, en este caso, es más conveniente utilizar el método
+<a href="https://docs.djangoproject.com/en/5.2/topics/http/shortcuts/#get-object-or-404">get_object_or_404</a>,
+del siguiente modo. Consultamos el enlace para ver un ejemplo.</p>
+<p>ACTIVIDAD: modifica tu vista para utilizar get_object_or_404.</p>
+<blockquote>
+<p>NOTA: en Django se puede utilizar "pk" o "id" indistintamente para
+referirnos al identificador de clave única asignado automáticamente a
+cada nuevo objeto que se crea en una tabla de BBDD. Todas las tablas
+generadas por Django van a tener una columna "id" a la que nos podemos
+referir también por "pk".</p>
+</blockquote>
+<h5 id="template_1">Template<a class="headerlink" href="#template_1" title="Permanent link">&para;</a></h5>
+<p>La plantilla que podemos utilizar es la siguiente:</p>
+<p><img alt="" src="../Pictures/ud5/10000001000003B6000001897714B22FD715051A.png" /></p>
+<p><strong>NOTA</strong>: el href de la línea 7 está incompleto, lo
+resolveremos en un apartado más adelante.</p>
+<p><strong>NOTA</strong>: También podemos ver que, una vez tenemos el objeto "proyecto"
+podemos acceder a sus categorías simplemente mediante la siguiente
+expresión en la template (gracias a la clave foránea entre el modelo
+Proyecto y el modelo Categoria):
+<div class="highlight"><pre><span></span><code>proyecto.categorias.all
+</code></pre></div>
+<strong>NOTA</strong>: Utilizamos un <strong>punto</strong> "." para pasar de un objeto
+relacionado con otro. Lo mismo ocurre para el atributo "src" de la
+imagen, que ha de hacer referencia a la URL de la imagen asociada al
+proyecto. Conseguimos acceder al atributo "url" de la imagen partiendo
+del proyecto, pasando a su atributo "imagen" (que es a su vez otro
+objeto con diferentes atributos) y recuperando finalmente el atributo "url" de dicha imagen.</p>
+<p><strong>NOTA</strong>: En la template esta expresión no acaba con los <strong>paréntesis</strong>,
+como sí sucedería si estuviésemos llamando a esta función del ORM desde,
+por ejemplo, una vista.</p>
+<h5 id="url_1">URL<a class="headerlink" href="#url_1" title="Permanent link">&para;</a></h5>
+<p>Finalmente, configuramos la URL para esta página.</p>
+<p>Para el caso de FBV añadimos la siguiente línea a la lista urlpatterns
+de urls.py:
+<div class="highlight"><pre><span></span><code><span class="n">path</span><span class="p">(</span><span class="s1">&#39;proyecto_fbv/&lt;int:pk&gt;/&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">proyecto_view</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;proyecto&#39;</span><span class="p">),</span>
+</code></pre></div>
+Y para CBV:
+<div class="highlight"><pre><span></span><code><span class="n">path</span><span class="p">(</span><span class="s1">&#39;proyecto_cbv/&lt;int:pk&gt;/&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">ProyectoView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;proyecto&#39;</span><span class="p">),</span>
+</code></pre></div></p>
+<p>Es necesario modificar la estructura de la URL para poder recibir el
+parámetro que identifique al proyecto (en este caso, su id).</p>
+<p>Ahora podemos completar la línea 11 de home.html, que quedaría del
+siguiente modo:
+<div class="highlight"><pre><span></span><code>&lt;a href=&quot;{% url &#39;proyecto&#39; pk=proyecto.id %}&quot; class=&quot;p-5&quot;&gt;
+</code></pre></div>
+Al haber asignado un valor al atributo "name" de la URL, somos capaces
+de referenciar esta URL mediante su nombre 'proyecto', sea cual sea su
+ruta.</p>
+<p>NOTA: Según la sintaxis de Python, se requiere comillas simples dentro
+de comillas dobles, o viceversa.</p>
+<h4 id="contacto">Contacto<a class="headerlink" href="#contacto" title="Permanent link">&para;</a></h4>
+<p>Esta va a ser la vista más sencilla de todas, porque no vamos a
+necesitar consultar ningún dato de la BBDD, por tanto no vamos a pasar
+ningún valor en el contexto.</p>
+<h5 id="vista_2">Vista<a class="headerlink" href="#vista_2" title="Permanent link">&para;</a></h5>
+<p>Si optamos por FBV:
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">contacto_view</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="s1">&#39;portfolio/contacto.html&#39;</span><span class="p">,</span><span class="n">context</span><span class="p">)</span> 
+</code></pre></div>
+En caso de CBV:
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">ContactoView</span><span class="p">(</span><span class="n">TemplateView</span><span class="p">):</span>
+    <span class="n">template_name</span> <span class="o">=</span> <span class="s1">&#39;portfolio/contacto.html&#39;</span>
+</code></pre></div>
+Este es un claro ejemplo en el que CBV es muy adecuado cuando el tipo de
+vista que utilicemos se ajusta mucho a lo que pretendemos hacer, y solo
+habrá que hacer unas pocas modificaciones, si es necesario.</p>
+<h5 id="template_2">Template<a class="headerlink" href="#template_2" title="Permanent link">&para;</a></h5>
+<p><img alt="" src="../Pictures/ud5/100000010000048D00000184B2DD3650777E7643.png" /></p>
+<p>Modifica el valor "Nombre y apellidos" del h3 para
+introducir tus datos particulares.</p>
+<p><strong>ACTIVIDAD DE CLASE</strong>: pasa como contexto a la template tu nombre y
+apellidos en forma de objeto, y modifica la template para que en el h3
+muestre tu nombre y apellidos, pasados por contexto.</p>
+<h5 id="url_2">URL<a class="headerlink" href="#url_2" title="Permanent link">&para;</a></h5>
+<p>Para el caso de FBV:
+<div class="highlight"><pre><span></span><code><span class="n">path</span><span class="p">(</span><span class="s1">&#39;contacto/&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">contacto_view</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;contacto&#39;</span><span class="p">),</span>
+</code></pre></div></p>
+<p>Para CBV:
+<div class="highlight"><pre><span></span><code><span class="n">path</span><span class="p">(</span><span class="s1">&#39;contacto/&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">ContactoView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;contacto&#39;</span><span class="p">),</span>
+</code></pre></div></p>
+<h4 id="filtrado-por-categoria">Filtrado por categoría<a class="headerlink" href="#filtrado-por-categoria" title="Permanent link">&para;</a></h4>
+<p>Vamos a resolver el filtrado por categoría. Queremos que al pulsar sobre
+alguna de las categorías de la ficha del proyecto, vayamos a la página
+de inicio, y se muestren solo los proyectos con esa categoría.</p>
+<p>Para ello, hemos de enviar a la URL "home" el id de la categoría.
+Primero completamos el atributo href de la línea 7 de proyecto.html del
+siguiente modo:
+<div class="highlight"><pre><span></span><code>href=&quot;{% url &#39;home&#39; categoria.id %}&quot;
+</code></pre></div>
+A continuación hemos de crear una nueva URL que pueda recibir el
+parámetro de categoría. Para el caso de CBV:
+<div class="highlight"><pre><span></span><code><span class="n">path</span><span class="p">(</span><span class="s1">&#39;&lt;int:cat_id&gt;/&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">HomeView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;home&#39;</span><span class="p">),</span>
+</code></pre></div>
+Es importante definir esta nueva URL debajo de la que habíamos definido
+inicialmente para la página home, ya que Django buscará por orden cuál
+es la URL que se adecúa más a la petición que estamos haciendo.</p>
+<p>Finalmente, en la vista de home hemos de recibir el parámetro, y filtrar
+los proyectos, no tomarlos todos, dependiendo de si se ha pasado el
+parámetro cat_id:</p>
+<p><img alt="" src="../Pictures/ud5/100000010000040B000000B4E69A8FA5D370125B.png" /></p>
+<p>NOTA: kwargs (key-word arguments) es un diccionario
+(del tipo clave:valor) mediante el cual se pueden pasar parámetros a los
+métodos. Es una convención propia de Python, y en este
+<a href="https://python-intermedio.readthedocs.io/es/latest/args_and_kwargs.html#uso-de-kwargs">enlace</a>
+puedes consultar más detalles. Para recuperar un valor del diccionario
+podríamos escribirlo de la forma kwargs['cat_id'], pero utilizar el
+método get es más conveniente para evitar excepciones si esa clave no se
+encontrase en el diccionario.</p>
+<h4 id="desplegable-de-categorias-inclusion-tags">Desplegable de categorías: inclusion tags<a class="headerlink" href="#desplegable-de-categorias-inclusion-tags" title="Permanent link">&para;</a></h4>
+<p>Nos queda un detalle, y es que queremos que el desplegable de categorías
+nos muestre todas las categorías y podamos filtrar al pulsar sobre
+alguna de ellas, pero de forma dinámica según los valores que se
+encuentran en BBDD.</p>
+<p>Pero existe un problema, y es que el dropdown de categorías está en el
+template header.html, y este template no está asociado directamente a
+ninguna vista, que es precisamente el elemento que le proporcionaría los
+datos. Entonces: ¿cómo vamos a poder proporcionar a una template datos
+sin pasar por una vista? Para esto se utilizan los llamados <a href="https://docs.djangoproject.com/en/5.2/howto/custom-template-tags/#inclusion-tags">inclusion
+tags</a>.</p>
+<p>En primer lugar, hemos de crear un <strong>método</strong> cuya función será devolver
+un diccionario. Este diccionario servirá de <strong>contexto</strong> para el
+inclusion tag. Para esto, vamos a crear una estructura de directorios
+para almacenar los posibles inclusion tags de la app portfolioapp, de la
+siguiente forma:</p>
+<p><img alt="" src="../Pictures/ud5/10000001000001120000008AB05B2BE6499ACD2F.png" /></p>
+<p>Es muy importante que el fichero <strong>init</strong>.py (está
+vacío) esté dentro de la carpeta templatetags. Dentro de la carpeta
+templatetags también habrá otro archivo categorias_dropdown.py con el
+siguiente contenido:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">django</span><span class="w"> </span><span class="kn">import</span> <span class="n">template</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Categoria</span>
+<span class="n">register</span> <span class="o">=</span> <span class="n">template</span><span class="o">.</span><span class="n">Library</span><span class="p">()</span>
+
+<span class="nd">@register</span><span class="o">.</span><span class="n">inclusion_tag</span><span class="p">(</span><span class="s1">&#39;portfolio/categorias_dropdown.html&#39;</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">categorias_dropdown</span><span class="p">():</span>
+    <span class="n">categorias</span> <span class="o">=</span> <span class="n">Categoria</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;categorias&#39;</span><span class="p">:</span> <span class="n">categorias</span><span class="p">}</span>
+</code></pre></div>
+<p>Esto va a asociar el método categorias_dropdown a una nueva plantilla
+categorias_dropdown.html, y lo va a registrar en la librería de
+templates, para que esté disponible a lo largo de la aplicación web y se
+pueda utilizar siempre que lo necesitemos.</p>
+<p>NOTA: se anteponen dos puntos .. a models para subir un nivel en la
+jerarquía de directorios, desde categorias_dropdown.py, y así encontrar
+el fichero models.py. Se trata de una ruta relativa al fichero actual, y
+es la forma de subir un nivel.</p>
+<p>A continuación, creamos una nueva plantilla categorias_dropdown.html con
+el siguiente contenido:</p>
+<p><img alt="" src="../Pictures/ud5/1000000100000486000000EE24F25C4ECC4C857B.png" /></p>
+<p>Damos por supuesto que vamos a tener un objeto
+categorias que podremos recorrer, ya que nos lo proporcionará el
+inclusion tag que hemos definido y registrado en categorias_dropdown.py.</p>
+<p>Cada entrada en el dropdown será un enlace a la página "home"
+pasándole como parámetro el id de categoría, que procesará correctamente
+según lo que hemos desarrollado en el apartado anterior.</p>
+<p>Por último, lo único que hemos de hacer es cargar este incluision tag en
+header.html, y referenciarlo (líneas 1 y 12):</p>
+<p><img alt="" src="../Pictures/ud5/10000001000003C40000014DD598709AA87AFCE9.png" /></p>
+<p>Al refrescar la aplicación y pulsar sobre el dropdown,
+nos aparecerán todas las categorías que dimos de alta mediante el
+administrador de Django.</p>
+<h4 id="navegacion">Navegación<a class="headerlink" href="#navegacion" title="Permanent link">&para;</a></h4>
+<p>Es el momento de enlazar las opciones de navegación de la aplicación,
+una vez tenemos configuradas todas las URLs.</p>
+<p>En header.html, completamos los tres atributos href del siguiente modo
+(líneas 4, 10 y 14):</p>
+<p><img alt="" src="../Pictures/ud5/1000000100000447000001556AEB04C9B4C9093D.png" /></p>
+<h2 id="bonus-track-dockerizacion-del-proyecto">BONUS TRACK: DOCKERIZACIÓN DEL PROYECTO<a class="headerlink" href="#bonus-track-dockerizacion-del-proyecto" title="Permanent link">&para;</a></h2>
+<p>Tenemos el proyecto funcionando mediante un entorno virtual, pero nos
+hemos aficionado a que nuestra vida sea más sencilla mediante los
+contenedores de Docker. Teníamos nuesta anterior versión del portfolio
+(en PHP) dockerizada, ¿podríamos hacer lo mismo con nuestro proyecto en
+Django?</p>
+<p>Por supuesto que sí, y en este apartado vamos a ver cómo hacerlo.</p>
+<h3 id="creacion-de-la-imagen">Creación de la imagen<a class="headerlink" href="#creacion-de-la-imagen" title="Permanent link">&para;</a></h3>
+<p>Creamos primero un fichero Dockerfile a la misma altura que el fichero
+requirements.txt. Este nuevo archivo tendrá el siguiente contenido:
+<div class="highlight"><pre><span></span><code>FROM python:3.10
+ENV PYTHONUNBUFFERED 1
+
+RUN mkdir /code
+WORKDIR /code
+ADD requirements.txt /code/
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt
+</code></pre></div></p>
+<h3 id="docker-compose">Docker compose<a class="headerlink" href="#docker-compose" title="Permanent link">&para;</a></h3>
+<p>Por último creamos el fichero docker-compose.yml a la altura del
+Dockerfile:
+<div class="highlight"><pre><span></span><code>version: &#39;3&#39;
+
+services:
+  web:
+    build: . 
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - &quot;80:8000&quot;      
+    volumes:
+      - ./portfolioDjango/:/code    
+</code></pre></div></p>
+<p>Solo queda ejecutar docker-compose up, y comprobar que la aplicación se
+está ejecutando en localhost, puerto 80.</p>
+<h2 id="verificacion-del-ejemplo-guiado">VERIFICACIÓN DEL EJEMPLO GUIADO<a class="headerlink" href="#verificacion-del-ejemplo-guiado" title="Permanent link">&para;</a></h2>
+<p>Durante las clases presenciales se llevará a cabo la verificación de que
+se ha desarrollado el ejemplo guiado, para cubrir los criterios de
+evaluación a) y b) del RA5, y el a) del RA6.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.expand", "navigation.tracking", "navigation.tabs", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>

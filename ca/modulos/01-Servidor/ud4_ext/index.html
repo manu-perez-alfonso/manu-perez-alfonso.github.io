@@ -18,7 +18,7 @@
         <link rel="prev" href="../ud4/">
       
       
-        <link rel="next" href="../ud6/">
+        <link rel="next" href="../ud5/">
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ud5-portfolio-acces-a-dades-i-objectes-del-navegador" class="md-skip">
+        <a href="#ud5-portafolis-acces-a-dades-i-objectes-del-navegador" class="md-skip">
           Salta el contingut
         </a>
       
@@ -738,7 +738,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ud6/" class="md-nav__link">
+      <a href="../ud5/" class="md-nav__link">
         
   
   
@@ -761,7 +761,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ud7/" class="md-nav__link">
+      <a href="../ud6/" class="md-nav__link">
         
   
   
@@ -784,7 +784,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ud8/" class="md-nav__link">
+      <a href="../ud7/" class="md-nav__link">
         
   
   
@@ -807,7 +807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ud9/" class="md-nav__link">
+      <a href="../ud8/" class="md-nav__link">
         
   
   
@@ -830,7 +830,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ud10/" class="md-nav__link">
+      <a href="../ud9/" class="md-nav__link">
         
   
   
@@ -853,7 +853,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ud11/" class="md-nav__link">
+      <a href="../ud10/" class="md-nav__link">
         
   
   
@@ -876,7 +876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ud12/" class="md-nav__link">
+      <a href="../ud11/" class="md-nav__link">
         
   
   
@@ -1377,14 +1377,14 @@
 
 
 
-<h1 id="ud5-portfolio-acces-a-dades-i-objectes-del-navegador">UD5: PORTFOLIO - ACCÉS A DADES I OBJECTES DEL NAVEGADOR<a class="headerlink" href="#ud5-portfolio-acces-a-dades-i-objectes-del-navegador" title="Permanent link">&para;</a></h1>
+<h1 id="ud5-portafolis-acces-a-dades-i-objectes-del-navegador">UD5: PORTAFOLIS - ACCÉS A DADES I OBJECTES DEL NAVEGADOR<a class="headerlink" href="#ud5-portafolis-acces-a-dades-i-objectes-del-navegador" title="Permanent link">&para;</a></h1>
 <p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud4_ext/10000000000003C00000021CCA08BAB38305D53C.jpg" /></p>
 <blockquote>
 <p>Duració de la unitat: 17 sessions.</p>
 <p><strong>Encara que aquesta unitat no es desenvoluparà durant el curs 2025/2026, es deixa ací com a exemple il·lustratiu de com utilitzar mysql amb PHP, sense framework.</strong></p>
 </blockquote>
 <h2 id="introduccio">INTRODUCCIÓ<a class="headerlink" href="#introduccio" title="Permanent link">&para;</a></h2>
-<p>Estem en la recta final del projecte del portfolio. Al llarg de les
+<p>Estem en la recta final del projecte del portafolis. Al llarg de les
 unitats anteriors ens ha sorgit la necessitat d'anar emmagatzemant
 diferents dades de l'aplicació, i ho hem anat solucionant
 temporalment mitjançant diferents arxius, definint variables o
@@ -1607,7 +1607,7 @@ contingut (inicial):</p>
 <p>L'explicació d'aquesta connexió a la base de dades, la trobem en
 este <a href="https://www.w3schools.com/php/php_mysql_connect.asp">enllaç</a>
 (exemple PDO).</p>
-<p>En visitar la pàgina principal del portfolio, veiem el següent error:</p>
+<p>En visitar la pàgina principal del portafolis, veiem el següent error:</p>
 <p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud4_ext/10000001000001F7000000C60D7913E0B56C34CB.png" /></p>
 <p>La prova no ha funcionat. L'error ens avisa que no es troba el
 driver a MySQL. Com és possible això? La imatge que estem utilitzant
@@ -1680,7 +1680,7 @@ tant, hauríem de <strong>tallar</strong> la comunicació entre ells per a
 <h2 id="acces-a-dades">ACCÉS A DADES<a class="headerlink" href="#acces-a-dades" title="Permanent link">&para;</a></h2>
 <h3 id="teoria">Teoria<a class="headerlink" href="#teoria" title="Permanent link">&para;</a></h3>
 <p>Per a la implementació de l'accés a dades del nostre projecte de
-portfolio ens basarem en la secció <a href="https://www.w3schools.com/php/php_mysql_intro.asp">MySQL Database
+portafolis ens basarem en la secció <a href="https://www.w3schools.com/php/php_mysql_intro.asp">MySQL Database
 </a>del manual de PHP de
 W3CSchools. En concret, utilitzarem PDO (PHP Data Objects), que és
 l'opció més utilitzada actualment, i que utilitza orientació a
@@ -1714,7 +1714,7 @@ dades que hem anat manejant fins ara:</p>
 <td>id: clau primària, requerit<br>e-mail: tipus text, requerit, <strong>valor únic</strong><br>contrasenya: text, requerit<br>Nom i cognoms: text, requerit<br>DNI: text, requerit, segons expressió regular<br>Actiu: booleà, vertader per defecte<br>Admin: booleà, fals per defecte</td>
 </tr>
 <tr>
-<td>sessió</td>
+<td>sessio</td>
 <td>id: clau primària, requerit<br>usuari: identificador d'usuari, <strong>valor únic</strong><br>Claus foranes: Usuari</td>
 </tr>
 <tr>
@@ -2045,7 +2045,7 @@ pàgina. En aquest cas s'ha redireccionat a index.php. S'utilitza per
 això el mètode header, que ha d'invocar-se abans que es carregue cap
 altre element de la pàgina, per això posem els include després.</p>
 <p>En les activitats d'aquesta unitat acabarem de completar el projecte de
-portfolio.</p>
+portafolis.</p>
 <h1 id="revisio-de-lexemple-guiat">Revisió de l'exemple guiat<a class="headerlink" href="#revisio-de-lexemple-guiat" title="Permanent link">&para;</a></h1>
 <p>El criteri d'avaluació R6.a) es donarà per superat en fer l'exercici
 guiat. Com a activitat, es revisarà en classe el treball
