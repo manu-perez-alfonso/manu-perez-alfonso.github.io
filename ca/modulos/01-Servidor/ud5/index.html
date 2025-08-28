@@ -710,9 +710,10 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="PORTAFOLIS AMB DJANGO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#configuracio" class="md-nav__link">
     <span class="md-ellipsis">
       Configuració
@@ -720,8 +721,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#aplicacions" class="md-nav__link">
     <span class="md-ellipsis">
       Aplicacions
@@ -729,8 +730,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#models" class="md-nav__link">
     <span class="md-ellipsis">
       Models
@@ -780,8 +781,8 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#plantilles-en-django" class="md-nav__link">
     <span class="md-ellipsis">
       Plantilles en Django
@@ -822,8 +823,8 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#vistes" class="md-nav__link">
     <span class="md-ellipsis">
       Vistes
@@ -831,8 +832,17 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
+  <a href="#urls" class="md-nav__link">
+    <span class="md-ellipsis">
+      URLs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#pagines-de-laplicacio" class="md-nav__link">
     <span class="md-ellipsis">
       Pàgines de l'aplicació
@@ -999,6 +1009,11 @@
     </nav>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#bonus-track-dockeritzacio-del-projecte" class="md-nav__link">
@@ -1081,7 +1096,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ud7/" class="md-nav__link">
+      <a href="../../../../modulos/01-Servidor/ud7.md" class="md-nav__link">
         
   
   
@@ -1623,9 +1638,10 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="PORTAFOLIS AMB DJANGO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#configuracio" class="md-nav__link">
     <span class="md-ellipsis">
       Configuració
@@ -1633,8 +1649,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#aplicacions" class="md-nav__link">
     <span class="md-ellipsis">
       Aplicacions
@@ -1642,8 +1658,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#models" class="md-nav__link">
     <span class="md-ellipsis">
       Models
@@ -1693,8 +1709,8 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#plantilles-en-django" class="md-nav__link">
     <span class="md-ellipsis">
       Plantilles en Django
@@ -1735,8 +1751,8 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#vistes" class="md-nav__link">
     <span class="md-ellipsis">
       Vistes
@@ -1744,8 +1760,17 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
+  <a href="#urls" class="md-nav__link">
+    <span class="md-ellipsis">
+      URLs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#pagines-de-laplicacio" class="md-nav__link">
     <span class="md-ellipsis">
       Pàgines de l'aplicació
@@ -1905,6 +1930,11 @@
       Navegació
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -2082,7 +2112,7 @@ Veiem que s'ha creat una nova carpeta portfolioDjango:</p>
 <p>Per tant, hem pogut llançar la nostra primera aplicació Django.</p>
 <h2 id="portafolis-amb-django">PORTAFOLIS AMB DJANGO<a class="headerlink" href="#portafolis-amb-django" title="Permanent link">&para;</a></h2>
 <p>En aquesta secció, desenvoluparem un portafolis utilitzant Django, seguint una estructura similar a la de les unitats anteriors, però aprofitant les funcionalitats que ofereix aquest framework.</p>
-<h2 id="configuracio">Configuració<a class="headerlink" href="#configuracio" title="Permanent link">&para;</a></h2>
+<h3 id="configuracio">Configuració<a class="headerlink" href="#configuracio" title="Permanent link">&para;</a></h3>
 <p>El primer fitxer en què ens hem de fixar, dels que s'han creat automàticament en generar el projecte, és el denominat <strong>settings.py</strong>. En aquest fitxer residirà gran part de la configuració de la nostra aplicació. Les parts més importants a destacar en aquests moments són les següents (en aquest <a href="https://docs.djangoproject.com/es/5.2/ref/settings/#core-settings">enllaç</a> les tens totes, per a la versió 5.2):</p>
 <ul>
 <li>
@@ -2128,7 +2158,7 @@ La variable STATIC_ROOT no apareix en el fitxer settings.py per defecte, cal def
 NOTA: hauràs d'importar el mòdul "os" (Operating System, per a funcions del sistema operatiu) perquè això funcione. Només has d'inserir aquesta línia al principi del fitxer settings.py:
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 </code></pre></div></p>
-<h2 id="aplicacions">Aplicacions<a class="headerlink" href="#aplicacions" title="Permanent link">&para;</a></h2>
+<h3 id="aplicacions">Aplicacions<a class="headerlink" href="#aplicacions" title="Permanent link">&para;</a></h3>
 <p>En primer lloc, cal diferenciar dos conceptes clau en Django:</p>
 <ul>
 <li><strong>Projecte</strong>: s'identifica amb el conjunt de l'aplicació web desenvolupada, i el seu directori arrel es troba al nivell (normalment) del fitxer manage.py.</li>
@@ -2181,11 +2211,11 @@ Cadascuna d'aquestes aplicacions dota el nostre projecte de funcionalitats difer
 </blockquote>
 <p>El missatge fa referència a migracions d'apps, algunes de les quals, "casualment", apareixen en la llista INSTALLED_APPS. I ens proporciona una ordre per solucionar el problema.</p>
 <p>Sembla que el que hem vist en aquest apartat no era tot el que necessitàvem per acabar de configurar les nostres apps. Aquesta qüestió la resoldrem en el següent apartat, quan implementem els models de la nostra nova aplicació "portfolioapp".</p>
-<h2 id="models">Models<a class="headerlink" href="#models" title="Permanent link">&para;</a></h2>
+<h3 id="models">Models<a class="headerlink" href="#models" title="Permanent link">&para;</a></h3>
 <p>En el projecte anterior en PHP vam implementar la connexió a la base de dades en l'última fase. Ara ho farem al revés, començarem a utilitzar la BBDD des de l'inici del projecte. Per a això necessitem taules on emmagatzemar la informació, com les crearem amb Django? Molt fàcil: les crearem mitjançant el fitxer models.py que es troba dins de la nostra aplicació, mitjançant els anomenats "models" de Django.</p>
 <p>Un model representa una font d'informació única de dades, conté els camps i el comportament de les dades a emmagatzemar, i generalment un model es transforma en una taula de base de dades.</p>
 <p>Pots trobar tota la informació sobre els models de Django en aquest <a href="https://docs.djangoproject.com/en/5.2/topics/db/models/">enllaç</a>.</p>
-<h3 id="definicio">Definició<a class="headerlink" href="#definicio" title="Permanent link">&para;</a></h3>
+<h4 id="definicio">Definició<a class="headerlink" href="#definicio" title="Permanent link">&para;</a></h4>
 <p>Començarem creant dos models: el de projecte i el de categoria. Introduïm el següent en portfolioapp/models.py:</p>
 <p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/10000001000003A4000001286C1C1730C2F62297.png" /></p>
 <p>Cal destacar que:</p>
@@ -2197,7 +2227,7 @@ Cadascuna d'aquestes aplicacions dota el nostre projecte de funcionalitats difer
 <p>En aquest <a href="https://docs.djangoproject.com/en/5.2/ref/models/fields/#field-types">enllaç</a> tens una descripció de tots els tipus de camps.</p>
 <p>Cal notar que no hem definit cap columna "id" per a les nostres taules. Django s'ocupa directament de fer això per nosaltres, segons es detalla en aquest <a href="https://docs.djangoproject.com/en/5.2/topics/db/models/#automatic-primary-key-fields">enllaç</a>. A aquesta columna la podem referenciar amb "id" o "pk", indistintament.</p>
 <p>Dedicarem un apartat exclusiu per a la definició del camp que contindrà la imatge del projecte.</p>
-<h3 id="migracio">Migració<a class="headerlink" href="#migracio" title="Permanent link">&para;</a></h3>
+<h4 id="migracio">Migració<a class="headerlink" href="#migracio" title="Permanent link">&para;</a></h4>
 <p>En l'apartat anterior hem definit els models. Això és una declaració d'intencions, no hem creat realment encara res en la base de dades sqlite3 (configurada en settings.py). Com traslladem aquesta definició de models a la base de dades? Molt fàcil: mitjançant les ordres <strong>makemigrations</strong> i <strong>migrate</strong>.</p>
 <p>Podem aplicar aquestes ordres a totes les aplicacions del nostre projecte, o les podem realitzar per a una app en particular. Anem a migrar només l'aplicació que hem creat "portfolioapp".</p>
 <p>Executem la primera ordre:
@@ -2226,7 +2256,7 @@ Cadascuna d'aquestes aplicacions dota el nostre projecte de funcionalitats difer
 <p>Ara iniciem l'aplicació:</p>
 <p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/10000001000005EC000000B46FE9EDE79557D9E9.png" /></p>
 <p>I ja no ens apareix el missatge d'error anterior.</p>
-<h3 id="imagefield">ImageField<a class="headerlink" href="#imagefield" title="Permanent link">&para;</a></h3>
+<h4 id="imagefield">ImageField<a class="headerlink" href="#imagefield" title="Permanent link">&para;</a></h4>
 <p>En aquest apartat modificarem el model Projecte per poder incloure un nou camp al qual associar una imatge.</p>
 <p>Django ofereix dos tipus de camps de model que impliquen pujar un fitxer mitjançant l'aplicació web: FileField i ImageField. Cadascun d'aquests tipus de camps té particularitats, però tots dos necessiten una ruta en la qual emmagatzemar els fitxers que s'envien des del costat client (agent d'usuari). Aquesta ruta es determina mitjançant les variables MEDIA_ROOT i MEDIA_URL, especificades en settings.py.</p>
 <p>En aquests moments no tenim configurades aquestes variables, anem a incloure-les en aquest fitxer amb els següents valors (sota la configuració de STATIC_URL):
@@ -2265,7 +2295,7 @@ Després de modificar-lo, llancem l'ordre makemigrations:</p>
 <p>Finalment, apliquem les migracions amb migrate:</p>
 <p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/10000001000005D300000063C51602918DA67E7D.png" /></p>
 <p>Ara, el nostre nou camp es troba en la BBDD.</p>
-<h3 id="administrador-de-django">Administrador de Django<a class="headerlink" href="#administrador-de-django" title="Permanent link">&para;</a></h3>
+<h4 id="administrador-de-django">Administrador de Django<a class="headerlink" href="#administrador-de-django" title="Permanent link">&para;</a></h4>
 <p>Hem creat dos nous models en la nostra nova aplicació portfolioapp. Com podem gestionar les dades associades a cada model des d'una interfície amigable? Resposta: programant l'administrador de Django.</p>
 <p>Django ve amb una aplicació que ens permet gestionar els nostres models de forma visual, a més de moltes altres coses. Es tracta de la primera app continguda en la llista INSTALLED_APPS, anomenada "django.contrib.admin". Però perquè els nostres models es puguen gestionar mitjançant l'administrador de Django, primer hem de configurar el fitxer admin.py de cada app.</p>
 <p>Anem a fer-ho. Introduïm el següent en el fitxer admin.py dins de portfolioapp:</p>
@@ -2286,17 +2316,17 @@ Després de llançar l'ordre la consola ens demana una sèrie de dades (fonament
 <p><strong>RECAPITULEM</strong>: Tenim la base de dades, tenim taules i dades en elles.</p>
 <p>Què ens queda? Hem d'aconseguir ara la part visual de la nostra aplicació web, poder fer-la dinàmica amb les dades que tenim en la BBDD, i a més establir la navegació pel nostre lloc web.</p>
 <p>Per a això necessitarem els següents apartats: <em>plantilles</em> HTML, les <em>vistes</em> (que implementaran la nostra lògica de negoci) i la configuració de les <em>URLs</em> del nostre lloc web (que invocaran la lògica de negoci i navegaran). Anem a per això en els següents apartats.</p>
-<h2 id="plantilles-en-django">Plantilles en Django<a class="headerlink" href="#plantilles-en-django" title="Permanent link">&para;</a></h2>
+<h3 id="plantilles-en-django">Plantilles en Django<a class="headerlink" href="#plantilles-en-django" title="Permanent link">&para;</a></h3>
 <p>Django ve amb un motor de plantilles anomenat DTL (Django Template Language), encara que és possible utilitzar altres com <a href="https://jinja.palletsprojects.com/en/3.1.x/">Jinja2</a>. Un projecte Django pot configurar-se per utilitzar un motor de plantilles o més, o fins i tot cap.</p>
 <p>Aquest motor de plantilles ens permet construir la part visual de l'aplicació, amb codi HTML (estàtic) i una sintaxi especial que el fa dinàmic. En aquest <a href="https://docs.djangoproject.com/en/5.2/topics/templates/">enllaç</a> trobaràs tot el relatiu al motor de plantilles de Django.</p>
-<h3 id="jerarquia-de-plantilles">Jerarquia de plantilles<a class="headerlink" href="#jerarquia-de-plantilles" title="Permanent link">&para;</a></h3>
+<h4 id="jerarquia-de-plantilles">Jerarquia de plantilles<a class="headerlink" href="#jerarquia-de-plantilles" title="Permanent link">&para;</a></h4>
 <p>Les plantilles en Django segueixen una estructura jeràrquica. Això vol dir que es defineixen de manera que unes es poden utilitzar de base per a altres plantilles. Les plantilles permeten ser esteses si s'utilitza la sintaxi adequada.</p>
 <p>Per a aquest projecte utilitzarem la jerarquia de plantilles següent:</p>
 <p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/10000001000004000000020A5774E3DD8E056D77.png" /></p>
 <p>Descarrega aquestes plantilles (incompletes) <a download="templates.zip" href="../../../../modulos/01-Servidor/ud5_estaticos/templates.zip">templates.zip</a> en una nova carpeta "portfolio", dins d'una altra carpeta "templates", segons aquesta estructura:</p>
 <p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/10000001000000EF000001208BE953EFACC6CE00.png" /></p>
 <p>En classe les revisarem i explicarem la sintaxi bàsica que apareix en elles. Pren notes.</p>
-<h3 id="fitxers-estatics">Fitxers estàtics<a class="headerlink" href="#fitxers-estatics" title="Permanent link">&para;</a></h3>
+<h4 id="fitxers-estatics">Fitxers estàtics<a class="headerlink" href="#fitxers-estatics" title="Permanent link">&para;</a></h4>
 <p>Les aplicacions web normalment necessiten utilitzar el que s'anomena fitxers estàtics (imatges, fitxers JavaScript, CSS, etc.).</p>
 <p>Si, per exemple, naveguem a l'administrador de Django en localhost:8000/admin, veurem en la consola el log del servidor de Django. Algunes de les línies que apareixen fan referència a recursos estàtics que aquest administrador necessita:</p>
 <p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/10000001000005ED000001C9FA7730E3EB961D16.png" /></p>
@@ -2324,7 +2354,7 @@ Ho fem i veiem el resultat:</p>
 <p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/100000010000012A0000013EFFF1474E49D9FB34.png" /></p>
 <p>Els únics fitxers estàtics que tenim en aquests moments pertanyen a l'app d'administrador.</p>
 <p>Cal mencionar també que la tendència actual és emmagatzemar els fitxers estàtics d'una aplicació web en servidors CDN.</p>
-<h3 id="plantilles-derror">Plantilles d'error<a class="headerlink" href="#plantilles-derror" title="Permanent link">&para;</a></h3>
+<h4 id="plantilles-derror">Plantilles d'error<a class="headerlink" href="#plantilles-derror" title="Permanent link">&para;</a></h4>
 <p>Tots hem vist el típic error 404 en teclejar incorrectament una URL en el navegador:</p>
 <p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/10000000000002000000017FA5756466870EEAE2.png" /></p>
 <p>Nosaltres, que som programadors web avantatjats, ja sabem què significa aquest codi d'error, retornat pel protocol HTTP (segons s'explica en el mòdul de Desplegament d'aplicacions web). Però un usuari normal pot arribar a alarmar-se en obtenir aquest codi, sense saber exactament què ha passat. Podríem, d'alguna manera, retornar a l'usuari un missatge d'error més significatiu que l'ajude a saber què ha passat i què pot fer per solucionar el problema? Per a això Django ens proporciona una forma fàcil de retornar respostes a l'usuari en cas que es reben determinades respostes d'error del servidor.</p>
@@ -2332,7 +2362,7 @@ Ho fem i veiem el resultat:</p>
 <p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/100000010000012B0000014A36949D70E430F4E4.png" /></p>
 <p>Descarrega aquestes plantilles d'Aules a la carpeta del projecte corresponent.</p>
 <p><strong>IMPORTANT</strong>: Aquestes pàgines d'error es mostraran quan la variable DEBUG de settings.py tinga el valor False.</p>
-<h2 id="vistes">Vistes<a class="headerlink" href="#vistes" title="Permanent link">&para;</a></h2>
+<h3 id="vistes">Vistes<a class="headerlink" href="#vistes" title="Permanent link">&para;</a></h3>
 <p>Les vistes són l'element de la nostra aplicació en què residirà la <em>lògica de negoci</em>, i es defineixen en el fitxer views.py, dins de cada app. Bàsicament prendran una petició HTTP com a entrada (<strong>request</strong>) i retornaran una resposta HTTP (<strong>response</strong>), que pot ser:</p>
 <ul>
 <li>Un document HTML</li>
@@ -2343,9 +2373,20 @@ Ho fem i veiem el resultat:</p>
 <li>O qualsevol altra cosa</li>
 </ul>
 <p>Les vistes se situen darrere de les URLs de la nostra aplicació web, com veurem en l'exemple guiat, i determinen (segons el MVC) l'aspecte visual de la resposta (mitjançant l'ús de plantilles), així com l'accés i manipulació a la BBDD.</p>
+<p>És important fer notar que les vistes en Django poden ser de dos tipus:</p>
+<ul>
+<li><strong>FBV</strong> (Function Based Views): són les primeres que es van començar a utilitzar en Django. Són més senzilles a priori, però no utilitzen els principis de la programació orientada a objectes, la qual cosa les fa més difícils d'extendre i propiciar així la reutilització de codi. Tenen l'avantatge que s'entén de forma més clara les operacions que realitza la vista.</li>
+<li><strong>CBV</strong> (Class Based Views): es tracta de classes que ja cobreixen els casos més usuals, amb la qual cosa la seua utilització tendeix a ser més simple, només és necessari extendre determinats atributs/funcions. Com a desavantatge, cal mencionar que són menys explícites en les accions (molta de la lògica s'hereta d'una classe superior). Per adaptar el seu funcionament, cal sobreescriure/extendre determinats mètodes.</li>
+</ul>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/1000000000000400000002775850B3C76DF738DE.jpg" /></p>
+<p>Veurem exemples d'ambdós tipus.</p>
+<h3 id="urls">URLs<a class="headerlink" href="#urls" title="Permanent link">&para;</a></h3>
+<p>Una URL (Uniform Resource Locator), en el món web, és una adreça que apunta a un recurs en la xarxa de xarxes (Internet). Aquest recurs pot ser de molts tipus: documents HTML, XML, JSON, CSS... contingut multimèdia com una imatge, un vídeo, etc.</p>
+<p>Particularitzant per al framework Django (i generalment per a qualsevol altre tipus de framework de desenvolupament web), les URLs representen el punt d'entrada a la lògica d'una aplicació web, darrere de la interfície d'usuari.</p>
+<p>Per tant, a les URLs s'accedeix a través de la interfície d'usuari, i donen (al seu torn), accés a la lògica de negoci (vistes). Les vistes, al seu torn, processen la petició web, realitzen accions en la BBDD (si és necessari) i determinen el tipus de resposta (en forma d'HTML, etc.) utilitzant, o no, plantilles.</p>
 <p>D'aquesta manera, haurem de construir un mapa de URLs per a la nostra aplicació web, de manera que es definisca:</p>
 <ul>
-<li>Estructura de la URL: identificació de la URL perquè la faça única de les altres.</li>
+<li>Estructura de la URL: identificació de la URL perquè siga única respecte a les altres.</li>
 <li>Paràmetres: es definiran quins paràmetres s'accepten a través de la URL, poden ser opcionals.</li>
 <li>Vista: definida en views.py, que tractarà la petició HTTP rebuda a través de la URL.</li>
 </ul>
@@ -2354,14 +2395,14 @@ Ho fem i veiem el resultat:</p>
 <li>En les plantilles HTML, per establir la navegació pel lloc web.</li>
 <li>En les pròpies vistes, per a la redirecció a altres parts de l'aplicació, després d'aplicar la lògica de negoci.</li>
 </ul>
-<h2 id="pagines-de-laplicacio">Pàgines de l'aplicació<a class="headerlink" href="#pagines-de-laplicacio" title="Permanent link">&para;</a></h2>
+<h3 id="pagines-de-laplicacio">Pàgines de l'aplicació<a class="headerlink" href="#pagines-de-laplicacio" title="Permanent link">&para;</a></h3>
 <p>En aquest apartat utilitzarem tot l'anterior per desenvolupar el portafolis. Veurem el procés per a cadascuna de les pàgines de la nostra aplicació web.</p>
 <p>Implementarem les vistes de les dues formes possibles per veure les diferències, és a dir: FBV i CBV.</p>
-<h3 id="home">Home<a class="headerlink" href="#home" title="Permanent link">&para;</a></h3>
+<h4 id="home">Home<a class="headerlink" href="#home" title="Permanent link">&para;</a></h4>
 <p>Aquesta serà la pàgina de benvinguda, amb el llistat de tots els projectes. Necessitarem una vista, que recupere de la BBDD tots els projectes i retorne la resposta en forma d'HTML acabat; la plantilla HTML (formada per codi HTML i codi incrustat) retornarà l'aspecte visual de la pàgina; finalment, la URL connectarà la ruta "/" arrel amb la vista.</p>
 <p>Després de finalitzar els següents subapartats, la pàgina de benvinguda de l'aplicació quedarà de la següent manera:</p>
 <p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/10000001000003630000026016E78569E93BD628.png" /></p>
-<h4 id="vista">Vista<a class="headerlink" href="#vista" title="Permanent link">&para;</a></h4>
+<h5 id="vista">Vista<a class="headerlink" href="#vista" title="Permanent link">&para;</a></h5>
 <p>El tipus de vista FBV (Function Based View) podria ser de la següent manera:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">django.shortcuts</span><span class="w"> </span><span class="kn">import</span> <span class="n">render</span> <span class="c1"># Per a FBV</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Projecte</span>
@@ -2392,12 +2433,12 @@ Ho fem i veiem el resultat:</p>
 <p>La variable resultant d'utilitzar l'ORM de Django "projectes" s'anomena <strong>queryset</strong>, i és un conjunt de dades agregat amb tot el necessari per capturar les dades recuperades per la consulta a BBDD.</p>
 <p>Finalment, les dues vistes fan referència a un objecte "<strong>context</strong>". Per a què serveix aquest objecte? Precisament es tracta d'un diccionari que més endavant utilitzarà la template per representar els diferents valors en la interfície d'usuari. Aquest objecte s'injecta en la template, la qual, mitjançant codi incrustat, el manipularà i representarà els seus diferents valors. Es tracta, doncs, de la forma que tenim de fer dinàmiques les diferents pàgines de la nostra aplicació web.</p>
 <p>Si no injectàrem els projectes a la template via context, es tractaria d'una pàgina estàtica, que és el propòsit de la classe TemplateView.</p>
-<h4 id="template">Template<a class="headerlink" href="#template" title="Permanent link">&para;</a></h4>
+<h5 id="template">Template<a class="headerlink" href="#template" title="Permanent link">&para;</a></h5>
 <p>La plantilla a utilitzar en aquesta pàgina s'anomena home.html, i tindrà el següent contingut:</p>
 <p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/1000000100000336000001BCA2B25A79AD91DE94.png" /></p>
 <p>En classe comentarem les diferents parts de què es compon.</p>
 <p>Com veiem, es maneja la variable "projectes" mitjançant codi incrustat. Com ha arribat ací aquesta variable? Mitjançant l'objecte "context" proporcionat per la vista (ja siga FBV o CBV).</p>
-<h4 id="url">URL<a class="headerlink" href="#url" title="Permanent link">&para;</a></h4>
+<h5 id="url">URL<a class="headerlink" href="#url" title="Permanent link">&para;</a></h5>
 <p>La configuració de la URL canviarà lleugerament si decidim implementar la vista mitjançant FBV o mitjançant CBV.</p>
 <p>Per al cas de FBV, cal afegir el següent element en la llista urlpatterns del fitxer:
 <div class="highlight"><pre><span></span><code><span class="n">path</span><span class="p">(</span><span class="s1">&#39;fbv/&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">home_view</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;home&#39;</span><span class="p">),</span>
@@ -2409,10 +2450,10 @@ Per al cas de CBV, cal substituir la línia anterior per la següent:
 <p>En ambdós casos, cal importar les vistes del fitxer views.py en el fitxer urls.py:
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">portfolioapp</span><span class="w"> </span><span class="kn">import</span> <span class="n">views</span>
 </code></pre></div></p>
-<h3 id="projecte">Projecte<a class="headerlink" href="#projecte" title="Permanent link">&para;</a></h3>
+<h4 id="projecte">Projecte<a class="headerlink" href="#projecte" title="Permanent link">&para;</a></h4>
 <p>A la pàgina de projecte s'arribarà després d'haver fet clic sobre un projecte en la llista de la pàgina de benvinguda. Per a això cal omplir l'atribut href de la línia 11 en home.html (ara té el valor "#"). Això ho farem una vegada configurem la URL per a la fitxa del projecte.</p>
 <p>Anem a configurar els fitxers que ens fan falta per a aquesta pàgina.</p>
-<h4 id="vista_1">Vista<a class="headerlink" href="#vista_1" title="Permanent link">&para;</a></h4>
+<h5 id="vista_1">Vista<a class="headerlink" href="#vista_1" title="Permanent link">&para;</a></h5>
 <p>Aquesta vista tindrà una particularitat: ha de rebre un paràmetre de la URL, que serà l'id del projecte.</p>
 <p>Una possible forma de fer-ho mitjançant FBV és la següent:
 <div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">projecte_view</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="n">pk</span><span class="p">):</span>
@@ -2437,7 +2478,7 @@ En els dos casos hem realitzat la consulta del projecte particular mitjançant P
 <blockquote>
 <p>NOTA: en Django es pot utilitzar "pk" o "id" indistintament per referir-nos a l'identificador de clau única assignat automàticament a cada nou objecte que es crea en una taula de BBDD. Totes les taules generades per Django tindran una columna "id" a la qual ens podem referir també per "pk".</p>
 </blockquote>
-<h4 id="template_1">Template<a class="headerlink" href="#template_1" title="Permanent link">&para;</a></h4>
+<h5 id="template_1">Template<a class="headerlink" href="#template_1" title="Permanent link">&para;</a></h5>
 <p>La plantilla que podem utilitzar és la següent:</p>
 <p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/10000001000003B6000001897714B22FD715051A.png" /></p>
 <p><strong>NOTA</strong>: l'href de la línia 7 està incomplet, ho resoldrem en un apartat més endavant.</p>
@@ -2446,7 +2487,7 @@ En els dos casos hem realitzat la consulta del projecte particular mitjançant P
 </code></pre></div>
 <strong>NOTA</strong>: Utilitzem un <strong>punt</strong> "." per passar d'un objecte relacionat a un altre. El mateix ocorre per a l'atribut "src" de la imatge, que ha de fer referència a la URL de la imatge associada al projecte. Aconseguim accedir a l'atribut "url" de la imatge partint del projecte, passant al seu atribut "imatge" (que és al seu torn un altre objecte amb diferents atributs) i recuperant finalment l'atribut "url" d'aquesta imatge.</p>
 <p><strong>NOTA</strong>: En la template aquesta expressió no acaba amb els <strong>parèntesis</strong>, com sí succeiria si estiguérem cridant aquesta funció de l'ORM des de, per exemple, una vista.</p>
-<h4 id="url_1">URL<a class="headerlink" href="#url_1" title="Permanent link">&para;</a></h4>
+<h5 id="url_1">URL<a class="headerlink" href="#url_1" title="Permanent link">&para;</a></h5>
 <p>Finalment, configurem la URL per a aquesta pàgina.</p>
 <p>Per al cas de FBV afegim la següent línia a la llista urlpatterns de urls.py:
 <div class="highlight"><pre><span></span><code><span class="n">path</span><span class="p">(</span><span class="s1">&#39;projecte_fbv/&lt;int:pk&gt;/&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">projecte_view</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;projecte&#39;</span><span class="p">),</span>
@@ -2460,9 +2501,9 @@ I per a CBV:
 </code></pre></div>
 En haver assignat un valor a l'atribut "name" de la URL, som capaços de referenciar aquesta URL mitjançant el seu nom 'projecte', siga quina siga la seua ruta.</p>
 <p>NOTA: Segons la sintaxi de Python, es requereixen cometes simples dins de cometes dobles, o viceversa.</p>
-<h3 id="contacte">Contacte<a class="headerlink" href="#contacte" title="Permanent link">&para;</a></h3>
+<h4 id="contacte">Contacte<a class="headerlink" href="#contacte" title="Permanent link">&para;</a></h4>
 <p>Aquesta serà la vista més senzilla de totes, perquè no necessitarem consultar cap dada de la BBDD, per tant no passarem cap valor en el context.</p>
-<h4 id="vista_2">Vista<a class="headerlink" href="#vista_2" title="Permanent link">&para;</a></h4>
+<h5 id="vista_2">Vista<a class="headerlink" href="#vista_2" title="Permanent link">&para;</a></h5>
 <p>Si optem per FBV:
 <div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">contacte_view</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
     <span class="n">context</span> <span class="o">=</span> <span class="p">{}</span>
@@ -2473,18 +2514,18 @@ En cas de CBV:
     <span class="n">template_name</span> <span class="o">=</span> <span class="s1">&#39;portfolio/contacte.html&#39;</span>
 </code></pre></div>
 Aquest és un clar exemple en què CBV és molt adequat quan el tipus de vista que utilitzem s'ajusta molt al que pretenem fer, i només caldrà fer unes poques modificacions, si és necessari.</p>
-<h4 id="template_2">Template<a class="headerlink" href="#template_2" title="Permanent link">&para;</a></h4>
+<h5 id="template_2">Template<a class="headerlink" href="#template_2" title="Permanent link">&para;</a></h5>
 <p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/100000010000048D00000184B2DD3650777E7643.png" /></p>
 <p>Modifica el valor "Nom i cognoms" del h3 per introduir les teues dades particulars.</p>
 <p><strong>ACTIVITAT DE CLASSE</strong>: passa com a context a la template el teu nom i cognoms en forma d'objecte, i modifica la template perquè en l'h3 mostre el teu nom i cognoms, passats per context.</p>
-<h4 id="url_2">URL<a class="headerlink" href="#url_2" title="Permanent link">&para;</a></h4>
+<h5 id="url_2">URL<a class="headerlink" href="#url_2" title="Permanent link">&para;</a></h5>
 <p>Per al cas de FBV:
 <div class="highlight"><pre><span></span><code><span class="n">path</span><span class="p">(</span><span class="s1">&#39;contacte/&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">contacte_view</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;contacte&#39;</span><span class="p">),</span>
 </code></pre></div></p>
 <p>Per a CBV:
 <div class="highlight"><pre><span></span><code><span class="n">path</span><span class="p">(</span><span class="s1">&#39;contacte/&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">ContacteView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;contacte&#39;</span><span class="p">),</span>
 </code></pre></div></p>
-<h3 id="filtrat-per-categoria">Filtrat per categoria<a class="headerlink" href="#filtrat-per-categoria" title="Permanent link">&para;</a></h3>
+<h4 id="filtrat-per-categoria">Filtrat per categoria<a class="headerlink" href="#filtrat-per-categoria" title="Permanent link">&para;</a></h4>
 <p>Anem a resoldre el filtrat per categoria. Volem que en fer clic sobre alguna de les categories de la fitxa del projecte, anem a la pàgina d'inici, i es mostren només els projectes amb eixa categoria.</p>
 <p>Per a això, hem d'enviar a la URL "home" l'id de la categoria. Primer completem l'atribut href de la línia 7 de projecte.html de la següent manera:
 <div class="highlight"><pre><span></span><code>href=&quot;{% url &#39;home&#39; categoria.id %}&quot;
@@ -2496,7 +2537,7 @@ A continuació hem de crear una nova URL que puga rebre el paràmetre de categor
 <p>Finalment, en la vista de home hem de rebre el paràmetre, i filtrar els projectes, no prendre'ls tots, depenent de si s'ha passat el paràmetre cat_id:</p>
 <p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/100000010000040B000000B4E69A8FA5D370125B.png" /></p>
 <p>NOTA: kwargs (key-word arguments) és un diccionari (del tipus clau:valor) mitjançant el qual es poden passar paràmetres als mètodes. És una convenció pròpia de Python, i en aquest <a href="https://python-intermedio.readthedocs.io/es/latest/args_and_kwargs.html#uso-de-kwargs">enllaç</a> pots consultar més detalls. Per recuperar un valor del diccionari podríem escriure-ho de la forma kwargs['cat_id'], però utilitzar el mètode get és més convenient per evitar excepcions si eixa clau no es trobara en el diccionari.</p>
-<h3 id="desplegable-de-categories-inclusion-tags">Desplegable de categories: inclusion tags<a class="headerlink" href="#desplegable-de-categories-inclusion-tags" title="Permanent link">&para;</a></h3>
+<h4 id="desplegable-de-categories-inclusion-tags">Desplegable de categories: inclusion tags<a class="headerlink" href="#desplegable-de-categories-inclusion-tags" title="Permanent link">&para;</a></h4>
 <p>Ens queda un detall, i és que volem que el desplegable de categories ens mostre totes les categories i puguem filtrar en fer clic sobre alguna d'elles, però de manera dinàmica segons els valors que es troben en BBDD.</p>
 <p>Però existeix un problema, i és que el dropdown de categories està en el template header.html, i aquest template no està associat directament a cap vista, que és precisament l'element que li proporcionaria les dades. Llavors: com podrem proporcionar a una template dades sense passar per una vista? Per a això s'utilitzen els anomenats <a href="https://docs.djangoproject.com/en/5.2/howto/custom-template-tags/#inclusion-tags">inclusion tags</a>.</p>
 <p>En primer lloc, hem de crear un <strong>mètode</strong> la funció del qual serà retornar un diccionari. Aquest diccionari servirà de <strong>context</strong> per a l'inclusion tag. Per a això, crearem una estructura de directoris per a emmagatzemar els possibles inclusion tags de l'app portfolioapp, de la següent manera:</p>
@@ -2520,7 +2561,7 @@ A continuació hem de crear una nova URL que puga rebre el paràmetre de categor
 <p>Finalment, l'únic que hem de fer és carregar aquest inclusion tag en header.html, i referenciar-lo (línies 1 i 12):</p>
 <p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/10000001000003C40000014DD598709AA87AFCE9.png" /></p>
 <p>En refrescar l'aplicació i fer clic sobre el dropdown, ens apareixeran totes les categories que hem donat d'alta mitjançant l'administrador de Django.</p>
-<h3 id="navegacio">Navegació<a class="headerlink" href="#navegacio" title="Permanent link">&para;</a></h3>
+<h4 id="navegacio">Navegació<a class="headerlink" href="#navegacio" title="Permanent link">&para;</a></h4>
 <p>És el moment d'enllaçar les opcions de navegació de l'aplicació, una vegada tenim configurades totes les URLs.</p>
 <p>En header.html, completem els tres atributs href de la següent manera (línies 4, 10 i 14):</p>
 <p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud5/1000000100000447000001556AEB04C9B4C9093D.png" /></p>

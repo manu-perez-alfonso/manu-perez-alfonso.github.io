@@ -18,7 +18,7 @@
         <link rel="prev" href="../ud5/">
       
       
-        <link rel="next" href="../ud7/">
+        <link rel="next" href="../ud8/">
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
@@ -76,6 +76,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#ud6-multicapa-vistes-i-controladors-esdeveniments-i-interactivitat" class="md-skip">
+          Salta el contingut
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -618,6 +623,21 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    UD6. (Multicapa) Vistes i controladors, esdeveniments i interactivitat
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -631,6 +651,256 @@
 
       </a>
       
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Taula de continguts">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Taula de continguts
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccio" class="md-nav__link">
+    <span class="md-ellipsis">
+      INTRODUCCIÓ
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#avaluacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      AVALUACIÓ
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vistes-dedicio-generiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vistes d'edició genèriques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vistes d&#39;edició genèriques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#createview" class="md-nav__link">
+    <span class="md-ellipsis">
+      CreateView
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updateview" class="md-nav__link">
+    <span class="md-ellipsis">
+      UpdateView
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleteview" class="md-nav__link">
+    <span class="md-ellipsis">
+      DeleteView
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redireccions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Redireccions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixins" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mixins
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mixins">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#messages-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      Messages framework
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixins-personalitzats" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mixins personalitzats
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#personalitzacio-de-vistes-generiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Personalització de vistes genèriques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Personalització de vistes genèriques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#form_valid" class="md-nav__link">
+    <span class="md-ellipsis">
+      form_valid
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="form_valid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tags-de-missatges" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tags de missatges
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formularis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formularis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Formularis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gestio-de-projectes-amb-modelform" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestió de projectes amb ModelForm
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestió de projectes amb ModelForm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creacio-de-la-classe-projecteform" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creació de la classe ProjecteForm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#layout-del-formulari" class="md-nav__link">
+    <span class="md-ellipsis">
+      Layout del formulari
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metode-clean" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mètode clean
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-based-views" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function based views
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interactivitat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interactivitat
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interactivitat">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#django-crispy-forms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Django Crispy Forms
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -643,7 +913,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ud7/" class="md-nav__link">
+      <a href="../../../../modulos/01-Servidor/ud7.md" class="md-nav__link">
         
   
   
@@ -1109,6 +1379,247 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Taula de continguts
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccio" class="md-nav__link">
+    <span class="md-ellipsis">
+      INTRODUCCIÓ
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#avaluacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      AVALUACIÓ
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vistes-dedicio-generiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vistes d'edició genèriques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vistes d&#39;edició genèriques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#createview" class="md-nav__link">
+    <span class="md-ellipsis">
+      CreateView
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updateview" class="md-nav__link">
+    <span class="md-ellipsis">
+      UpdateView
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleteview" class="md-nav__link">
+    <span class="md-ellipsis">
+      DeleteView
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redireccions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Redireccions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixins" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mixins
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mixins">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#messages-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      Messages framework
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixins-personalitzats" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mixins personalitzats
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#personalitzacio-de-vistes-generiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Personalització de vistes genèriques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Personalització de vistes genèriques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#form_valid" class="md-nav__link">
+    <span class="md-ellipsis">
+      form_valid
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="form_valid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tags-de-missatges" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tags de missatges
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formularis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formularis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Formularis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gestio-de-projectes-amb-modelform" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestió de projectes amb ModelForm
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestió de projectes amb ModelForm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creacio-de-la-classe-projecteform" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creació de la classe ProjecteForm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#layout-del-formulari" class="md-nav__link">
+    <span class="md-ellipsis">
+      Layout del formulari
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metode-clean" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mètode clean
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-based-views" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function based views
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interactivitat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interactivitat
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interactivitat">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#django-crispy-forms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Django Crispy Forms
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1124,9 +1635,549 @@
 
 
 
-  <h1>UD6. (Multicapa) Vistes i controladors, esdeveniments i interactivitat</h1>
+<h1 id="ud6-multicapa-vistes-i-controladors-esdeveniments-i-interactivitat">UD6: MULTICAPA - VISTES I CONTROLADORS, ESDEVENIMENTS I INTERACTIVITAT<a class="headerlink" href="#ud6-multicapa-vistes-i-controladors-esdeveniments-i-interactivitat" title="Permanent link">&para;</a></h1>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud6/100000010000020A000001576ACAE4B0B36135B8.png" /></p>
+<h2 id="introduccio">INTRODUCCIÓ<a class="headerlink" href="#introduccio" title="Permanent link">&para;</a></h2>
+<p>En aquesta unitat introduirem la creació de formularis amb Django per tal de manipular les dades de la nostra aplicació web. Pel camí descobrirem nous tipus de vistes (CBV) que automatitzen moltes de les operacions que hem de realitzar. També aprendrem a utilitzar apps (o mòduls) desenvolupats per tercers per personalitzar més convenientment els nostres formularis i afegir interactivitat des del servidor.</p>
+<p>Tot això ho articularem mitjançant l'exemple guiat del portfolio.</p>
+<p>Quant a les activitats, introduirem l'ús de formularis al projecte iniciat en la unitat anterior, entre altres aspectes.</p>
+<h2 id="avaluacio">AVALUACIÓ<a class="headerlink" href="#avaluacio" title="Permanent link">&para;</a></h2>
+<p>El present document, juntament amb el seu corresponent butlletí d'activitats (publicat addicionalment), cobreix els següents criteris d'avaluació:</p>
+<table>
+<thead>
+<tr>
+<th>RESULTATS D'APRENENTATGE</th>
+<th>CRITERIS D'AVALUACIÓ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RA5. Desenvolupa aplicacions Web identificant i aplicant mecanismes per a separar el codi de presentació de la lògica de negoci.</td>
+<td>c) S'han utilitzat objectes i controls en el servidor per a generar l'aspecte visual de l'aplicació web en el client.<br>d) S'han utilitzat formularis generats de manera dinàmica per a respondre als esdeveniments de l'aplicació Web.<br>h) S'ha provat i documentat el codi.</td>
+</tr>
+<tr>
+<td>RA6. Desenvolupa aplicacions web d'accés a magatzems de dades, aplicant mesures per a mantindre la seguretat i la integritat de la informació</td>
+<td>f) S'han creat aplicacions web que permeten l'actualització i l'eliminació d'informació disponible en una base de dades.</td>
+</tr>
+<tr>
+<td>RA8. Genera pàgines web dinàmiques analitzant i utilitzant tecnologies i frameworks del servidor web que afegeixen codi al llenguatge de marques.</td>
+<td>a) S'han identificat les diferències entre l'execució de codi en el servidor i en el client web.<br>b) S'han reconegut els avantatges d'unir ambdues tecnologies en el procés de desenvolupament de programes.<br>c) S'han identificat les tecnologies i frameworks relacionades amb la generació per part del servidor de pàgines web amb guions incrustats.<br>d) S'han utilitzat aquestes tecnologies i frameworks per a generar pàgines web que inclouen interacció amb l'usuari.<br>e) S'han utilitzat aquestes tecnologies i frameworks, per a generar pàgines web que inclouen verificació de formularis.<br>f) S'han utilitzat aquestes tecnologies i frameworks per a generar pàgines web que inclouen modificació dinàmica del seu contingut i la seua estructura.<br>g) S'han aplicat aquestes tecnologies i frameworks en la programació d'aplicacions web.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="vistes-dedicio-generiques">Vistes d'edició genèriques<a class="headerlink" href="#vistes-dedicio-generiques" title="Permanent link">&para;</a></h2>
+<p>En la unitat anterior vam veure que existeixen dos tipus de vistes: FBV i CBV. En aquesta unitat aprofundirem més en les segones.</p>
+<h3 id="createview">CreateView<a class="headerlink" href="#createview" title="Permanent link">&para;</a></h3>
+<p>Aquesta vista crea un formulari per a nosaltres per a la creació d'un objecte, i s'encarrega també de totes les validacions i els seus corresponents missatges.</p>
+<p>Anem a crear una vista d'aquest tipus per a crear nous projectes en el portfolio. En views.py, inserim el següent codi, per a la creació de nous projectes (importem abans la classe CreateView):
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">ProyectoCreateView</span><span class="p">(</span><span class="n">CreateView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Proyecto</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;titulo&#39;</span><span class="p">,</span> <span class="s1">&#39;descripcion&#39;</span><span class="p">,</span> <span class="s1">&#39;fecha_creacion&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;categorias&#39;</span><span class="p">,</span> <span class="s1">&#39;imagen&#39;</span><span class="p">]</span>
+</code></pre></div>
+A continuació creem una plantilla en una carpeta anomenada "portfolioapp", dins de la carpeta "templates", amb el nom "proyecto_form.html", amb el següent contingut:
+<div class="highlight"><pre><span></span><code>{% extends &#39;portfolio/base.html&#39; %}
 
+{% block content %}
+&lt;div class=&quot;container&quot;&gt;
+    &lt;h2&gt;Creació d&#39;un nou projecte&lt;/h2&gt;
+    &lt;form method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;{% csrf_token %}
+        {{ form.as_p }}
+        &lt;input type=&quot;submit&quot; value=&quot;Guardar&quot;&gt;
+    &lt;/form&gt;
+&lt;/div&gt;
+{% endblock %}
+</code></pre></div>
+<em>ACTIVITAT</em>: investiga què significa csrf_token i per què l'hem d'incloure sempre al crear un formulari.</p>
+<p>Finalment, creem una nova URL:
+<div class="highlight"><pre><span></span><code>path(&#39;proyecto_create/&#39;, views.ProyectoCreateView.as_view(), name=&#39;proyecto_create&#39;)
+</code></pre></div></p>
+<p>Anem al navegador, i introduïm la URL segons l'estructura que hem configurat i, obtenim el formulari amb tots els seus camps!</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud6/100000010000034500000296D777C09C0870A895.png" /></p>
+<p>Emocionant, però què ha passat darrere les cortines perquè amb tan poques línies hàgem obtingut un formulari funcional? Ha ocorregut el següent:</p>
+<ul>
+<li>CreateView ha derivat un formulari basant-se en el model Proyecto, prenent els camps que li hem passat en la llista fields.</li>
+<li>Hem utilitzat aquest formulari en el template "proyecto_form.html". La vista se l'ha passat automàticament per context, sense que nosaltres hàgim configurat res.</li>
+<li>Com sap Django quina plantilla ha d'utilitzar per a la nova vista? Ho sap perquè hem deixat la plantilla sota el directori "portfolioapp" en templates, amb el mateix nom que l'app que conté la vista. A més, hem seguit la nomenclatura [nom model]_form.html, és a dir projecte_form.html, amb la qual cosa Django ho ha sabut trobar.</li>
+</ul>
+<p>Anem a crear el nostre primer projecte. Premem en Guardar, i obtenim el següent:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud6/1000000100000549000001747916B1BBB020AEA3.png" /></p>
+<p>Django ens avisa que no hem configurat la vista per a redireccionar la navegació després de crear un projecte satisfactòriament. Malgrat l'error, realment sí s'ha creat el projecte, ho podem veure a home:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud6/10000001000004560000028854444E44C7017F05.png" /></p>
+<p>Per tant, anem a modificar la vista de la següent forma, per a definir un atribut anomenat success_url:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">django.urls</span><span class="w"> </span><span class="kn">import</span> <span class="n">reverse_lazy</span>
+<span class="o">...</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ProyectoCreateView</span><span class="p">(</span><span class="n">CreateView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Proyecto</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;titulo&#39;</span><span class="p">,</span> <span class="s1">&#39;descripcion&#39;</span><span class="p">,</span> <span class="s1">&#39;fecha_creacion&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;categorias&#39;</span><span class="p">,</span> <span class="s1">&#39;imagen&#39;</span><span class="p">]</span>
+    <span class="n">success_url</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s1">&#39;home&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p>El nom 'home' ve del nom que li vam donar a la URL de la vista HomeView, creada en la unitat anterior.</p>
+<p>Si creem ara un nou projecte, en salvar els canvis ens redireccionarà a la pàgina d'inici.</p>
+<h3 id="updateview">UpdateView<a class="headerlink" href="#updateview" title="Permanent link">&para;</a></h3>
+<p>Anem en aquest apartat a implementar l'actualització del projecte. Per a això, utilitzem la vista genèrica UpdateView (la importem prèviament), i afegim una vista de la següent manera:</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">ProyectoUpdateView</span><span class="p">(</span><span class="n">UpdateView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Proyecto</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;titulo&#39;</span><span class="p">,</span> <span class="s1">&#39;descripcion&#39;</span><span class="p">,</span> <span class="s1">&#39;fecha_creacion&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;categorias&#39;</span><span class="p">,</span> <span class="s1">&#39;imagen&#39;</span><span class="p">]</span>
+    <span class="n">success_url</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s1">&#39;home&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p>La URL serà la següent:
+<div class="highlight"><pre><span></span><code><span class="n">path</span><span class="p">(</span><span class="s1">&#39;proyecto_update/&lt;int:pk&gt;/&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">ProyectoUpdateView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;proyecto_update&#39;</span><span class="p">),</span>
+</code></pre></div></p>
+<p>Provem la URL amb un ID de prova i veiem que recupera automàticament les dades del projecte amb aquest ID.</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud6/10000001000002F500000286DFDD63288A8A350D.png" /></p>
+<p>Cal notar que no hem especificat cap plantilla, ha seguit prenent la plantilla projecte_form.php que ja s'havia utilitzat per a la CreateView.</p>
+<p>Hi ha una cosa en el formulari que no ens acaba de agradar, i és el text del botó. Anem a modificar la plantilla perquè, en funció de que estiguem en mode creació o edició, mostri "Crear" o "Actualizar", perquè sigui més orientatiu per a l'usuari. Això ho podem aconseguir comprovant si existeix una variable "object" en el context de la plantilla, passat per UpdateView. Així, modificaríem el codi de la plantilla lleugerament perquè el botó que dispara el formulari quedi:
+<div class="highlight"><pre><span></span><code>&lt;input type=&quot;submit&quot; value=&quot;{{object|yesno:&#39;Actualizar,Crear&#39;}}&quot;&gt;
+</code></pre></div></p>
+<p>De la mateixa forma, modifiquem l'element h2:
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>{{object|yesno:&#39;Actualizar projecte,Creació d&#39;un nou projecte&#39;}}<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+</code></pre></div></p>
+<p>Hem utilitzat l'operador ternari
+<a href="https://docs.djangoproject.com/en/4.2/ref/templates/builtins/#yesno">yesno</a>
+en la plantilla.</p>
+<p>Anem a modificar la pantalla d'inici perquè, en prémer en un dels projectes, vagi al formulari d'edició. A la següent unitat configurarem l'aplicació perquè només es pugui editar un projecte si l'usuari té privilegis per a això.</p>
+<p>L'únic que hem de fer és canviar lleugerament la línia 12 de home.html per canviar el nom de la URL a la qual apunta l'enllaç de cada projecte:
+<div class="highlight"><pre><span></span><code>&lt;a href=&quot;{% url &#39;proyecto_update&#39; pk=proyecto.id %}&quot; class=&quot;p-5&quot;&gt;
+</code></pre></div></p>
+<p>Provem que ara accedim al formulari d'edició després de prémer sobre un dels projectes.</p>
+<h3 id="deleteview">DeleteView<a class="headerlink" href="#deleteview" title="Permanent link">&para;</a></h3>
+<p>Ara anem a implementar una vista que ens permeti esborrar un projecte determinat. Per a això anem a utilitzar la vista genèrica DeleteView. L'operació es durà a terme en dos passos:</p>
+<p>1. En el formulari d'edició del projecte tindrem un botó Eliminar, només habilitat si el formulari està en mode edició, no creació.</p>
+<p>2. Navegació a una pantalla de confirmació, on confirmarem que realment volem esborrar el registre.</p>
+<p>Anem a això. Configurem la vista d'eliminació de la següent manera:</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">ProyectoDeleteView</span><span class="p">(</span><span class="n">DeleteView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Proyecto</span>
+    <span class="n">success_url</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s1">&#39;home&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p>No és necessari especificar l'atribut template_name, ja que el nom de la plantilla segueix la nomenclatura per defecte
+(proyecto_confirm_delete.html, definida més avall).</p>
+<p>I la seva corresponent URL:</p>
+<div class="highlight"><pre><span></span><code><span class="n">path</span><span class="p">(</span><span class="s1">&#39;proyecto_delete/&lt;int:pk&gt;/&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">ProyectoDeleteView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;proyecto_delete&#39;</span><span class="p">),</span>
+</code></pre></div>
+<p>La plantilla, amb nom "proyecto_confirm_delete.html", serà la següent:
+<div class="highlight"><pre><span></span><code>{% extends &#39;portfolio/base.html&#39; %}
 
+{% block content %}
+&lt;div class=&quot;container&quot;&gt;
+    &lt;h2&gt;Eliminar un projecte&lt;/h2&gt;
+    &lt;form method=&quot;post&quot;&gt;{% csrf_token %}
+        &lt;p&gt;Està segur que vol eliminar aquest projecte &quot;{{ object }}&quot;?&lt;/p&gt;
+        {{ form }}
+        &lt;input type=&quot;submit&quot; value=&quot;Confirmar&quot; class=&quot;btn btn-danger&quot;&gt;
+    &lt;/form&gt;
+&lt;/div&gt;
+{% endblock %}
+</code></pre></div></p>
+<p>Queda per crear el botó Eliminar en el formulari del projecte, i només s'habilitarà quan estigui en mode edició (el projecte ja ha estat creat). Com sabem si el formulari està en mode creació o edició? Molt fàcil: la vista UpdateView passa a la plantilla, com a part del context, un objecte "object" amb tots els atributs del projecte. Així, només hem de condicionar la visualització del botó Eliminar quan object no estigui buit. D'aquesta forma, afegim el següent a projecte_form.html, després de l'element form:
+<div class="highlight"><pre><span></span><code>{% if object %}
+&lt;a class=&quot;btn btn-danger&quot; href=&quot;{% url &#39;proyecto_delete&#39; object.id %}&quot;&gt; Eliminar &lt;/a&gt;
+{% endif %}
+</code></pre></div></p>
+<p>Ja tenim el botó Eliminar en el formulari d'edició. Si premem, ens portarà a la següent pàgina:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud6/10000001000003020000013875DA150CB4BFB623.png" /></p>
+<p>No ens apareix correctament el nom del projecte,
+perquè no hem configurat la seva <strong>representació textual</strong> mitjançant la
+funció <strong>str</strong> en la configuració del model Proyecto.</p>
+<p>ACTIVITAT: configura <strong>str</strong> en Proyecto, com vas fer en les
+activitats de la unitat anterior.</p>
+<p>Després de confirmar l'eliminació, naveguem automàticament a la pàgina d'inici i comprovem que s'ha eliminat el projecte.</p>
+<h3 id="redireccions">Redireccions<a class="headerlink" href="#redireccions" title="Permanent link">&para;</a></h3>
+<p>Ara tenim una forma de crear, actualitzar i eliminar projectes, però
+cada vegada que realitzem una acció, ens redirecciona a la pantalla de
+benvinguda. Volem canviar això de manera que, quan realitzem una
+operació, es redireccioni automàticament a una URL que tingui sentit.
+Podríem dissenyar les següents accions perquè la navegació sigui el
+més lògica possible:</p>
+<ul>
+<li>Anar a pantalla d'edició després de la creació d'un projecte.</li>
+<li>Anar a la pàgina de benvinguda després de l'edició exitosa d'un projecte.</li>
+<li>Anar a la pàgina de benvinguda després de l'eliminació d'un projecte.</li>
+</ul>
+<p>Les dues últimes les tenim resoltes, falta per solucionar la primera.</p>
+<p>Tenim diferents formes de fer el mateix:</p>
+<ul>
+<li>Mitjançant el mètode get_success_url en la vista, amb el qual podem
+    construir dinàmicament la URL a la qual redireccionar, en funció de
+    cada \"id\" de projecte.</li>
+<li>Mitjançant el mètode
+    <a href="https://docs.djangoproject.com/en/4.2/ref/models/instances/#django.db.models.Model.get_absolute_url">get_absolute_url</a>
+    en el model, que s'utilitzaria per redireccionar després de crear o
+    actualitzar un objecte d'aquest model.</li>
+</ul>
+<p>Com només volem modificar el comportament de la creació,
+substituïm la vista ProyectoCreateView per la següent versió:
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">ProyectoCreateView</span><span class="p">(</span><span class="n">CreateView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Proyecto</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;titulo&#39;</span><span class="p">,</span> <span class="s1">&#39;descripcion&#39;</span><span class="p">,</span> <span class="s1">&#39;fecha_creacion&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;categorias&#39;</span><span class="p">,</span> <span class="s1">&#39;imagen&#39;</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_success_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">object</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">object</span>
+        <span class="k">return</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s1">&#39;proyecto_update&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;pk&#39;</span><span class="p">:</span> <span class="nb">object</span><span class="o">.</span><span class="n">id</span><span class="p">})</span>
+</code></pre></div></p>
+<p>Cal fer notar que ja disposem de l'objecte creat (a la BBDD)
+mitjançant self.object per a quan s'executa la funció get_success_url.
+Això ens permet una gran varietat de possibilitats, ja que podríem
+redireccionar la navegació de multitud de formes (a diferents vistes,
+amb diferents paràmetres) depenent de les característiques de l'objecte
+creat, o d'altres factors. Podríem, per exemple, redireccionar la
+navegació a la pàgina d'inici i passar un paràmetre per filtrar tots
+els projectes de l'any que acabem de crear. Ho deixarem així de moment.</p>
+<h3 id="mixins">Mixins<a class="headerlink" href="#mixins" title="Permanent link">&para;</a></h3>
+<p>Els mixins són una forma de reutilització de codi en Django, de manera
+que podem definir una vista que hereti d'una altra vista genèrica, i
+aportarle funcionalitats extra mitjançant mixins.</p>
+<h4 id="messages-framework">Messages framework<a class="headerlink" href="#messages-framework" title="Permanent link">&para;</a></h4>
+<p>Anem a utilitzar com a exemple el mixin SuccessMessageMixin, que ens va a
+permetre mostrar missatges de confirmació després de realitzar qualsevol
+acció. La documentació sobre això la pots trobar en aquest
+<a href="https://docs.djangoproject.com/en/5.2/ref/contrib/messages/">enllaç</a>.</p>
+<p>En primer lloc, la documentació ens diu que, per defecte, la
+configuració per a aquesta funcionalitat ja està preestablerta en
+settings.py. Anem a la part que ens interessa, que és la de
+<a href="https://docs.djangoproject.com/en/5.2/ref/contrib/messages/#adding-messages-in-class-based-views">agregar missatges en
+CBV</a>.
+En views.py importem la classe SuccessMessageMixin com ens indica en
+l'exemple del enllaç, i modifiquem la vista ProyectoCreateView perquè
+quedi de la següent manera:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">django.contrib.messages.views</span><span class="w"> </span><span class="kn">import</span> <span class="n">SuccessMessageMixin</span>
+<span class="o">...</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ProyectoCreateView</span><span class="p">(</span><span class="n">SuccessMessageMixin</span><span class="p">,</span> <span class="n">CreateView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Proyecto</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;titulo&#39;</span><span class="p">,</span> <span class="s1">&#39;descripcion&#39;</span><span class="p">,</span> <span class="s1">&#39;fecha_creacion&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;categorias&#39;</span><span class="p">,</span> <span class="s1">&#39;imagen&#39;</span><span class="p">]</span>
+    <span class="n">success_message</span> <span class="o">=</span> <span class="s2">&quot;Projecte creat satisfactòriament&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_success_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">object</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">object</span>
+        <span class="k">return</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s1">&#39;proyecto_update&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;pk&#39;</span><span class="p">:</span> <span class="nb">object</span><span class="o">.</span><span class="n">id</span><span class="p">})</span> 
+</code></pre></div>
+<p>NOTA: és important situar els mixins a l'esquerra de la vista base.
+Els atributs i mètodes es resolen d'esquerra a dreta. En cas de que les
+classes de les que s'hereda tinguin un mateix nom d'un atribut i/o
+mètode, el de més a l'esquerra s'agafaria abans que el de la classe de
+més a la dreta, segons la llista especificada. És per això que la classe
+base es situa més a la dreta.</p>
+<p>Està tot llest ja. Només ens queda poder mostrar per pantalla els
+missatges generats, com es mostra en aquest
+<a href="https://docs.djangoproject.com/en/4.2/ref/contrib/messages/#displaying-messages">apartat</a>
+de la documentació. Per a això, podem reservar un espai en la
+plantilla base de l'aplicació, que contingui el següent bloc (abans
+del bloc "content"):</p>
+<div class="highlight"><pre><span></span><code>{% block messages %}
+    {% if messages %}
+        {% for message in messages %}
+        &lt;div {% if message.tags %} class=&quot;alert alert-{{ message.tags }} alert-dismissible fade show&quot; {%endif %} role=&quot;alert&quot;&gt;
+            {{ message }}
+            &lt;button type=&quot;button&quot; class=&quot;btn-close&quot; data-bs-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;/button&gt;
+        &lt;/div&gt;
+        {% endfor %}
+    {% endif %}
+{% endblock messages %}
+</code></pre></div>
+<p>En crear un nou projecte, se'ns mostrarà el següent missatge:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud6/1000000100000486000003766548A6CEA97FA276.png" /></p>
+<p>És important notar que els missatges es mostraran en finalitzar l'acció
+que hem realitzat, però quan ja hàgim carregat la següent pàgina.
+Per tant, la navegació ha de realitzar-se de manera que tingui sentit
+per a l'usuari el missatge obtingut, i la pàgina actual en la que ens
+troben.</p>
+<p>ACTIVITAT: Afegeix aquesta funcionalitat a la vista ProyectoUpdateView.</p>
+<p>En aquests moments el missatge mostrat és estàtic, sempre es mostraria
+el mateix. Però podríem fer que es mostrés un missatge diferent, per
+exemple, en funció d'algun dels atributs del projecte (el seu nom,
+la seva representació textual, etc). Per a poder fer això, n'hi ha prou
+amb sobreescriure el mètode get_success_message de la classe (CreateView o
+UpdateView). Un exemple pot ser el següent, que fa que es mostri
+un missatge amb un text fix, combinat amb la representació textual
+del projecte:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_success_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cleaned_data</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s2">&quot;Projecte &#39;</span><span class="si">{}</span><span class="s2">&#39; actualitzat satisfactòriament&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">object</span><span class="p">))</span>
+</code></pre></div>
+<p>En aquest <a href="https://www.w3schools.com/python/ref_string_format.asp">enllaç</a>
+tens una explicació més detallada de què fa <strong>format</strong>.</p>
+<p>Com a apunt final, anem a fer un petit canvi en la configuració
+de settings.py. Simplement afegeix aquesta importació:
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">django.contrib.messages</span><span class="w"> </span><span class="kn">import</span> <span class="n">constants</span> <span class="k">as</span> <span class="n">messages</span>
+</code></pre></div>
+I afegeix aquesta línia al final:
+<div class="highlight"><pre><span></span><code><span class="n">MESSAGE_TAGS</span> <span class="o">=</span> <span class="p">{</span><span class="n">messages</span><span class="o">.</span><span class="n">ERROR</span><span class="p">:</span> <span class="s1">&#39;danger&#39;</span><span class="p">}</span>
+</code></pre></div>
+Més endavant en aquest document s'explicarà el per què d'aquest canvi.</p>
+<h4 id="mixins-personalitzats">Mixins personalitzats<a class="headerlink" href="#mixins-personalitzats" title="Permanent link">&para;</a></h4>
+<p>La possibilitat d'utilitzar mixins suposa un reaprofitament
+importantíssim de codi. Podem crear petites càpsules de codi
+identificades amb un nom, i anar dotant a les nostres classes de
+característiques addicionals. Al llegir la línia inicial d'una classe (els
+seus mixins i classe base de la qual hereta) hauríem de poder saber quin va a
+ser el propòsit de la classe.</p>
+<p>En aquest apartat anem a crear un mixin nou. Per a això, primer
+creem un fitxer mixins.py en l'app portfolioapp:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud6/10000001000000BD0000011F7C2E7BE79FC00E43.png" /></p>
+<p>Crear un mixin és crear una classe nova. Per a crear
+una classe des de zero, heredem de la classe "object", encara que podem
+partir d'altres classes.</p>
+<p>Observant les nostres vistes, què podríem portar-nos a un mixin? potser
+les diferents opcions són argumentables, però amb el codi que hem
+generat fins ara, es repeteixen alguns atributs de les classes
+ProyectoCreateView i ProyectoUpdateView, i l'herència de
+SuccessMessageMixin. Anem per tant a crear un mixin que agrupi tot
+això, i a més a redireccionar les dues accions (creació i
+actualització) a la pantalla d'actualització. En mixins.py:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">django.contrib.messages.views</span><span class="w"> </span><span class="kn">import</span> <span class="n">SuccessMessageMixin</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Proyecto</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">ProyectoMixin</span><span class="p">(</span><span class="n">SuccessMessageMixin</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Proyecto</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;titulo&#39;</span><span class="p">,</span> <span class="s1">&#39;descripcion&#39;</span><span class="p">,</span> <span class="s1">&#39;fecha_creacion&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;categorias&#39;</span><span class="p">,</span> <span class="s1">&#39;imagen&#39;</span><span class="p">]</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_success_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">object</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">object</span>
+        <span class="k">return</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s1">&#39;proyecto_update&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;pk&#39;</span><span class="p">:</span> <span class="nb">object</span><span class="o">.</span><span class="n">id</span><span class="p">})</span>
+</code></pre></div>
+<p>En views.py modifiquem les vistes perquè quedin de la manera següent:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">.mixins</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProyectoMixin</span>
+<span class="o">...</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ProyectoCreateView</span><span class="p">(</span><span class="n">ProyectoMixin</span><span class="p">,</span> <span class="n">CreateView</span><span class="p">):</span>
+    <span class="n">success_message</span> <span class="o">=</span> <span class="s2">&quot;Projecte creat satisfactòriament&quot;</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">ProyectoUpdateView</span><span class="p">(</span><span class="n">ProyectoMixin</span><span class="p">,</span> <span class="n">UpdateView</span><span class="p">):</span>
+    <span class="n">success_message</span> <span class="o">=</span> <span class="s2">&quot;Projecte actualitzat satisfactòriament&quot;</span>
+</code></pre></div>
+<p>Si provem l'aplicació, hauria de funcionar igual que abans, amb els avantatges que el nostre codi és molt més modular, i si haguérem de canviar alguna cosa del comportament comú a aquestes dues vistes, només caldria modificar-ho en un únic lloc.</p>
+<p>NOTA: Un mixin hauria de representar una agrupació de funcionalitats que pogueren ser reutilitzades en moltes vistes, fins i tot de diferents apps. En aquest cas, estem portant al mixin l'atribut model junt amb altres atributs i mètodes que el particularitzen per a vistes basades en el model Projecte. Per tant, no podrem utilitzar aquest mixin en altres vistes d'altres models. Podríem acabar fins i tot portant tota la lògica de les dues vistes al mixin, però es difuminarà el propòsit del mixin, i les vistes es reduirien a un mínim que no tindria sentit. La pràctica ens dirà quan portem determinats comportaments a un mixin, i quan els deixem en una vista determinada.</p>
+<h3 id="personalitzacio-de-vistes-generiques">Personalització de vistes genèriques<a class="headerlink" href="#personalitzacio-de-vistes-generiques" title="Permanent link">&para;</a></h3>
+<p>Ja hem vist algun exemple de com modificar el comportament d'una vista, en concret el mètode get_success_url (de CreateView i UpdateView). En aquest apartat anirem una mica més enllà i descobrirem quines opcions tenim disponibles per personalitzar, i farem alguns exemples.</p>
+<p>Prenem com a exemple la vista CreateView. El primer que ens hem de preguntar és quins mètodes podem personalitzar. Anem a la <a href="https://docs.djangoproject.com/en/5.2/ref/class-based-views/generic-editing/#django.views.generic.edit.CreateView">documentació</a> d'aquesta vista, i ens dóna una llista de les seues característiques:</p>
+<p><strong>Atributs:</strong></p>
+<p>Entre els atributs, la documentació especifica un anomenat "object". Si l'objecte encara no ha estat creat, aquest atribut tindrà el valor None, i si l'objecte ja ha estat creat contindrà una còpia. Això ho hem utilitzat en el mètode get_success_url, per passar-li a la vista "projecte_update" l'id de l'objecte que s'ha creat en prémer el botó "Crear".</p>
+<p><strong>Ancestres:</strong></p>
+<p>Aquesta és la llista d'ancestres:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud6/100000010000022D000000FD7E77D21918D67104.png" /></p>
+<p>NOTA: En aquest apartat s'especifiquen les sigles <a href="https://www.educative.io/answers/what-is-mro-in-python">MRO</a> (Method Resolution Order), que és l'algoritme que utilitza Python per a la resolució d'un mètode/atribut en la jerarquia de classes, quan s'utilitza l'herència múltiple. Aquest punt és el que s'ha discutit en l'apartat de mixins.</p>
+<p>Si consultem cadascuna d'aquestes classes, podem veure els atributs i mètodes de cadascuna d'elles. Per exemple:</p>
+<ul>
+<li>Mitjançant SingleObjectTemplateResponseMixin podem recuperar la plantilla per a una vista que opere sobre un sol objecte. Entre altres, podem veure que aquest mixin té un mètode get_template_names, que estableix una llista de plantilles candidates a ser utilitzades. Ens diu que es busca una plantilla amb la forma <app_label>/<model_name><template_name_suffix>.html. Aquesta estructura és coherent amb el nom de la plantilla que utilitzàvem ProjecteCreateView, anomenada projecte_form.html, dins de l'app portfolioapp. Per tant hem resolt el misteri de com era possible que Django trobés la plantilla del nostre projecte automàticament. Podríem, per exemple, sobreescriure aquest mètode per obtenir el nom d'una plantilla per a la nostra vista, segons un altre tipus de lògica.</li>
+<li>En ModelFormMixin podem veure que estan quasi tots els atributs que hem utilitzat fins ara, i el mètode get_success_url que ja havíem sobreescrit. Tenim a més altres mètodes interessants, com form_valid (que ens permetrà realitzar determinades accions una vegada s'ha verificat que els camps del formulari són vàlids, abans de crear l'objecte i redireccionar).</li>
+</ul>
+<p>En els següents subapartats farem algunes personalitzacions a algunes de les vistes que venim utilitzant.</p>
+<h4 id="form_valid">form_valid<a class="headerlink" href="#form_valid" title="Permanent link">&para;</a></h4>
+<p>Imaginem que volem enviar una notificació als subscriptors del nostre lloc web (si tinguérem la capacitat de portar la seua alta i gestió). Volem notificar-los que hem publicat un nou projecte, no volem que es perden res. Això és molt comú en qualsevol tipus d'aplicació, no podem pretendre que els usuaris estiguen constantment refrescant una pàgina web per saber si hi ha novetats, hem d'enviar notificacions (normalment en forma d'e-mail).</p>
+<p>Per això, en qualsevol projecte d'una certa envergadura, disposarem d'una part de l'aplicació que s'encarregue de registrar tots aquells esdeveniments susceptibles de ser notificats, així com la lògica per trobar els destinataris, conformar els missatges, i enviar els e-mails (ja directament, o a través d'un servei com <a href="https://mailchimp.com/es/?currency=EUR">mailchimp</a>).</p>
+<p>Bé, el primer pas és poder registrar l'esdeveniment de creació d'un projecte nou. Però on el registrem? Ho podem fer en una taula nova. Aquesta taula... la creem en l'app "portfolioapp" que tenim actualment en el projecte? Doncs no és el més adequat: començarem a desenvolupar lògica per a una nova funcionalitat sobre notificacions. Té molt més sentit crear una app nova en el projecte, que registre la base de tot això, i a més la puguem reutilitzar en futurs projectes.</p>
+<p>Per tant, creem una nova app anomenada "notificacions" (mitjançant l'ordre startapp), l'afegim a INSTALLED_APPS de settings.py, i dins del seu fitxer models.py definim un nou model. Una versió molt molt molt simplificada seria:</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">NotificaProjecte</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">projecte</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Projecte</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">PROTECT</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="n">now</span><span class="p">)</span>
+    <span class="n">notificat</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">BooleanField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
+<p><em>NOTA</em>: En un projecte de més envergadura, si volguérem notificar esdeveniments realitzats sobre diferents tipus de models, hauríem de tenir un model NotificaXXX per cada tipus d'objecte a modificar? El problema és que la clau forana "projecte" va enllaçada amb el model Projecte, però no pot anar enllaçada amb cap altre model. Ens estalviaria molt d'esforç el poder enllaçar aquest atribut a qualsevol model sobre el qual volguérem notificar algun esdeveniment. Com es podria fer en Django? Molt fàcil: mitjançant el que s'anomena el <a href="https://docs.djangoproject.com/en/5.2/ref/contrib/contenttypes/">contenttype framework</a> de Django, mitjançant el qual podem establir claus foranes genèriques, a qualsevol altre model. Un mateix model ens pot servir de detall per a molts altres.</p>
+<p>Després de crear el model, fem les migracions i migrem, i configurem l'administrador per a aquest nou model.</p>
+<p>El nostre objectiu és que cada vegada que es cree un projecte nou es cree, alhora, un nou objecte per a la classe NotificaProjecte.</p>
+<p>Bé, sobreescriurem el mètode form_valid de la vista ProjecteCreateView per realitzar dues accions:</p>
+<ul>
+<li>Comprovar que la data de creació del projecte no és anterior al moment actual (es tracta només d'un exercici il·lustratiu).</li>
+<li>Creació tant del projecte com de la seua notificació corresponent.</li>
+</ul>
+<p>Primer importem el següent en views.py:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">django.contrib</span><span class="w"> </span><span class="kn">import</span> <span class="n">messages</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.db</span><span class="w"> </span><span class="kn">import</span> <span class="n">transaction</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">timezone</span>
+</code></pre></div>
+<p>Tot això és tan fàcil com afegir el següent mètode a la classe ProjecteCreateView:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">form_valid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">form</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">form</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">data_creacio</span> <span class="o">&lt;</span> <span class="n">timezone</span><span class="o">.</span><span class="n">now</span><span class="p">():</span>
+        <span class="n">messages</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">,</span> <span class="s2">&quot;La data/hora del projecte no pot ser anterior a l&#39;actual.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">ProjecteCreateView</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">form_invalid</span><span class="p">(</span><span class="n">form</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+         <span class="n">projecte</span> <span class="o">=</span> <span class="n">form</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+         <span class="n">NotificaProjecte</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">projecte</span><span class="o">=</span><span class="n">projecte</span><span class="p">)</span>
+         <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">ProjecteCreateView</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">form_valid</span><span class="p">(</span><span class="n">form</span><span class="p">)</span>
+</code></pre></div>
+<p>En el moment en què s'executa form_valid, l'objecte encara no està creat realment en la base de dades, o almenys no s'ha fet el commit final. És per això que l'objecte està disponible en form.instance, encara que podem revertir els canvis cridant al mètode form_invalid de la superclasse.</p>
+<p>Anem a provar-ho. Primer intentem crear un projecte amb una data anterior a l'actual, i obtenim el següent missatge d'error:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud6/1000000100000487000003348E6C3EBBBB972C2B.png" /></p>
+<p>Fenomenal. Anem a provar la resta de la lògica. Modifiquem la data i guardem:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud6/10000001000004C50000038429FD91705EFE379C.png" /></p>
+<p>Bé, anem a veure si s'ha creat un altre registre de notificació, mitjançant l'administrador:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud6/100000010000075E000001D56016A1FE6B01F7ED.png" /></p>
+<p>Perfecte! Hem aconseguit crear un registre en una altra taula, al mateix temps que hem creat un projecte. Ara tindrem el següent problema: en intentar esborrar un projecte, obtindrem un error avisant-nos que tenim registres dependents en la BBDD. Això ho tractarem en les activitats.</p>
+<p><strong><em>MOLT IMPORTANT</em></strong>: Cal fer notar el següent:</p>
+<ul>
+<li>Realment no hem sobreescrit el mètode form_valid, l'hem <strong>estès</strong>. Hem realitzat una sèrie d'operacions i al final hem cridat al mètode form_valid o form_invalid de la superclasse. És a dir, només hem afegit alguns passos previs a la lògica heretada. La nomenclatura per cridar al mètode de la superclasse és mitjançant <a href="https://realpython.com/python-super/">super</a>.</li>
+<li>Hem utilitzat transaccions de Django per assegurar-nos que la creació del projecte i la seua notificació es realitza de manera conjunta, i si es produeix algun tipus d'error en un d'ells, que no es realitze la transacció en la base de dades.</li>
+</ul>
+<p><em>NOTA</em>: Existeix una altra aproximació per realitzar aquest tipus d'operacions en Django, que són els senyals o <a href="https://docs.djangoproject.com/en/5.2/topics/signals/">signals</a>. Aquest mètode suposa que es disparen determinades accions en la BBDD quan es detecten determinats esdeveniments. Hi ha ocasions en què això ens permet controlar molt millor el moment i les accions que volem sincronitzar amb un determinat esdeveniment en el sistema, i no hauríem de preocupar-nos de replicar la mateixa lògica en totes aquelles parts del codi que ho necessitem. Serien similars als triggers de bases de dades.</p>
+<h5 id="tags-de-missatges">Tags de missatges<a class="headerlink" href="#tags-de-missatges" title="Permanent link">&para;</a></h5>
+<p>Django ha sabut posar-li fins i tot el color correcte al missatge d'error... o se'ns escapa alguna cosa? Revisem la plantilla base.html, veiem que el color ve donat per la part que diu:</p>
+<p>alert-{{message.tags}}</p>
+<p>Anem a veure-ho en l'exemple del missatge d'error de la comprovació de dates:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud6/100000010000056100000139B1BC13BDAFE113A4.png" /></p>
+<p>Genial, tenim la classe alert-danger, que és la que ens dóna el color roig.</p>
+<p>Bé, la classe bootstrap que estem assignant a eixe bloc ve donada pel mateix codi del missatge d'error. En les <a href="https://getbootstrap.com/docs/5.2/components/alerts/">alertes</a> de bootstrap veiem que la classe per a missatges d'error és "alert-danger".</p>
+<p>Però: en la <a href="https://docs.djangoproject.com/en/5.2/ref/contrib/messages/#message-tags">documentació</a> del framework de missatges de Django, els codis són els següents:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud6/10000001000000CE000000AEAA4192E5A57BA8C2.png" /></p>
+<p>I segons bootstrap, les classes de les alertes que es podrien correspondre amb els nostres codis de missatges són:</p>
+<p>alert-info</p>
+<p>alert-success</p>
+<p>alert-warning</p>
+<p>alert-<strong>danger</strong></p>
+<p>Veiem que concatenant "alert-" amb el codi de cada tipus de missatge en Django podem conformar la classe adequada, per això utilitzem alert-{{message.tags}}.</p>
+<p>T'has adonat ja d'on està la discrepància? Sí: el codi dels missatges d'error en Django és "error", no "danger". Així que, com pot estar derivant la classe correctament? Bé, això és per la modificació que vam fer anteriorment en settings.py:</p>
+<p>MESSAGE_TAGS = {messages.ERROR: 'danger'}</p>
+<p>Gràcies a això, estem utilitzant "danger" i no "error" (el valor per defecte de Django) com a etiqueta d'error. Ho podem comprovar fàcilment: comentem eixa línia en settings.py i intentem forçar l'error:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud6/100000010000056100000139ADEC02DFE525DD0D.png" /></p>
+<p>Ara veiem que ha format la classe "alert-error". Com que eixa classe no la reconeix Bootstrap, provoca que el missatge no es visualitze correctament.</p>
+<p>FINALMENT, descomentem la línia de MESSAGE_TAGS en settings.py, per deixar eixa modificació.</p>
+<h2 id="formularis">Formularis<a class="headerlink" href="#formularis" title="Permanent link">&para;</a></h2>
+<p>Les vistes CreateView i UpdateView han creat automàticament un formulari basant-se en els camps que hem especificat en l'atribut fields, però l'aspecte i distribució d'eixe formulari és clarament millorable.</p>
+<p>Els formularis són una peça clau en la interacció amb l'usuari, per tant cal prestar especial atenció a aquests elements en la nostra aplicació. La disposició i agrupació dels camps, les utilitats que ajuden l'usuari a decidir els valors introduïts, els missatges (informatius, d'avís, error, i èxit) i el comportament de l'aplicació després de l'enviament de les dades i el seu processament, han d'estar especialment analitzats i depurats abans de llançar la nostra aplicació. Conceptes de disseny d'interfícies com la usabilitat, estan estretament relacionats amb els formularis.</p>
+<p>Django ens proporciona una sèrie d'utilitats per agilitzar la creació i configuració de formularis. Principalment, disposarem de dues classes que realitzaran moltes de les tasques bàsiques per nosaltres:</p>
+<ul>
+<li><a href="https://docs.djangoproject.com/en/5.2/ref/forms/api/#django.forms.Form">Classe Form</a>: Representa la forma més bàsica de crear un formulari, permetrà tenir més control. La utilitzarem normalment per a formularis que no gestionen directament un model (operacions bàsiques de creació, actualització, eliminació), com per exemple el formulari de login, o un simple formulari de contacte que envie un e-mail (sense manipular dades de la BBDD). Les classes basades en la classe Form s'utilitzen normalment en una <em>FormView</em>, de manera que realitze la resta de la lògica amb les dades recollides pel formulari.</li>
+<li><a href="https://docs.djangoproject.com/en/5.2/topics/forms/modelforms/#django.forms.ModelForm">Classe ModelForm</a>: Aquesta classe serà la que utilitzarem majoritàriament, per realitzar la gestió dels nostres models, i la utilitzarem per construir classes que més tard utilitzarem en una CreateView, una UpdateView i/o DeleteView.</li>
+</ul>
+<p>En aquest <a href="https://docs.djangoproject.com/en/5.2/topics/class-based-views/generic-editing/">enllaç</a> trobaràs exemples d'utilització dels següents parells:</p>
+<ul>
+<li>Classe Form, amb classe FormView.</li>
+<li>Classe ModelForm, amb CreateView, UpdateView i DeleteView.</li>
+</ul>
+<p>En el següent subapartat crearem un formulari per al manteniment dels projectes, utilitzant la classe ModelForm. En la pròxima unitat utilitzarem la classe Form per realitzar un formulari per al login de l'aplicació.</p>
+<h3 id="gestio-de-projectes-amb-modelform">Gestió de projectes amb ModelForm<a class="headerlink" href="#gestio-de-projectes-amb-modelform" title="Permanent link">&para;</a></h3>
+<h4 id="creacio-de-la-classe-projecteform">Creació de la classe ProjecteForm<a class="headerlink" href="#creacio-de-la-classe-projecteform" title="Permanent link">&para;</a></h4>
+<p>El primer pas serà la creació d'un fitxer forms.py en l'app de portfolioapp (típicament tindrem un fitxer forms.py dins de cada app), i incloem el següent:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">django</span><span class="w"> </span><span class="kn">import</span> <span class="n">forms</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Projecte</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ProjecteForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">Projecte</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;titol&#39;</span><span class="p">,</span> <span class="s1">&#39;descripcio&#39;</span><span class="p">,</span> <span class="s1">&#39;data_creacio&#39;</span><span class="p">,</span> <span class="s1">&#39;any&#39;</span><span class="p">,</span> <span class="s1">&#39;categories&#39;</span><span class="p">,</span> <span class="s1">&#39;imatge&#39;</span><span class="p">]</span>
+</code></pre></div>
+<p>Per poder utilitzar-lo en les vistes, importem aquesta classe en views.py. A continuació inclourem la següent línia en les classes ProjecteCreateView i ProjecteUpdateView:
+<div class="highlight"><pre><span></span><code><span class="n">form_class</span> <span class="o">=</span> <span class="n">ProjecteForm</span>
+</code></pre></div>
+Hem d'eliminar l'atribut "fields" que teníem en el mixin ProjecteMixin, ja que si no ho fem l'aplicació ens tornarà un error.</p>
+<p>Després de fer els canvis, consultem el formulari, i no apreciem cap diferència:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud6/100000010000024D000002A9E0BF32037D178675.png" /></p>
+<p>Ara ens hauríem de preguntar: com és possible que en el camp Categoria aparega un multiselector si no ho hem especificat en cap lloc? Django ha decidit utilitzar eixe "widget" basant-se en la definició del model. Existeixen altres tipus de widgets per defecte que podríem utilitzar en els nostres formularis? Sí, tens una llista completa en aquest <a href="https://docs.djangoproject.com/en/5.2/ref/forms/widgets/">enllaç</a>.</p>
+<p>Podríem, a més, utilitzar widgets de tercers en els nostres formularis, com per exemple els desenvolupats en aquesta app anomenada <a href="https://django-filter.readthedocs.io/en/stable/ref/widgets.html">django-filter</a>, que ens permeten tenir un ventall de selectors més rics per als nostres formularis.</p>
+<h4 id="layout-del-formulari">Layout del formulari<a class="headerlink" href="#layout-del-formulari" title="Permanent link">&para;</a></h4>
+<p>Volem que el nostre formulari tinga una aparença més atractiva i siga més funcional. Volem que mostre uns missatges d'error associats a cadascun dels camps, no els preestablits en el navegador.</p>
+<p>Podem establir diversos graus de control sobre el formulari, però en aquest apartat manipularem el layout (disposició) dels camps i establirem un major grau de control sobre ells. D'aquesta manera, s'ha desenvolupat una nova versió de la plantilla que s'adjunta al present document, anomenada projecte_form.html. A continuació veiem el resultat:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud6/10000001000003300000024F0A6B359F6ADF7082.png" /></p>
+<p>Ha canviat un poc la disposició dels camps, però tampoc és gran cosa.</p>
+<p>L'aspecte és clarament millorable, com podem aconseguir un formulari més adaptat als actuals estàndards d'interfícies d'usuari? Més avall en aquest document ho farem mitjançant un paquet addicional anomenat Django Crispy Forms.</p>
+<h4 id="metode-clean">Mètode clean<a class="headerlink" href="#metode-clean" title="Permanent link">&para;</a></h4>
+<p>En un apartat anterior vam implementar en la vista ProjecteCreateView la restricció que la data de creació no fóra anterior al moment actual. El mateix ho podem fer com a part del formulari, mitjançant els mètodes clean. Tenim dos tipus:</p>
+<ul>
+<li>Mètode clean comú a tots els camps: amb aquest mètode podem comprovar dependències entre els camps o tenir en compte consideracions addicionals.</li>
+<li>Mètodes clean propis de cada camp: es defineixen com clean_[nom de l'atribut], i són específics per a cada camp del formulari.</li>
+</ul>
+<p>Anem a implementar un mètode clean per al camp data_creacio. En el formulari ProjecteForm (a l'altura de la classe Meta, no dins), introduïm el següent:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">clean_data_creacio</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">data_creacio</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cleaned_data</span><span class="p">[</span><span class="s1">&#39;data_creacio&#39;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">data_creacio</span> <span class="o">&lt;</span> <span class="n">timezone</span><span class="o">.</span><span class="n">now</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="n">ValidationError</span><span class="p">(</span><span class="s2">&quot;La data/hora del projecte no pot ser anterior a l&#39;actual.&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">data_creacio</span>
+</code></pre></div>
+<p>Comprovem el missatge d'error, que és clarament millorable estèticament:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud6/1000000100000107000000883FC2FEEEC057391D.png" /></p>
+<p>Les validacions del formulari es dispararan abans que les de la vista, encara que podem comentar la validació de les vistes per no duplicar codi.</p>
+<p>Això ho millorarem amb Django Crispy Forms.</p>
+<p>Podem realitzar aquesta validació on més ens interesse: si la realitzem en el formulari, qualsevol vista que l'utilitze conservarà aquesta validació; si la realitzem en les vistes, hauríem de duplicar la lògica o crear un mixin.</p>
+<h2 id="function-based-views">Function based views<a class="headerlink" href="#function-based-views" title="Permanent link">&para;</a></h2>
+<p>En aquest document hem utilitzat CBV en tots els exemples, però podríem haver-los realitzat amb FBV. Normalment utilitzar aquesta segona aproximació ens dóna més control sobre el que estem fent, però per a gran part dels casos no ho necessitem. En general, utilitzarem FBV quan necessitem alguna cosa especialitzada i concreta, per a tot el demés ens beneficiarem de totes les funcionalitats que ja venen implementades en les classes.</p>
+<p>Ara que hem revisat l'apartat de formularis de Django, podem abordar les FBV, ja que si utilitzem aquest mètode, hem de definir els formularis prèviament (amb CBV ens venen els formularis fets, si volem els que venen per defecte).</p>
+<p>A mode il·lustratiu, revisarem aquest <a href="https://cpadiernos.github.io/function-based-views-and-their-class-based-view-equivalents-in-django-part-two.html">enllaç</a> per establir els paral·lelismes entre les dues aproximacions.</p>
+<h2 id="interactivitat">Interactivitat<a class="headerlink" href="#interactivitat" title="Permanent link">&para;</a></h2>
+<p>El desenvolupament en costat servidor fa moltíssimes coses per nosaltres, representa en la majoria de les aplicacions una bona part del total, però hi ha moltíssimes més coses que atendre. La interacció amb l'usuari és un altre factor essencial, i funcionalitats desenvolupades en el costat servidor que no són utilitzades de manera efectiva per l'usuari (per raons d'usabilitat o altres) són funcionalitats que no existeixen en la pràctica. Per tant, cal cuidar i mimar especialment la percepció que l'usuari té de la nostra aplicació.</p>
+<p>És per això que la part servidor s'ha de complementar amb la part client (entre altres), que ocorre en el navegador web, per al cas de les aplicacions web.</p>
+<p>Existeixen multitud de tecnologies, llibreries, tècniques, que ens permeten ajustar de manera molt més fina la interacció amb l'usuari. Amb el model MVC podem realitzar moltíssimes adaptacions, però el model que ens permet major versatilitat és el basat en serveis REST, que ens permet separar completament la part servidor i la part client, cedint a aquest últim tot el protagonisme en la interacció amb l'usuari.</p>
+<p>En els següents subapartats veurem uns exemples de com podem millorar l'aspecte i interacció de la nostra aplicació amb diferents paquets i llibreries.</p>
+<p>Al voltant de Django es desenvolupen multitud de paquets que poden facilitar moltes d'aquestes tasques. En aquest <a href="https://djangopackages.org/">enllaç</a> trobaràs molts d'ells. Podem destacar:</p>
+<ul>
+<li><a href="https://djangopackages.org/grids/g/auto-complete/">Autocompletat</a> de camps</li>
+<li><a href="https://djangopackages.org/grids/g/calendar/">Calendaris</a></li>
+<li><a href="https://djangopackages.org/grids/g/charts/">Gràfics</a></li>
+<li><a href="https://djangopackages.org/grids/g/file-managers/">Fitxers</a></li>
+<li><a href="https://djangopackages.org/grids/g/filters/">Filtrat</a></li>
+<li><a href="https://djangopackages.org/grids/g/forms/">Formularis</a></li>
+<li><a href="https://djangopackages.org/grids/g/maps/">Mapes</a></li>
+<li><a href="https://djangopackages.org/grids/g/pagination/">Paginació</a></li>
+</ul>
+<p>I molts més.</p>
+<h3 id="django-crispy-forms">Django Crispy Forms<a class="headerlink" href="#django-crispy-forms" title="Permanent link">&para;</a></h3>
+<p>Anem a continuar amb el treball iniciat en l'apartat anterior. Anem a reprendre el formulari que no tenia un aspecte molt usable, i l'anem a millorar amb Django Crispy Forms. Hem d'instal·lar 2 paquets:</p>
+<ul>
+<li><a href="https://django-crispy-forms.readthedocs.io/en/latest/install.html">Django Crispy Forms</a></li>
+<li><a href="https://github.com/django-crispy-forms/crispy-bootstrap5">Pack de plantilles Bootstrap 5 per a Django Crispy Forms.</a></li>
+</ul>
+<p>Instal·la els dos paquets que s'indiquen mitjançant pip (en el nostre entorn virtual), congela requirements.txt, i modifica INSTALLED_APPS en settings.py. Segueix les instruccions d'instal·lació dels dos enllaços. A més, assegura't d'incloure les següents variables en settings.py (per al segon paquet instal·lat):</p>
+<div class="highlight"><pre><span></span><code><span class="n">CRISPY_ALLOWED_TEMPLATE_PACKS</span> <span class="o">=</span> <span class="s2">&quot;bootstrap5&quot;</span>
+<span class="n">CRISPY_TEMPLATE_PACK</span> <span class="o">=</span> <span class="s2">&quot;bootstrap5&quot;</span>
+</code></pre></div>
+<p>Anem a la plantilla de projecte_form.html, i revertim els canvis que havíem fet. La deixem de la següent manera:
+<div class="highlight"><pre><span></span><code>{% extends &#39;portfolio/base.html&#39; %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+&lt;div class=&quot;container&quot;&gt;
+    &lt;h2&gt;{{object|yesno:&#39;Actualitzar projecte,Creació d&#39;un nou projecte&#39;}} &lt;/h2&gt;
+    &lt;form method=&quot;post&quot; enctype=&quot;multipart/form-data&quot; novalidate&gt;
+        {% crispy form %}
+        &lt;input type=&quot;submit&quot; class=&quot;btn btn-success mr-2&quot; value=&quot;{{object|yesno:&#39;Actualitzar,Crear&#39;}}&quot; &gt;
+        {% if object %}
+        &lt;a class=&quot;btn btn-danger&quot; role=&quot;button&quot; href=&quot;{% url &#39;projecte_delete&#39; object.id %}&quot;&gt; Eliminar &lt;/a&gt;
+        {% endif %}
+    &lt;/form&gt;
+&lt;/div&gt;
+{% endblock %}
+</code></pre></div></p>
+<p>Anem a fer màgia amb Django Crispy Forms i afegim la següent línia després de l'extends:
+<div class="highlight"><pre><span></span><code>{% load crispy_forms_tags %}
+</code></pre></div>
+La línia que diu {{ form.as_p }} la substituïm per:
+<div class="highlight"><pre><span></span><code>{% crispy form %}
+</code></pre></div>
+Finalment, esborrem la línia {% csrf_token %} perquè Crispy Forms ja ho inclou per nosaltres, i incloem "novalidate" a l'element form, d'aquesta manera anul·lem les validacions natives del navegador.</p>
+<p>Comprovem ara el formulari i veiem una millora claríssima:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud6/10000001000004010000034FAB4CDCBF9821562C.png" /></p>
+<p>Abans de continuar, anem a veure què ens ofereix aquest paquet per canviar el nostre formulari. En la documentació es detallen dues classes:</p>
+<ul>
+<li>FormHelper: defineix el comportament en la representació del formulari.</li>
+<li>Layout: com el seu nom indica, defineix l'estructura dels elements del formulari.</li>
+</ul>
+<p>Primer introduirem el següent codi en la classe ProjecteForm:
+<div class="highlight"><pre><span></span><code>    def __init__(self, *args, **kwargs):
+        super(ProjecteForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper(self)
+        self.helper.form_tag = False # No incloure &lt;form&gt;&lt;/form&gt;
+
+        self.helper.layout = Layout(
+            Div(
+                Field(&#39;titol&#39;),
+                Field(&#39;descripcio&#39;),
+            ),
+            HTML(&#39;&lt;hr&gt;&#39;),
+            Div(
+                Div(Field(&#39;data_creacio&#39;), css_class=&quot;col-6&quot;),
+                Div(Field(&#39;any&#39;), css_class=&quot;col-6&quot;),
+                css_class=&quot;row&quot;
+            ),
+            HTML(&#39;&lt;hr&gt;&#39;),
+            Div(
+                Field(&#39;categories&#39;, css_class=&quot;mb-3&quot;),
+                Field(&#39;imatge&#39;),
+                css_class=&quot;mb-5&quot;
+            ),
+        )
+</code></pre></div></p>
+<p>Observacions:</p>
+<ul>
+<li>S'estén el constructor de la classe ProjecteForm per acomodar els canvis amb Crispy Forms.</li>
+<li>S'estableix l'atribut form_tag del helper a False perquè no s'incloga l'element <form> en l'HTML, ja que ja el tenim establert en projecte_form.html.</li>
+<li>Utilitzem elements com Layout, Div, HTML per estructurar els elements, i els donem estil amb l'atribut css_class.</li>
+</ul>
+<p>D'aquesta manera podríem modificar l'estructura del formulari de manera dinàmica, mitjançant Python.</p>
+<p>Anem a veure com ha quedat el formulari:</p>
+<p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud6/1000000100000403000003872F98143BE6BA03FB.png" /></p>
 
 
 

@@ -18,7 +18,7 @@
         <link rel="prev" href="../ud5/">
       
       
-        <link rel="next" href="../ud7/">
+        <link rel="next" href="../ud8/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -76,6 +76,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#ud6-multicapa-vistas-y-controladores-eventos-e-interactividad" class="md-skip">
+          Saltar a contenido
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -618,6 +623,21 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    UD6. (Multicapa) Vistas y controladores, eventos e interactividad
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -631,6 +651,256 @@
 
       </a>
       
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      INTRODUCCIÓN
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evaluacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      EVALUACIÓN
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vistas-de-edicion-genericas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vistas de edición genéricas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vistas de edición genéricas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#createview" class="md-nav__link">
+    <span class="md-ellipsis">
+      CreateView
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updateview" class="md-nav__link">
+    <span class="md-ellipsis">
+      UpdateView
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleteview" class="md-nav__link">
+    <span class="md-ellipsis">
+      DeleteView
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redirecciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Redirecciones
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixins" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mixins
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mixins">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#messages-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      Messages framework
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixins-personalizados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mixins personalizados
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#personalizacion-de-vistas-genericas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Personalización de vistas genéricas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Personalización de vistas genéricas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#form_valid" class="md-nav__link">
+    <span class="md-ellipsis">
+      form_valid
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="form_valid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tags-de-mensajes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tags de mensajes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formularios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formularios
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Formularios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-proyectos-con-modelform" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestión de proyectos con ModelForm
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestión de proyectos con ModelForm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creacion-de-la-clase-proyectoform" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación de la clase ProyectoForm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#layout-del-formulario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Layout del formulario
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodo-clean" class="md-nav__link">
+    <span class="md-ellipsis">
+      Método clean
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-based-views" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function based views
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interactividad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interactividad
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interactividad">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#django-crispy-forms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Django Crispy Forms
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -643,7 +913,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ud7/" class="md-nav__link">
+      <a href="../ud7.md" class="md-nav__link">
         
   
   
@@ -1109,6 +1379,247 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      INTRODUCCIÓN
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evaluacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      EVALUACIÓN
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vistas-de-edicion-genericas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vistas de edición genéricas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vistas de edición genéricas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#createview" class="md-nav__link">
+    <span class="md-ellipsis">
+      CreateView
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updateview" class="md-nav__link">
+    <span class="md-ellipsis">
+      UpdateView
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleteview" class="md-nav__link">
+    <span class="md-ellipsis">
+      DeleteView
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redirecciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Redirecciones
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixins" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mixins
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mixins">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#messages-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      Messages framework
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixins-personalizados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mixins personalizados
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#personalizacion-de-vistas-genericas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Personalización de vistas genéricas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Personalización de vistas genéricas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#form_valid" class="md-nav__link">
+    <span class="md-ellipsis">
+      form_valid
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="form_valid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tags-de-mensajes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tags de mensajes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formularios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formularios
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Formularios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gestion-de-proyectos-con-modelform" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestión de proyectos con ModelForm
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestión de proyectos con ModelForm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creacion-de-la-clase-proyectoform" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creación de la clase ProyectoForm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#layout-del-formulario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Layout del formulario
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodo-clean" class="md-nav__link">
+    <span class="md-ellipsis">
+      Método clean
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-based-views" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function based views
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interactividad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interactividad
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interactividad">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#django-crispy-forms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Django Crispy Forms
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1124,9 +1635,880 @@
 
 
 
-  <h1>UD6. (Multicapa) Vistas y controladores, eventos e interactividad</h1>
+<h1 id="ud6-multicapa-vistas-y-controladores-eventos-e-interactividad">UD6: MULTICAPA - VISTAS Y CONTROLADORES, EVENTOS E INTERACTIVIDAD<a class="headerlink" href="#ud6-multicapa-vistas-y-controladores-eventos-e-interactividad" title="Permanent link">&para;</a></h1>
+<p><img alt="" src="../Pictures/ud6/100000010000020A000001576ACAE4B0B36135B8.png" /></p>
+<h2 id="introduccion">INTRODUCCIÓN<a class="headerlink" href="#introduccion" title="Permanent link">&para;</a></h2>
+<p>En esta unidad vamos a introducir la creación de formularios con Django
+para poder manipular los datos de nuestra aplicación web. Por el camino
+iremos descubriendo nuevos tipos de vistas (CBV) que automatizan muchas
+de las operaciones que hemos de realizar. También descubriremos cómo
+utilizar apps (o módulos) desarrolladas por terceros para personalizar
+más convenientemente nuestros formularios y añadir interactividad desde
+el servidor.</p>
+<p>Todo ello lo articularemos mediante el ejemplo guiado del portfolio.</p>
+<p>En cuanto a las actividades, introduciremos el uso de formularios al
+proyecto iniciado en la unidad anterior, entre otros aspectos.</p>
+<h2 id="evaluacion">EVALUACIÓN<a class="headerlink" href="#evaluacion" title="Permanent link">&para;</a></h2>
+<p>El presente documento, junto con sus correspondiente boletín de
+actividades (publicado adicionalmente), cubren los siguientes criterios
+de evaluación:</p>
+<table>
+<thead>
+<tr>
+<th>RESULTADOS DE APRENDIZAJE</th>
+<th>CRITERIOS DE EVALUACIÓN</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RA5. Desarrolla aplicaciones Web identificando y aplicando mecanismos para separar el código de presentación de la lógica de negocio.</td>
+<td>c) Se han utilizado objetos y controles en el servidor para generar el aspecto visual de la aplicación web en el cliente.<br>d) Se han utilizado formularios generados de forma dinámica para responder a los eventos de la aplicación Web.<br>h) Se ha probado y documentado el código.</td>
+</tr>
+<tr>
+<td>RA6. Desarrolla aplicaciones web de acceso a almacenes de datos, aplicando medidas para mantener la seguridad y la integridad de la información</td>
+<td>f) Se han creado aplicaciones web que permitan la actualización y la eliminación de información disponible en una base de datos.</td>
+</tr>
+<tr>
+<td>RA8. Genera páginas web dinámicas analizando y utilizando tecnologías y frameworks del servidor web que añadan código al lenguaje de marcas.</td>
+<td>a) Se han identificado las diferencias entre la ejecución de código en el servidor y en el cliente web.<br>b) Se han reconocido las ventajas de unir ambas tecnologías en el proceso de desarrollo de programas.<br>c) Se han identificado las tecnologías y frameworks relacionadas con la generación por parte del servidor de páginas web con guiones embebidos.<br>d) Se han utilizado estas tecnologías y frameworks para generar páginas web que incluyan interacción con el usuario.<br>e) Se han utilizado estas tecnologías y frameworks, para generar páginas web que incluyan verificación de formularios.<br>f) Se han utilizado estas tecnologías y frameworks para generar páginas web que incluyan modificación dinámica de su contenido y su estructura.<br>g) Se han aplicado estas tecnologías y frameworks en la programación de aplicaciones web.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="vistas-de-edicion-genericas">Vistas de edición genéricas<a class="headerlink" href="#vistas-de-edicion-genericas" title="Permanent link">&para;</a></h2>
+<p>En la unidad anterior vimos que existen dos tipos de vistas: FBV y CBV.
+En esta unidad vamos a profundizar más en las segundas.</p>
+<h3 id="createview">CreateView<a class="headerlink" href="#createview" title="Permanent link">&para;</a></h3>
+<p>Esta vista crea un formulario por nosotros para la creación de un
+objeto, y se encarga también de todas las validaciones y sus
+correspondientes mensajes.</p>
+<p>Vamos a crear una vista de este tipo para crear nuevos proyectos en en
+portfolio. En views.py, insertamos el siguiente código, para la creación
+de nuevos proyectos (importamos antes la clase CreateView):
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">ProyectoCreateView</span><span class="p">(</span><span class="n">CreateView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Proyecto</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;titulo&#39;</span><span class="p">,</span> <span class="s1">&#39;descripcion&#39;</span><span class="p">,</span> <span class="s1">&#39;fecha_creacion&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;categorias&#39;</span><span class="p">,</span> <span class="s1">&#39;imagen&#39;</span><span class="p">]</span>
+</code></pre></div>
+A continuación vamos a crear una plantilla en una carpeta llamada
+"portfolioapp", dentro de la carpeta "templates", con el nombre
+"proyecto_form.html", con el siguiente contenido:
+<div class="highlight"><pre><span></span><code>{% extends &#39;portfolio/base.html&#39; %}
 
+{% block content %}
+&lt;div class=&quot;container&quot;&gt;
+    &lt;h2&gt;Creación de un nuevo proyecto&lt;/h2&gt;
+    &lt;form method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;{% csrf_token %}
+        {{ form.as_p }}
+        &lt;input type=&quot;submit&quot; value=&quot;Guardar&quot;&gt;
+    &lt;/form&gt;
+&lt;/div&gt;
+{% endblock %}
+</code></pre></div>
+<em>ACTIVIDAD</em>: investigamos qué significa csrf_token y por qué lo hemos de
+incluir siempre al crear un formulario.</p>
+<p>Por último, creamos una nueva URL:
+<div class="highlight"><pre><span></span><code>path(&#39;proyecto_create/&#39;, views.ProyectoCreateView.as_view(), name=&#39;proyecto_create&#39;)
+</code></pre></div></p>
+<p>Vamos al navegador, e introducimos la URL según la estructura que hemos
+configurado y, ¡obtenemos el formulario con todos sus campos!</p>
+<p><img alt="" src="../Pictures/ud6/100000010000034500000296D777C09C0870A895.png" /></p>
+<p>Emocionante, pero ¿qué ha pasado tras las cortinas para que con tan
+pocas líneas hayamos obtenido un formulario funcional? Ha ocurrido lo
+siguiente:</p>
+<ul>
+<li>CreateView ha derivado un formulario basándose en el modelo
+    Proyecto, tomando los campos que le hemos pasado en la lista fields.</li>
+<li>Hemos utilizado este formulario en el template
+    "proyecto_form.html". La vista se lo ha pasado automáticamente por
+    contexto, sin que nosotros hayamos configurado nada.</li>
+<li>¿Cómo sabe Django qué plantilla ha de utilizar para la nueva vista?
+    Lo sabe porque hemos dejado la plantilla bajo el directorio
+    "portfolioapp" en templates, con el mismo nombre que la app que
+    contiene la vista. Además, hemos seguido la nomenclatura [nombre
+    modelo]_form.html, es decir proyecto_form.html, con lo cual Django
+    lo ha sabido encontrar.</li>
+</ul>
+<p>Vamos a crear nuestro primer proyecto. Pulsamos en Guardar, y obtenemos
+lo siguiente:</p>
+<p><img alt="" src="../Pictures/ud6/1000000100000549000001747916B1BBB020AEA3.png" /></p>
+<p>Django nos avisa que no hemos configurado la vista
+para redireccionar la navegación tras crear un proyecto
+satisfactoriamente. A pesar del error, realmente sí se ha creado el
+proyecto, lo podemos ver en home:</p>
+<p><img alt="" src="../Pictures/ud6/10000001000004560000028854444E44C7017F05.png" /></p>
+<p>Por tanto, vamos a modificar la vista de la siguiente forma, para
+definir un atributo llamado success_url:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">django.urls</span><span class="w"> </span><span class="kn">import</span> <span class="n">reverse_lazy</span>
+<span class="o">...</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ProyectoCreateView</span><span class="p">(</span><span class="n">CreateView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Proyecto</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;titulo&#39;</span><span class="p">,</span> <span class="s1">&#39;descripcion&#39;</span><span class="p">,</span> <span class="s1">&#39;fecha_creacion&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;categorias&#39;</span><span class="p">,</span> <span class="s1">&#39;imagen&#39;</span><span class="p">]</span>
+    <span class="n">success_url</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s1">&#39;home&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p>El nombre 'home' viene del nombre que le dimos a la URL de la vista
+HomeView, creada en la unidad anterior.</p>
+<p>Si creamos ahora un nuevo proyecto, al salvar los cambios nos
+redireccionará a la página de inicio.</p>
+<h3 id="updateview">UpdateView<a class="headerlink" href="#updateview" title="Permanent link">&para;</a></h3>
+<p>Vamos en este apartado a implementar la actualización del proyecto. Para
+ello, utilizamos la vista genérica UpdateView (la importamos
+previamente), y añadimos una vista del siguiente modo:</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">ProyectoUpdateView</span><span class="p">(</span><span class="n">UpdateView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Proyecto</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;titulo&#39;</span><span class="p">,</span> <span class="s1">&#39;descripcion&#39;</span><span class="p">,</span> <span class="s1">&#39;fecha_creacion&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;categorias&#39;</span><span class="p">,</span> <span class="s1">&#39;imagen&#39;</span><span class="p">]</span>
+    <span class="n">success_url</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s1">&#39;home&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p>La URL será la siguiente:
+<div class="highlight"><pre><span></span><code><span class="n">path</span><span class="p">(</span><span class="s1">&#39;proyecto_update/&lt;int:pk&gt;/&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">ProyectoUpdateView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;proyecto_update&#39;</span><span class="p">),</span>
+</code></pre></div></p>
+<p>Probamos la URL con un ID de prueba y vemos que recupera automáticamente
+los datos del proyecto con ese ID.</p>
+<p><img alt="" src="../Pictures/ud6/10000001000002F500000286DFDD63288A8A350D.png" /></p>
+<p>Hay que notar que no hemos especificado ninguna plantilla, ha seguido
+tomando la plantilla proyecto_form.php que ya se había utilizado para la
+CreateView.</p>
+<p>Hay una cosa en el formulario que no nos acaba de gustar, y es el texto
+del botón. Vamos a modificar la plantilla para que, en función de que
+estemos en modo creación o edición, muestre "Crear" o "Actualizar",
+para que sea más orientativo para el usuario. Esto lo podemos conseguir
+comprobando si existe una variable "object" en el contexto de la
+plantilla, pasado por UpdateView. Así, modificaríamos el código de la
+plantilla ligeramente para que el botón que dispara el formulario quede:
+<div class="highlight"><pre><span></span><code>&lt;input type=&quot;submit&quot; value=&quot;{{object|yesno:&#39;Actualizar,Crear&#39;}}&quot;&gt;
+</code></pre></div></p>
+<p>De la misma forma, modificamos el elemento h2:
+<div class="highlight"><pre><span></span><code>&lt;h2&gt;{{object|yesno:&#39;Actualizar proyecto,Creación de un nuevo proyecto&#39;}}&lt;/h2&gt;
+</code></pre></div></p>
+<p>Hemos utilizado el operador ternario
+<a href="https://docs.djangoproject.com/en/4.2/ref/templates/builtins/#yesno">yesno</a>
+en la plantilla.</p>
+<p>Vamos a modificar la pantalla de inicio para que, al pulsar en uno de
+los proyectos, vaya al formulario de edición. En la siguiente unidad
+configuraremos la aplicación para que solo se pueda editar un proyecto
+si el usuario tiene privilegios para ello.</p>
+<p>Lo único que hemos de hacer es cambiar ligeramente la línea 12 de
+home.html para cambiar el nombre de la URL a la que apunta el enlace de
+cada proyecto:
+<div class="highlight"><pre><span></span><code>&lt;a href=&quot;{% url &#39;proyecto_update&#39; pk=proyecto.id %}&quot; class=&quot;p-5&quot;&gt;
+</code></pre></div></p>
+<p>Probamos que ahora accedemos al formulario de edición tras pulsar sobre
+uno de los proyectos.</p>
+<h3 id="deleteview">DeleteView<a class="headerlink" href="#deleteview" title="Permanent link">&para;</a></h3>
+<p>Ahora vamos a implementar una vista que nos permita borrar un proyecto
+determinado. Para ello vamos a utilizar la vista genérica DeleteView. La
+operación se va a realizar en dos pasos:</p>
+<p>1. En el formulario de edición del proyecto tendremos un botón
+Eliminar, solo habilitado si el formulario está en modo edición, no
+creación.</p>
+<p>2. Navegación a una pantalla de confirmación, donde confirmaremos que
+realmente queremos borrar el registro.</p>
+<p>Vamos a ello. Configuramos la vista de eliminación de la siguiente
+forma:</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">ProyectoDeleteView</span><span class="p">(</span><span class="n">DeleteView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Proyecto</span>
+    <span class="n">success_url</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s1">&#39;home&#39;</span><span class="p">)</span>
+</code></pre></div>
+<p>No es necesario especificar el atributo template_name, ya que el nombre
+de la plantilla sigue la nomenclatura por defecto
+(proyecto_confirm_delete.html, definida más abajo).</p>
+<p>Y su correspondiente URL:</p>
+<div class="highlight"><pre><span></span><code><span class="n">path</span><span class="p">(</span><span class="s1">&#39;proyecto_delete/&lt;int:pk&gt;/&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">ProyectoDeleteView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;proyecto_delete&#39;</span><span class="p">),</span>
+</code></pre></div>
+<p>La plantilla, con nombre "proyecto_confirm_delete.html", será la
+siguiente:
+<div class="highlight"><pre><span></span><code>{% extends &#39;portfolio/base.html&#39; %}
 
+{% block content %}
+&lt;div class=&quot;container&quot;&gt;
+    &lt;h2&gt;Eliminar un proyecto&lt;/h2&gt;
+    &lt;form method=&quot;post&quot;&gt;{% csrf_token %}
+        &lt;p&gt;¿Está seguro que quiere eliminar este proyecto &quot;{{ object }}&quot;?&lt;/p&gt;
+        {{ form }}
+        &lt;input type=&quot;submit&quot; value=&quot;Confirmar&quot; class=&quot;btn btn-danger&quot;&gt;
+    &lt;/form&gt;
+&lt;/div&gt;
+{% endblock %}
+</code></pre></div></p>
+<p>Queda por crear el botón Eliminar en el formulario del proyecto, y solo
+se habilitará cuando esté en modo edición (el proyecto ya ha sido
+creado). ¿Cómo sabemos si el formulario está en modo creación o edición?
+Muy fácil: la vista UpdateView pasa a la plantilla, como parte del
+contexto, un objeto "object" con todos los atributos del proyecto.
+Así, solo hemos de condicionar la visualización del botón Eliminar
+cuando object no esté vacío. De esta forma, añadimos lo siguiente a
+proyecto_form.html, tras el elemento form:
+<div class="highlight"><pre><span></span><code>{% if object %}
+&lt;a class=&quot;btn btn-danger&quot; href=&quot;{% url &#39;proyecto_delete&#39; object.id %}&quot;&gt; Eliminar &lt;/a&gt;
+{% endif %}
+</code></pre></div></p>
+<p>Ya tenemos el botón Eliminar en el formulario de edición. Si pulsamos,
+nos llevará a la siguiente página:</p>
+<p><img alt="" src="../Pictures/ud6/10000001000003020000013875DA150CB4BFB623.png" /></p>
+<p>No nos aparece correctamente el nombre del proyecto,
+porque no hemos configurado su <strong>representación textual</strong> mediante la
+función <strong>str</strong> en la configuración del modelo Proyecto.</p>
+<p>ACTIVIDAD: configura <strong>str</strong> en Proyecto, como hiciste en las
+actividades de la unidad anterior.</p>
+<p>Tras confirmar la eliminación, navegamos automáticamente a la página de
+inicio y comprobamos que se ha eliminado el proyecto.</p>
+<h3 id="redirecciones">Redirecciones<a class="headerlink" href="#redirecciones" title="Permanent link">&para;</a></h3>
+<p>Ahora tenemos una forma de crear, actualizar y eliminar proyectos, pero
+cada vez que realizamos una acción, nos redirecciona a la pantalla de
+bienvenida. Queremos cambiar esto de forma que, cuando realizamos una
+operación, se redireccione automáticamente a una URL que tenga sentido.
+Podríamos diseñar las siguientes acciones para que la navegación sea lo
+más lógica posible:</p>
+<ul>
+<li>Ir a pantalla de edición tras la creación de un proyecto.</li>
+<li>Ir a la página de bienvenida tras la edición exitosa de un proyecto.</li>
+<li>Ir a la página de bienvenida tras la eliminación de un proyecto.</li>
+</ul>
+<p>Las dos últimas las tenemos resueltas, falta por solucionar la primera.</p>
+<p>Tenemos diferentes formas de hacer lo mismo:</p>
+<ul>
+<li>Mediante el método get_success_url en la vista, con el que podemos
+    construir dinámicamente la URL a la que redireccionar, en función de
+    cada \"id\" de proyecto.</li>
+<li>Mediante el método
+    <a href="https://docs.djangoproject.com/en/4.2/ref/models/instances/#django.db.models.Model.get_absolute_url">get_absolute_url</a>
+    en el modelo, que se utilizaría para redireccionar tras crear o
+    actualizar un objeto de ese modelo.</li>
+</ul>
+<p>Como solo queremos modificar el comportamiento de la creación,
+sustituimos la vista ProyectoCreateView por la siguiente versión:
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">ProyectoCreateView</span><span class="p">(</span><span class="n">CreateView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Proyecto</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;titulo&#39;</span><span class="p">,</span> <span class="s1">&#39;descripcion&#39;</span><span class="p">,</span> <span class="s1">&#39;fecha_creacion&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;categorias&#39;</span><span class="p">,</span> <span class="s1">&#39;imagen&#39;</span><span class="p">]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_success_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">object</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">object</span>
+        <span class="k">return</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s1">&#39;proyecto_update&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;pk&#39;</span><span class="p">:</span> <span class="nb">object</span><span class="o">.</span><span class="n">id</span><span class="p">})</span>
+</code></pre></div></p>
+<p>Cabe hacer notar que ya disponemos del objeto creado (en la BBDD)
+mediante self.object para cuando se ejecuta la función get_success_url.
+Esto nos permite una gran variedad de posibilidades, ya que podríamos
+redireccionar la navegación de multitud de formas (a diferentes vistas,
+con diferentes parámetros) dependiendo de las características del objeto
+creado, o de otros factores. Podríamos, por ejemplo, redireccionar la
+navegación a la página de inicio y pasar un parámetro para filtrar todos
+los proyectos del mismo año que el que acabamos de crear. Lo vamos a
+dejar así por el momento.</p>
+<h3 id="mixins">Mixins<a class="headerlink" href="#mixins" title="Permanent link">&para;</a></h3>
+<p>Los mixins son una forma de reutilización de código en Django, de forma
+que podemos definir una vista que herede de otra vista genérica, y
+aportarle funcionalidades extra mediante mixins.</p>
+<h4 id="messages-framework">Messages framework<a class="headerlink" href="#messages-framework" title="Permanent link">&para;</a></h4>
+<p>Vamos a utilizar como ejemplo el mixin SuccessMessageMixin, que nos va a
+permitir mostrar mensajes de confirmación tras realizar cualquier
+acción. La documentación sobre esto la puedes encontrar en este
+<a href="https://docs.djangoproject.com/en/5.2/ref/contrib/messages/">enlace</a>.</p>
+<p>En primer lugar, la documentación nos dice que, por defecto, la
+configuración para esta funcionalidad ya está preestablecida en
+settings.py. Vamos a la parte que nos interesa, que es la de la de
+<a href="https://docs.djangoproject.com/en/5.2/ref/contrib/messages/#adding-messages-in-class-based-views">agregar mensajes en
+CBV</a>.
+En views.py importamos la clase SuccessMessageMixin como nos indica en
+el ejemplo del enlace, y modificamos la vista ProyectoCreateView para
+que quede del siguiente modo:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">django.contrib.messages.views</span><span class="w"> </span><span class="kn">import</span> <span class="n">SuccessMessageMixin</span>
+<span class="o">...</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ProyectoCreateView</span><span class="p">(</span><span class="n">SuccessMessageMixin</span><span class="p">,</span> <span class="n">CreateView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Proyecto</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;titulo&#39;</span><span class="p">,</span> <span class="s1">&#39;descripcion&#39;</span><span class="p">,</span> <span class="s1">&#39;fecha_creacion&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;categorias&#39;</span><span class="p">,</span> <span class="s1">&#39;imagen&#39;</span><span class="p">]</span>
+    <span class="n">success_message</span> <span class="o">=</span> <span class="s2">&quot;Proyecto creado exitosamente&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_success_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">object</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">object</span>
+        <span class="k">return</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s1">&#39;proyecto_update&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;pk&#39;</span><span class="p">:</span> <span class="nb">object</span><span class="o">.</span><span class="n">id</span><span class="p">})</span> 
+</code></pre></div>
+<p>NOTA: es importante situar los mixins a la izquierda de la vista base.
+Los atributos y métodos se resuelven de izquierda a derecha. En caso de
+que las clases de las que se hereda tengan un mismo nombre de un
+atributo y/o método, el de más a la izquierda se tomaría antes que el de
+la clase de más a la derecha, según la lista especificada. Es por ello
+que la clase base se sitúa más a la derecha.</p>
+<p>Está todo listo ya. Solo nos queda poder mostrar por pantalla los
+mensajes generados, como se muestra en este
+<a href="https://docs.djangoproject.com/en/4.2/ref/contrib/messages/#displaying-messages">apartado</a>
+de la documentación. Para ello, podemos reservar un espacio en la
+plantilla base de la aplicación, que contenga el siguiente bloque (antes
+del bloque "content"):</p>
+<div class="highlight"><pre><span></span><code>{% block messages %}
+    {% if messages %}
+        {% for message in messages %}
+        &lt;div {% if message.tags %} class=&quot;alert alert-{{ message.tags }} alert-dismissible fade show&quot; {%endif %} role=&quot;alert&quot;&gt;
+            {{ message }}
+            &lt;button type=&quot;button&quot; class=&quot;btn-close&quot; data-bs-dismiss=&quot;alert&quot; aria-label=&quot;Close&quot;&gt;&lt;/button&gt;
+        &lt;/div&gt;
+        {% endfor %}
+    {% endif %}
+{% endblock messages %}
+</code></pre></div>
+<p>Al crear un nuevo proyecto, se nos mostrará el siguiente mensaje:</p>
+<p><img alt="" src="../Pictures/ud6/1000000100000486000003766548A6CEA97FA276.png" /></p>
+<p>Es importante notar que los mensajes se mostrarán al finalizar la acción
+que hemos realizado, pero cuando ya hayamos cargado la siguiente página.
+Por tanto, la navegación ha de realizarse de forma que tenga sentido
+para el usuario el mensaje obtenido, y la página actual en la que nos
+encontramos.</p>
+<p>ACTIVIDAD: Añade esta funcionalidad a la vista ProyectoUpdateView.</p>
+<p>En estos momentos el mensaje mostrado es estático, siempre se mostraría
+el mismo. Pero podríamos hacer que se mostrase un mensaje diferente, por
+ejemplo, en función de alguno de los atributos del proyecto (su nombre,
+su representación textual, etc). Para poder hacer esto, basta con
+sobreescribir el método get_success_message de la clase (CreateView o
+UpdateView). Un ejemplo puede ser el siguiente, que hace que se muestre
+un mensaje con un texto fijo, combinado con la representación textual
+del proyecto:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_success_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cleaned_data</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s2">&quot;Proyecto &#39;</span><span class="si">{}</span><span class="s2">&#39; actualizado exitosamente&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">object</span><span class="p">))</span>
+</code></pre></div>
+<p>En este <a href="https://www.w3schools.com/python/ref_string_format.asp">enlace</a>
+tienes una explicación más detallada de qué hace <strong>format</strong>.</p>
+<p>Como apunte final, vamos a hacer un pequeño cambio en la configuración
+de settings.py. Simplemente añade esta importación:
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">django.contrib.messages</span><span class="w"> </span><span class="kn">import</span> <span class="n">constants</span> <span class="k">as</span> <span class="n">messages</span>
+</code></pre></div>
+Y añade esta línea al final:
+<div class="highlight"><pre><span></span><code><span class="n">MESSAGE_TAGS</span> <span class="o">=</span> <span class="p">{</span><span class="n">messages</span><span class="o">.</span><span class="n">ERROR</span><span class="p">:</span> <span class="s1">&#39;danger&#39;</span><span class="p">}</span>
+</code></pre></div>
+Más adelante en este documento se explicará el por qué de este cambio.</p>
+<h4 id="mixins-personalizados">Mixins personalizados<a class="headerlink" href="#mixins-personalizados" title="Permanent link">&para;</a></h4>
+<p>La posibilidad de utilizar mixins supone un reaprovechamiento
+importantísimo de código. Podemos crear pequeñas cápsulas de código
+identificadas con un nombre, e ir dotando a nuestras clases de
+características adicionales. Al leer la línea inicial de una clase (sus
+mixins y clase base de la que hereda) deberíamos poder saber cuál va a
+ser el propósito de la clase.</p>
+<p>En este apartado vamos a crear un mixin nuevo. Para ello, primero
+creamos un fichero mixins.py en la app portfolioapp:</p>
+<p><img alt="" src="../Pictures/ud6/10000001000000BD0000011F7C2E7BE79FC00E43.png" /></p>
+<p>Crear un mixin es crear una clase nueva. Para crear
+una clase desde cero, heredamos de la clase "object", aunque podemos
+partir de otras clases.</p>
+<p>Observando nuestras vistas, ¿qué podríamos llevarnos a un mixin? quizás
+las diferentes opciones son argumentables, pero con el código que hemos
+generado hasta el momento, se repiten algunos atributos de las clases
+ProyectoCreateView y ProyectoUpdateView, y la herencia de
+SuccessMessageMixin. Vamos por tanto a crear un mixin que agrupe todo
+esto, y además vamos a redireccionar las dos acciones (creación y
+actualización) a la pantalla de actualización. En mixins.py:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">django.contrib.messages.views</span><span class="w"> </span><span class="kn">import</span> <span class="n">SuccessMessageMixin</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Proyecto</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">ProyectoMixin</span><span class="p">(</span><span class="n">SuccessMessageMixin</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Proyecto</span>
+    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;titulo&#39;</span><span class="p">,</span> <span class="s1">&#39;descripcion&#39;</span><span class="p">,</span> <span class="s1">&#39;fecha_creacion&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;categorias&#39;</span><span class="p">,</span> <span class="s1">&#39;imagen&#39;</span><span class="p">]</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_success_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">object</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">object</span>
+        <span class="k">return</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s1">&#39;proyecto_update&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;pk&#39;</span><span class="p">:</span> <span class="nb">object</span><span class="o">.</span><span class="n">id</span><span class="p">})</span>
+</code></pre></div>
+<p>En views.py modificamos las vistas para que queden del modo:
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">.mixins</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProyectoMixin</span>
+<span class="o">...</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ProyectoCreateView</span><span class="p">(</span><span class="n">ProyectoMixin</span><span class="p">,</span> <span class="n">CreateView</span><span class="p">):</span>
+    <span class="n">success_message</span> <span class="o">=</span> <span class="s2">&quot;Proyecto creado exitosamente&quot;</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">ProyectoUpdateView</span><span class="p">(</span><span class="n">ProyectoMixin</span><span class="p">,</span> <span class="n">UpdateView</span><span class="p">):</span>
+    <span class="n">success_message</span> <span class="o">=</span> <span class="s2">&quot;Proyecto actualizado exitosamente&quot;</span>
+</code></pre></div></p>
+<p>Si probamos la aplicación, debería funcionar igual que antes, con las
+ventajas de que nuestro código es mucho más modular, y si tuviésemos que
+cambiar algo del comportamiento común a estas dos vistas, solo
+tendríamos que modificarlo en un único lugar.</p>
+<p>NOTA: Un mixin debería representar una agrupación de funcionalidades que
+pudiesen ser reutilizadas en muchas vistas, incluso de diferentes apps.
+En este caso, estamos llevando al mixin el atributo model junto con
+otros atributos y métodos que lo particularizan para vistas basadas en
+el modelo Proyecto. Por lo tanto, no vamos a poder utilizar este mixin
+en otras vistas de otros modelos. Podríamos acabar incluso llevándonos
+toda la lógica de las dos vistas al mixin, pero se difuminaría el
+propósito del mixin, y las vistas se reducirían a un mínimo que
+carecería de sentido. La práctica nos dirá cuándo nos llevamos
+determinados comportamientos a un mixin, y cuándo los dejamos en una
+determinada vista.</p>
+<h3 id="personalizacion-de-vistas-genericas">Personalización de vistas genéricas<a class="headerlink" href="#personalizacion-de-vistas-genericas" title="Permanent link">&para;</a></h3>
+<p>Hemos visto ya algún ejemplo de cómo modificar el comportamiento de una
+vista, en concreto el método get_success_url (de CreateView y
+UpdateView). En este apartado vamos a ir un poco más allá y vamos a
+averiguar qué opciones tenemos disponibles para personalizar, y hacer
+algunos ejemplos.</p>
+<p>Tomamos como ejemplo la vista CreateView. Lo primero que nos hemos de
+preguntar es qué métodos podemos personalizar. Vamos a la
+<a href="https://docs.djangoproject.com/en/5.2/ref/class-based-views/generic-editing/#django.views.generic.edit.CreateView">documentación</a>
+de esta vista, y nos da una lista de sus características:</p>
+<p><strong>Atributos:</strong></p>
+<p>Entre los atributos, la documentación especifica uno llamado "object".
+Si el objeto aún no ha sido creado, este atributo tendrá el valor None,
+y si el objeto ya ha sido creado contendrá una copia. Esto lo hemos
+utilizado en el método get_success_url, para pasarle a la vista "proyecto_update" el id del objeto que se ha creado al pulsar el botón
+"Crear".</p>
+<p><strong>Ancestros:</strong></p>
+<p>Esta es la lista de ancestros:</p>
+<p><img alt="" src="../Pictures/ud6/100000010000022D000000FD7E77D21918D67104.png" /></p>
+<p>NOTA: En este apartado se especifican las siglas
+<a href="https://www.educative.io/answers/what-is-mro-in-python">MRO</a> (Method
+Resolution Order), que es el algoritmo que utiliza Python para la
+resolución de un método/atributo en la jerarquía de clases, cuando se
+utiliza la herencia múltiple. Este punto es el que se ha discutido en el
+apartado de mixins.</p>
+<p>Si consultamos cada una de estas clases, podemos ver los atributos y
+métodos de cada una de ellas. Por ejemplo:</p>
+<ul>
+<li>Mediante SingleObjectTemplateResponseMixin podemos recuperar el
+    template para una vista que opere sobre un solo objeto. Entre otros,
+    podemos ver que este mixin tiene un método get_template_names, que
+    establece una lista de plantillas candidatas a ser utilizadas. Nos
+    dice que se busca una plantilla con la forma
+    <app_label>/<model_name><template_name_suffix>.html. Esta
+    estructura es coherente con el nombre de la plantilla que
+    utilizábamos ProyectoCreateView, llamada proyecto_form.html, dentro
+    de la app portfolioapp. Por tanto hemos resuelto el misterio de cómo
+    era posible que Django encontrase la plantilla de nuestro proyecto
+    automáticamente. Podríamos, por ejemplo, sobreescribir este método
+    para obtener el nombre de una plantilla para nuestra vista, según
+    otro tipo de lógica.</li>
+<li>En ModelFormMixin podemos ver que están casi todos los atributos que
+    hemos utilizado hasta ahora, y el método get_success_url que ya
+    habíamos sobreescrito. Tenemos además otros métodos interesantes,
+    como form_valid (que nos permitirá realizar determinadas acciones
+    una vez se ha verificado que los campos del formulario son válidos,
+    antes de crear el objeto y redireccionar).</li>
+</ul>
+<p>En los siguientes subapartados vamos a realizar algunas
+personalizaciones a algunas de las vistas que venimos utilizando.</p>
+<h4 id="form_valid">form_valid<a class="headerlink" href="#form_valid" title="Permanent link">&para;</a></h4>
+<p>Imaginemos que queremos enviar una notificación a los suscriptores de
+nuestro sitio web (si tuviésemos la capacidad de llevar su alta y
+gestión). Queremos notificarles que hemos publicado un nuevo proyecto,
+no queremos que se pierdan nada. Esto es de lo más común en cualquier
+tipo de aplicación, no podemos pretender que los usuarios estén
+constantemente refrescando una página web para saber si hay novedades,
+hemos de enviar notificaciones (normalmente en forma de e-mail).</p>
+<p>Por ello, en cualquier proyecto de una cierta envergadura, vamos a
+disponer de una parte de la aplicación que se encargue de registrar
+todos aquellos eventos susceptibles de ser notificados, así como la
+lógica para encontrar los destinatarios, conformar los mensajes, y
+enviar los e-mails (ya directamente, o a través de un servicio como
+<a href="https://mailchimp.com/es/?currency=EUR">mailchimp</a>).</p>
+<p>Bien, el primer paso es poder registrar el evento de creación de un
+proyecto nuevo. Pero ¿dónde lo registramos? Lo podemos hacer en una
+tabla nueva. Esta tabla... ¿la creamos en la app "portfolioapp" que
+tenemos actualmente en el proyecto? Pues no es lo más adecuado: vamos a
+empezar a desarrollar lógica para una nueva funcionalidad sobre
+notificaciones. Tiene muchísimo más sentido crear una app nueva en el
+proyecto, que registre la base de todo esto, y además lo podamos
+reutilizar en futuros proyectos.</p>
+<p>Por tanto, creamos una nueva app llamada "notificaciones" (mediante el
+comando startapp), la añadimos a INSTALLED_APPS de settings.py, y dentro
+de su fichero models.py definimos un nuevo modelo. Una versión muy muy
+muy simplificada sería:</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">NotificaProyecto</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">proyecto</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Proyecto</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">PROTECT</span><span class="p">)</span>
+    <span class="n">fecha</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="n">now</span><span class="p">)</span>
+    <span class="n">notificado</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">BooleanField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
+<p><em>NOTA</em>: En un proyecto de más envergadura, si quisiésemos notificar
+eventos realizados sobre diferentes tipos de modelos, ¿deberíamos tener
+un modelo NotificaXXX por cada tipo de objeto a modificar? El problema
+es que la clave foránea "proyecto" va enlazada con el modelo Proyecto,
+pero no puede ir enlazada con ningún otro modelo. Nos ahorraría mucho
+esfuerzo el poder enlazar ese atributo a cualquier modelo sobre el que
+quisiésemos notificar algún evento. ¿Cómo se podría hacer en Django? Muy
+fácil: mediante lo que se llama el <a href="https://docs.djangoproject.com/en/5.2/ref/contrib/contenttypes/">contenttype
+framework</a>
+de Django, mediante el que podemos establecer claves foráneas genéricas,
+a cualquier otro modelo. Un mismo modelo nos puede servir de detalle
+para varios muchos otros.</p>
+<p>Tras crear el modelo, hacemos las migraciones y migramos, y configuramos
+el administrador para este nuevo modelo.</p>
+<p>Nuestro objetivo es que cada vez que se cree un proyecto nuevo se cree,
+a la vez, un nuevo objeto para la clase NotificaProyecto.</p>
+<p>Bien, vamos a sobreescribir el método form_valid de la vista
+ProyectoCreateView para realizar dos acciones:</p>
+<ul>
+<li>Comprobar que la fecha de creación del proyecto no es anterior al
+    momento actual (se trata solo de un ejercicio ilustrativo).</li>
+<li>Creación tanto el proyecto como su correspondiente notificación.</li>
+</ul>
+<p>Primero importamos lo siguiente en views.py:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">django.contrib</span><span class="w"> </span><span class="kn">import</span> <span class="n">messages</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.db</span><span class="w"> </span><span class="kn">import</span> <span class="n">transaction</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">timezone</span>
+</code></pre></div>
+<p>Todo esto es tan fácil como añadir el siguiente método a la clase
+ProyectoCreateView:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">form_valid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">form</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">form</span><span class="o">.</span><span class="n">instance</span><span class="o">.</span><span class="n">fecha_creacion</span> <span class="o">&lt;</span> <span class="n">timezone</span><span class="o">.</span><span class="n">now</span><span class="p">():</span>
+        <span class="n">messages</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="p">,</span> <span class="s2">&quot;La fecha/hora del proyecto no puede ser anterior a la actual.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">ProyectoCreateView</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">form_invalid</span><span class="p">(</span><span class="n">form</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+         <span class="n">proyecto</span> <span class="o">=</span> <span class="n">form</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+         <span class="n">NotificaProyecto</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">proyecto</span><span class="o">=</span><span class="n">proyecto</span><span class="p">)</span>
+         <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">ProyectoCreateView</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">form_valid</span><span class="p">(</span><span class="n">form</span><span class="p">)</span>
+</code></pre></div>
+<p>En el momento en el que se ejecuta form_valid, el objeto aún no está
+creado realmente en la base de datos, o al menos no se ha hecho el
+commit final. Es por ello que el objeto está disponible en
+form.instance, aunque podemos revertir los cambios llamando al método
+form_invalid de la superclase.</p>
+<p>Vamos a probarlo. Primero intentamos crear un proyecto con una fecha
+anterior a la actual, y obtenemos el siguiente mensaje de error:</p>
+<p><img alt="" src="../Pictures/ud6/1000000100000487000003348E6C3EBBBB972C2B.png" /></p>
+<p>Fenomenal. Vamos a probar el resto de la lógica.
+Modificamos la fecha y guardamos:</p>
+<p><img alt="" src="../Pictures/ud6/10000001000004C50000038429FD91705EFE379C.png" /></p>
+<p>Bien, vamos a ver si se ha creado otro registro de
+notificación, mediante el administrador:</p>
+<p><img alt="" src="../Pictures/ud6/100000010000075E000001D56016A1FE6B01F7ED.png" /></p>
+<p>¡Perfecto! Hemos conseguido crear un registro en otra
+tabla, al tiempo que hemos creado un proyecto. Ahora vamos a tener el
+siguiente problema: al intentar borrar un proyecto, vamos a obtener un
+error avisándonos que tenemos registros dependientes en la BBDD. Esto lo
+trataremos en las actividades.</p>
+<p><strong><em>IMPORTANTÍSIMO</em></strong>: Cabe hacer notar lo siguiente:</p>
+<ul>
+<li>Realmente no hemos sobreescrito el método form_valid, lo hemos
+    <strong>extendido</strong>. Hemos realizado una serie de operaciones y al final
+    hemos llamado al método form_valid o form_invalid de la superclase.
+    Es decir, solo hemos añadido algunos pasos previos a la lógica
+    heredada. La nomenclatura para llamar al método de la superclase es
+    mediante <a href="https://realpython.com/python-super/">super</a>.</li>
+<li>Hemos utilizado transacciones de Django para asegurarnos de que la
+    creación del proyecto y su notificación se realiza de forma
+    conjunta, y si se produce algún tipo de error en uno de ellos, que
+    no se realice la transacción en la base de datos.</li>
+</ul>
+<p><em>NOTA</em>: Existe otra aproximación para realizar este tipo de operaciones
+en Django, que son las señales o
+<a href="https://docs.djangoproject.com/en/5.2/topics/signals/">signals</a>. Este
+método supone que se disparen determinadas acciones en la BBDD cuando se
+detectan determinados eventos. Existen ocasiones en que esto nos permite
+controlar mucho mejor el momento y las acciones que queremos sincronizar
+con un determinado evento en el sistema, y no tendríamos que
+preocuparnos de replicar la misma lógica en todas aquellas partes del
+código que lo necesitemos. Serían similares a los triggers de bases de
+datos.</p>
+<h5 id="tags-de-mensajes">Tags de mensajes<a class="headerlink" href="#tags-de-mensajes" title="Permanent link">&para;</a></h5>
+<p>Django ha sabido ponerle hasta el color correcto al mensaje de error...
+¿o se nos escapa algo? Revisemos la plantilla base.html, vemos que el
+color viene dado por la parte que dice:</p>
+<p>alert-{{message.tags}}</p>
+<p>Vamos a verlo en el ejemplo del mensaje de error de la comprobación de
+fechas:</p>
+<p><img alt="" src="../Pictures/ud6/100000010000056100000139B1BC13BDAFE113A4.png" /></p>
+<p>Genial, tenemos la clase alert-danger, que es la que
+nos da el color rojo.</p>
+<p>Bien, la clase bootstrap que le estamos asignando a ese bloque viene
+dado por el mismo código del mensaje de error. En las
+<a href="https://getbootstrap.com/docs/5.2/components/alerts/">alertas</a> de
+bootstrap vemos que la clase para mensajes de error es "alert-danger".</p>
+<p>Pero: en la
+<a href="https://docs.djangoproject.com/en/5.2/ref/contrib/messages/#message-tags">documentación</a>
+del framework de mensajes de Django, los códigos son los siguientes:</p>
+<p><img alt="" src="../Pictures/ud6/10000001000000CE000000AEAA4192E5A57BA8C2.png" /></p>
+<p>Y según bootstrap, las clases de las alertas que se
+podrían corresponder con nuestros códigos de mensajes son:</p>
+<p>alert-info</p>
+<p>alert-success</p>
+<p>alert-warning</p>
+<p>alert-<strong>danger</strong></p>
+<p>Vemos que concatenando "alert-" con el código de cada tipo de mensaje
+en Django podemos conformar la clase adecuada, por eso utilizamos
+alert-{{message.tags}}.</p>
+<p>¿Te has dado ya cuenta de dónde está la discrepancia? Sí: el código de
+los mensajes de error en Django es "error", no "danger". Con lo
+cual, ¿cómo puede estar derivando la clase correctamente? Bien, esto es
+por la modificación que hicimos anteriormente en settings.py:</p>
+<p>MESSAGE_TAGS = {messages.ERROR: 'danger'}</p>
+<p>Gracias a esto, estamos utilizando "danger" y no "error" (el valor
+por defecto de Django) como etiqueta de error. Lo podemos comprobar
+fácilmente: comentamos esa línea en settings.py e intentamos forzar el
+error:</p>
+<p><img alt="" src="../Pictures/ud6/100000010000056100000139ADEC02DFE525DD0D.png" /></p>
+<p>Ahora vemos que ha formado la clase "alert-error".
+Como esa clase no la reconoce Bootstrap, provoca que el mensaje no se
+visualice correctamente.</p>
+<p>FINALMENTE, descomentamos la línea de MESSAGE_TAGS en settyings.py, para
+dejar esa modificación.</p>
+<h2 id="formularios">Formularios<a class="headerlink" href="#formularios" title="Permanent link">&para;</a></h2>
+<p>Las vistas CreateView y UpdateView han creado automáticamente un
+formulario basándose en los campos que hemos especificado en el atributo
+fields, pero el aspecto y distribución de dicho formulario es claramente
+mejorable.</p>
+<p>Los formularios son una pieza clave en la interacción con el usuario,
+por tanto hay que prestar especial atención a estos elementos en nuestra
+aplicación. La disposición y agrupación de los campos, las utilidades
+que ayudan al usuario a decidir los valores introducidos, los mensajes
+(informativos, de aviso, error, y éxito) y el comportamiento de la
+aplicación tras el envío de los datos y su procesado, han de estar
+especialmente analizados y depurados antes de lanzar nuestra aplicación.
+Conceptos de diseño de interfaces como la usabilidad, están
+estrechamente relacionados con los formularios.</p>
+<p>Django nos proporciona una serie de utilidades para agilizar la creación
+y configuración de formularios. Principalmente, dispondremos de dos
+clases que realizarán muchas de las tareas básicas por nosotros:</p>
+<ul>
+<li><a href="https://docs.djangoproject.com/en/5.2/ref/forms/api/#django.forms.Form">Clase
+    Form</a>:
+    Representa la forma más básica de crear un formulario, permitirá
+    tener mayor control. La utilizaremos normalmente para formularios
+    que no gestionen directamente un modelo (operaciones básicas de
+    creación, actualización, eliminación), como por ejemplo el
+    formulario de login, o un simple formulario de contacto que envíe un
+    e-mail (sin manipular datos de la BBDD). Las clases basadas en la
+    clase Form se suelen utilizar en una <em>FormView</em>, de forma que
+    realice el resto de la lógica con los datos recogidos por el
+    formulario.</li>
+<li><a href="https://docs.djangoproject.com/en/5.2/topics/forms/modelforms/#django.forms.ModelForm">Clase
+    ModelForm</a>:
+    Esta clase será la que utilizaremos mayormente, para realizar la
+    gestión de nuestros modelos, y la utilizaremos para construir clases
+    que más tarde utilizaremos en una CreateView, una UpdateView y/o
+    DeleteView.</li>
+</ul>
+<p>En este
+<a href="https://docs.djangoproject.com/en/5.2/topics/class-based-views/generic-editing/">enlace</a>
+encontrarás ejemplos de utilización de los siguientes pares:</p>
+<ul>
+<li>Clase Form, con clase FormView.</li>
+<li>Clase ModelForm, con CreateView, UpdateView y DeleteView.</li>
+</ul>
+<p>En el siguiente subapartado vamos a crear un formulario para el
+mantenimiento de los proyectos, utilizando la clase ModelForm. En la
+próxima unidad utilizaremos la clase Form para realizar un formulario
+para el login de la aplicación.</p>
+<h3 id="gestion-de-proyectos-con-modelform">Gestión de proyectos con ModelForm<a class="headerlink" href="#gestion-de-proyectos-con-modelform" title="Permanent link">&para;</a></h3>
+<h4 id="creacion-de-la-clase-proyectoform">Creación de la clase ProyectoForm<a class="headerlink" href="#creacion-de-la-clase-proyectoform" title="Permanent link">&para;</a></h4>
+<p>El primer paso va a ser la creación de un fichero forms.py en la app de
+portfolioapp (típicamente tendremos un fichero forms.py dentro de cada
+app), e incluimos lo siguiente:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">django</span><span class="w"> </span><span class="kn">import</span> <span class="n">forms</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Proyecto</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ProyectoForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">Proyecto</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;titulo&#39;</span><span class="p">,</span> <span class="s1">&#39;descripcion&#39;</span><span class="p">,</span> <span class="s1">&#39;fecha_creacion&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;categorias&#39;</span><span class="p">,</span> <span class="s1">&#39;imagen&#39;</span><span class="p">]</span>
+</code></pre></div>
+<p>Para poder utilizarlo en las vistas, importamos esta clase en views.py.
+A continuación incluiremos la siguiente línea en las clases
+ProyectoCreateView y ProyectoUpdateView:
+<div class="highlight"><pre><span></span><code><span class="n">form_class</span> <span class="o">=</span> <span class="n">ProyectoForm</span>
+</code></pre></div>
+Hemos de eliminar el atributo "fields" que teníamos en el mixin
+ProyectoMixin, ya que si no lo hacemos la aplicación nos devolverá un
+error.</p>
+<p>Tras hacer los cambios, consultamos el formulario, y no apreciamos
+ninguna diferencia:</p>
+<p><img alt="" src="../Pictures/ud6/100000010000024D000002A9E0BF32037D178675.png" /></p>
+<p>Ahora nos deberíamos preguntar: ¿cómo es posible que
+en el campo Categoría aparezca un multiselector si no lo hemos
+especificado en ningún sitio? Django ha decidido utilizar ese "widget"
+basándose en la definición del modelo. ¿Existen otros tipos de widgets
+por defecto que podríamos utilizar en nuestros formularios? Sí, tienes
+una lista completa en este
+<a href="https://docs.djangoproject.com/en/5.2/ref/forms/widgets/">enlace</a>.</p>
+<p>Podríamos, además, utilizar widgets de terceros en nuestros formularios,
+como por ejemplo los desarrollados en esta app llamada
+<a href="https://django-filter.readthedocs.io/en/stable/ref/widgets.html">django-filter</a>,
+que nos permiten tener un abanico de selectores más ricos para nuestros
+formularios.</p>
+<h4 id="layout-del-formulario">Layout del formulario<a class="headerlink" href="#layout-del-formulario" title="Permanent link">&para;</a></h4>
+<p>Queremos que nuestro formulario tenga una apariencia más atractiva y sea
+más funcional. Queremos que muestre unos mensajes de error asociados a
+cada uno de los campos, no los preestablecidos en el navegador.</p>
+<p>Podemos establecer varios grados de control sobre el formulario, pero en
+este apartado vamos a manipular el layout (disposición) de los campos y
+vamos a establecer un mayor grado de control sobre ellos. De este modo,
+se ha desarrollado una nueva versión de la plantilla que se adjunta al
+presente documento, llamada proyecto_form.html. A continuación vemos el
+resultado:</p>
+<p><img alt="" src="../Pictures/ud6/10000001000003300000024F0A6B359F6ADF7082.png" /></p>
+<p>Ha cambiado un poco la disposición de los campos, pero
+tampoco es gran cosa.</p>
+<p>El aspecto es claramente mejorable, ¿cómo podemos conseguir un
+formulario más adaptado a los actuales estándares de interfaces de
+usuario? Más abajo en este documento lo llevaremos a cabo mediante un
+paquete adicional llamado Django Crispy Forms.</p>
+<h4 id="metodo-clean">Método clean<a class="headerlink" href="#metodo-clean" title="Permanent link">&para;</a></h4>
+<p>En un apartado anterior implementamos en la vista ProyectoCreateView la
+restricción de que la fecha de creación no fuese anterior al momento
+actual. Lo mismo lo podemos hacer como parte del formulario, mediante
+los métodos clean. Tenemos dos tipos:</p>
+<ul>
+<li>Método clean común a todos los campos: con este método podemos
+    comprobar dependencias entre los campos o tener en cuenta
+    consideraciones adicionales.</li>
+<li>Métodos clean propios de cada campo: se definen como clean_[nombre
+    del atributo], y son específicos para cada campo del formulario.</li>
+</ul>
+<p>Vamos a implementar un método clean para el campo fecha_creacion. En el
+formulario ProyectoForm (a la altura de la clase Meta, no dentro),
+introducimos lo siguiente:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">clean_fecha_creacion</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">fecha_creacion</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cleaned_data</span><span class="p">[</span><span class="s1">&#39;fecha_creacion&#39;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">fecha_creacion</span> <span class="o">&lt;</span> <span class="n">timezone</span><span class="o">.</span><span class="n">now</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="n">ValidationError</span><span class="p">(</span><span class="s2">&quot;La fecha/hora del proyecto no puede ser anterior a la actual.&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">fecha_creacion</span>
+</code></pre></div>
+<p>Comprobamos el mensaje de error, que es claramente mejorable
+estéticamente:</p>
+<p><img alt="" src="../Pictures/ud6/1000000100000107000000883FC2FEEEC057391D.png" /></p>
+<p>Las validaciones del formulario se dispararán antes que
+las de la vista, aunque podemos comentar la validación de las vistas
+para no duplicar código.</p>
+<p>Esto lo mejoraremos con Django Crispy Forms.</p>
+<p>Podemos realizar esta validación donde más nos interese: si la
+realizamos en el formulario, cualquier vista que lo utilice conservará
+esta validación; si la realizamos en las vistas, tendremos que duplicar
+la lógica o crear un mixin.</p>
+<h2 id="function-based-views">Function based views<a class="headerlink" href="#function-based-views" title="Permanent link">&para;</a></h2>
+<p>En este documento hemos utilizado CBV en todos los ejemplos, pero
+podríamos haberlos realizado con FBV. Normalmente utilizar esta segunda
+aproximación nos da más control sobre lo que estamos haciendo, pero para
+gran parte de los casos no lo necesitamos. Por lo general, utilizaremos
+FBV cuando necesitemos algo especializado y concreto, para todo lo demás
+nos beneficiaremos con todas las funcionalidades que vienen ya
+implementadas en las clases.</p>
+<p>Ahora que hemos revisado el apartado de formularios de Django, podemos
+acometer las FBV, ya que si utilizamos este método, hemos de definir los
+formularios previamente (con CBV nos vienen los formularios hechos, si
+queremos los que vienen por defecto).</p>
+<p>A modo ilustrativo, revisaremos este
+<a href="https://cpadiernos.github.io/function-based-views-and-their-class-based-view-equivalents-in-django-part-two.html">enlace</a>
+para establecer los paralelismos entre las dos aproximaciones.</p>
+<h2 id="interactividad">Interactividad<a class="headerlink" href="#interactividad" title="Permanent link">&para;</a></h2>
+<p>El desarrollo en lado servidor hace muchísimas cosas por nosotros,
+representa en la mayoría de las aplicaciones una buena parte del total,
+pero hay muchísimas más cosas que atender. La interacción con el usuario
+es otro factor esencial, y funcionalidades desarrolladas en el lado
+servidor que no son utilizadas de forma efectiva por el usuario (por
+razones de usabilidad u otras) son funcionalidades que no existen en la
+práctica. Por tanto, hay que cuidar y mimar especialmente la percepción
+que el usuario tiene de nuestra aplicación.</p>
+<p>Es por ello que la parte servidor se ha de complementar con la parte
+cliente (entre otras), que ocurre en el navegador web, para el caso de
+las aplicaciones web.</p>
+<p>Existen multitud de tecnologías, librerías, técnicas, que nos permiten
+ajustar de forma mucho más fina la interacción con el usuario. Con el
+modelo MVC podemos realizar muchísimas adaptaciones, pero el modelo que
+nos permite mayor versatilidad es el basado en servicios REST, que nos
+permite separar por completo la parte servidor y la parte cliente,
+cediendo a este último todo el protagonismo en la interacción con el
+usuario.</p>
+<p>En los siguientes subapartados vamos a ver unos ejemplos de cómo podemos
+mejorar el aspecto e interacción de nuestra aplicación con diferentes
+paquetes y librerías.</p>
+<p>En torno a Django se desarrollan multitud de paquetes que pueden
+facilitar muchas de estas tareas. En este
+<a href="https://djangopackages.org/">enlace</a> vas a encontrar muchos de ellos.
+Podemos destacar:</p>
+<ul>
+<li><a href="https://djangopackages.org/grids/g/auto-complete/">Autocompletado</a>
+    de campos</li>
+<li><a href="https://djangopackages.org/grids/g/calendar/">Calendarios</a></li>
+<li><a href="https://djangopackages.org/grids/g/charts/">Gráficos</a></li>
+<li><a href="https://djangopackages.org/grids/g/file-managers/">Ficheros</a></li>
+<li><a href="https://djangopackages.org/grids/g/filters/">Filtrado</a></li>
+<li><a href="https://djangopackages.org/grids/g/forms/">Formularios</a></li>
+<li><a href="https://djangopackages.org/grids/g/maps/">Mapas</a></li>
+<li><a href="https://djangopackages.org/grids/g/pagination/">Paginación</a></li>
+</ul>
+<p>Y muchos más.</p>
+<h3 id="django-crispy-forms">Django Crispy Forms<a class="headerlink" href="#django-crispy-forms" title="Permanent link">&para;</a></h3>
+<p>Vamos a seguir con el trabajo iniciado en el apartado anterior. Vamos a
+retomar el formulario que no tenía un aspecto muy usable, y lo vamos a
+endulzar con Django Crispy Forms. Hemos de instalar 2 paquetes:</p>
+<ul>
+<li><a href="https://django-crispy-forms.readthedocs.io/en/latest/install.html">Django Crispy
+    Forms</a></li>
+<li><a href="https://github.com/django-crispy-forms/crispy-bootstrap5">Pack de plantillas Bootstrap 5 para Django Crispy
+    Forms.</a></li>
+</ul>
+<p>Instala los dos paquetes que se nos indica mediante pip (en nuestro
+entorno virtual), congelamos requirements.txt, y modificamos
+INSTALLED_APPS en settings.py. Sigue las instrucciones de instalación de
+los dos enlaces. Además, asegúrate de incluir las siguientes variables
+en settings.py (para el segundo paquete instalado):</p>
+<div class="highlight"><pre><span></span><code><span class="n">CRISPY_ALLOWED_TEMPLATE_PACKS</span> <span class="o">=</span> <span class="s2">&quot;bootstrap5&quot;</span>
+<span class="n">CRISPY_TEMPLATE_PACK</span> <span class="o">=</span> <span class="s2">&quot;bootstrap5&quot;</span>
+</code></pre></div>
+<p>Vamos a la plantilla de proyecto_form.html, y revertimos los cambios que
+habíamos hecho. La dejamos del siguiente modo:
+<div class="highlight"><pre><span></span><code>{% extends &#39;portfolio/base.html&#39; %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+&lt;div class=&quot;container&quot;&gt;
+    &lt;h2&gt;{{object|yesno:&#39;Actualizar proyecto,Creación de un nuevo proyecto&#39;}}&lt;/h2&gt;
+    &lt;form method=&quot;post&quot; enctype=&quot;multipart/form-data&quot; novalidate&gt;
+        {% crispy form %}
+        &lt;input type=&quot;submit&quot; class=&quot;btn btn-success mr-2&quot; value=&quot;{{object|yesno:&#39;Actualizar,Crear&#39;}}&quot; &gt;
+        {% if object %}
+        &lt;a class=&quot;btn btn-danger&quot; role=&quot;button&quot; href=&quot;{% url &#39;proyecto_delete&#39; object.id %}&quot;&gt; Eliminar &lt;/a&gt;
+        {% endif %}
+    &lt;/form&gt;
+&lt;/div&gt;
+{% endblock %}
+</code></pre></div></p>
+<p>Vamos a hacer magia con Django Crispy Forms y añadimos la siguiente
+línea tras el extends:
+<div class="highlight"><pre><span></span><code>{% load crispy_forms_tags %}
+</code></pre></div>
+La línea que dice {{ form.as_p }} la sustituimos por:
+<div class="highlight"><pre><span></span><code>{% crispy form %}
+</code></pre></div>
+Finalmente, borramos la línea {% csrf_token %} porque Crispy Forms ya lo
+incluye por nosotros, e incluimos "novalidate" al elemento form, de
+esta forma anulamos las validaciones nativas del navegador.</p>
+<p>Comprobamos ahora el formulario y vemos una clarísima mejora:</p>
+<p><img alt="" src="../Pictures/ud6/10000001000004010000034FAB4CDCBF9821562C.png" /></p>
+<p>Antes de continuar, vamos a ver qué nos ofrece este paquete para cambiar
+nuestro formulario. En la documentación se detallan dos clases:</p>
+<ul>
+<li>FormHelper: define el comportamiento en la representación del
+    formulario.</li>
+<li>Layout: como su propio nombre indica, define la estructura de los
+    elementos del formulario.</li>
+</ul>
+<p>Primero vamos a introducir el siguiente código en la clase ProyectoForm:
+<div class="highlight"><pre><span></span><code>    def __init__(self, *args, **kwargs):
+        super(ProyectoForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper(self)
+        self.helper.form_tag = False # No incluir &lt;form&gt;&lt;/form&gt;
+
+        self.helper.layout = Layout(
+            Div(
+                Field(&#39;titulo&#39;),
+                Field(&#39;descripcion&#39;),
+            ),
+            HTML(&#39;&lt;hr&gt;&#39;),
+            Div(
+                Div(Field(&#39;fecha_creacion&#39;), css_class=&quot;col-6&quot;),
+                Div(Field(&#39;year&#39;), css_class=&quot;col-6&quot;),
+                css_class=&quot;row&quot;
+            ),
+            HTML(&#39;&lt;hr&gt;&#39;),
+            Div(
+                Field(&#39;categorias&#39;, css_class=&quot;mb-3&quot;),
+                Field(&#39;imagen&#39;),
+                css_class=&quot;mb-5&quot;
+            ),
+        )
+</code></pre></div></p>
+<p>Observaciones:</p>
+<ul>
+<li>Se extiende el constructor de la clase ProyectoForm para acomodar
+    los cambios con Crispy Forms.</li>
+<li>Se establece el atributo form_tag del helper a False para que no se
+    incluya el elemento <form> en el HTML, ya que ya lo tenemos
+    establecido en proyecto_form.html.</li>
+<li>Utilizamos elementos como Layout, Div, HTML para estructurar los
+    elementos, y les damos estilo con el atributo css_class.</li>
+</ul>
+<p>De esta forma podríamos modificar la estructura del formulario de forma
+dinámica, mediante Python.</p>
+<p>Vamos a ver cómo ha quedado el formulario:</p>
+<p><img alt="" src="../Pictures/ud6/1000000100000403000003872F98143BE6BA03FB.png" /></p>
 
 
 
