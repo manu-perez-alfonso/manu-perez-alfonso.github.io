@@ -804,9 +804,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#paquetes-django" class="md-nav__link">
+  <a href="#paquets-django" class="md-nav__link">
     <span class="md-ellipsis">
-      PAQUETES DJANGO
+      PAQUETS DJANGO
     </span>
   </a>
   
@@ -841,9 +841,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#autentificacio-amb-jwt" class="md-nav__link">
+  <a href="#autenticacio-amb-jwt" class="md-nav__link">
     <span class="md-ellipsis">
-      Autentificació amb JWT
+      Autenticació amb JWT
     </span>
   </a>
   
@@ -1308,9 +1308,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#paquetes-django" class="md-nav__link">
+  <a href="#paquets-django" class="md-nav__link">
     <span class="md-ellipsis">
-      PAQUETES DJANGO
+      PAQUETS DJANGO
     </span>
   </a>
   
@@ -1345,9 +1345,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#autentificacio-amb-jwt" class="md-nav__link">
+  <a href="#autenticacio-amb-jwt" class="md-nav__link">
     <span class="md-ellipsis">
-      Autentificació amb JWT
+      Autenticació amb JWT
     </span>
   </a>
   
@@ -1424,43 +1424,43 @@
 </ul>
 <p>Vistos aquests esquemes d'autentificació, DRF permet utilitzar diversos d'ells, mitjançant la utilització de l'array DEFAULT_AUTHENTICATION_CLASSES, dins del diccionari REST_FRAMEWORK, segons el següent exemple:</p>
 <p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud10/1000000100000340000000B7C645AF6A7AD18A47.png" /></p>
-<p>O també es pot especificar a la pròpia vista (ha de heretar d'APIView), mitjançant la llista authentication_classes.</p>
-<p>En cas que un request no passi les validacions de seguretat, es poden retornar dues possibles respostes:</p>
+<p>O també es pot especificar en la pròpia vista (ha d'heretar d'APIView), mitjançant la llista authentication_classes.</p>
+<p>En cas que una request no passe les validacions de seguretat, es poden retornar dues possibles respostes:</p>
 <ul>
 <li>Error HTTP 401 Unauthorized.</li>
 <li>Error HTTP 403 Permission Denied.</li>
 </ul>
 <h2 id="drf-permisos">DRF - PERMISOS<a class="headerlink" href="#drf-permisos" title="Permanent link">&para;</a></h2>
 <p>La documentació sobre permisos en DRF la trobaràs en aquest <a href="https://www.django-rest-framework.org/api-guide/permissions/">enllaç</a>.</p>
-<p>Els permisos en DRF determinen si a un determinat request se li concedeix accés als recursos sol·licitats, i s'apliquen abans de la lògica d'una determinada vista.</p>
-<p>Aquests permisos es poden aplicar tant al nivell de vista, com a nivell d'objecte. Això permet que determinats usuaris tinguin accés a uns objectes pertanyents a un model, i no a altres objectes d'aquest mateix model. El mètode a sobreescriure per poder realitzar això es diu get_object().</p>
-<p>En moltes ocasions, ens convindrà sobreescriure els mètodes get_queryset, perform_create, perform_update, perform_delete ..., en lloc d'utilitzar permisos a nivell d'objecte (el qual introduiria un retard addicional en la lògica de processament).</p>
+<p>Els permisos en DRF determinen si a una determinada request se li concedeix accés als recursos sol·licitats, i s'apliquen abans de la lògica d'una determinada vista.</p>
+<p>Aquests permisos es poden aplicar tant al nivell de vista, com a nivell d'objecte. Això permet que determinats usuaris tinguen accés a uns objectes pertanyents a un model, i no a altres objectes d'aquest mateix model. El mètode a sobreescriure per poder fer això es diu get_object().</p>
+<p>En moltes ocasions, ens convindrà sobreescriure els mètodes get_queryset, perform_create, perform_update, perform_delete..., en lloc d'utilitzar permisos a nivell d'objecte (el qual introduiria un retard addicional en la lògica de processament).</p>
 <p>Encara que podem determinar la política de permisos a nivell global mitjançant la llista DEFAULT_PERMISSION_CLASSES del diccionari REST_FRAMEWORK, és més recomanable implementar-ho a nivell de cadascuna de les vistes de la nostra aplicació. Un exemple de configuració global:</p>
 <p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud10/10000001000003380000009BE33E6FF3D79F38D5.png" /></p>
 <p>En aquest <a href="https://www.django-rest-framework.org/api-guide/permissions/#api-reference">enllaç</a> trobem la llista de permisos estàndard de DRF.</p>
-<p>De especial interès són els permisos personalitzats de DRF, mitjançant els quals podem implementar la lògica de permisos adequada segons els requeriments de la nostra aplicació. Imagina que hem creat un model de perfils d'usuaris (administrador, professor, alumnat ...), a cadascun dels quals li volem concedir diferents grups de privilegis a la nostra aplicació.</p>
+<p>D'especial interès són els permisos personalitzats de DRF, mitjançant els quals podem implementar la lògica de permisos adequada segons els requeriments de la nostra aplicació. Imagina que hem creat un model de perfils d'usuaris (administrador, professor, alumnat...), a cadascun dels quals li volem concedir diferents grups de privilegis a la nostra aplicació.</p>
 <p>Per a això, ens basarem en la classe BasePermission i sobreescriurem els mètodes (un, o ambdós) has_permission i/o has_object_permission, com es detalla en aquest <a href="https://www.django-rest-framework.org/api-guide/permissions/#custom-permissions">enllaç</a>.</p>
-<h2 id="paquetes-django">PAQUETES DJANGO<a class="headerlink" href="#paquetes-django" title="Permanent link">&para;</a></h2>
+<h2 id="paquets-django">PAQUETS DJANGO<a class="headerlink" href="#paquets-django" title="Permanent link">&para;</a></h2>
 <p>En aquest <a href="https://djangopackages.org/grids/g/authentication/">enllaç</a> trobem totes les extensions de Django que ens permeten implementar els mecanismes d'autenticació i seguretat.</p>
 <p>Els més rellevants, destacats en la documentació de DRF són:</p>
 <ul>
-<li>djando-rest-knox</li>
+<li>django-rest-knox</li>
 <li>Django OAuth Toolkit</li>
 <li>Django Rest framework OAuth</li>
 <li>JSON Web Token Authentication</li>
 <li>Djoser</li>
 </ul>
-<p>En el següent apartat analitzarem amb més profunditat les avantatges que ens ofereix utilitzar el paquet Djoser, i el utilitzarem per implementar diversos aspectes d'autenticació i seguretat en el projecte de portfolio.</p>
+<p>En el següent apartat analitzarem amb més profunditat les avantatges que ens ofereix utilitzar el paquet Djoser, i l'utilitzarem per implementar diversos aspectes d'autenticació i seguretat en el projecte de portfolio.</p>
 <h2 id="djoser-i-simple-jwt">DJOSER I SIMPLE JWT<a class="headerlink" href="#djoser-i-simple-jwt" title="Permanent link">&para;</a></h2>
 <p>En aquest apartat veurem diferents aspectes de Djoser, que ens proporciona diverses opcions interessants:</p>
 <ul>
-<li>Per una banda, utilitza autentificació (per token o per social) mitjançant altres paquets.</li>
-<li>Per altra banda, ens proporciona de sèrie un conjunt de vistes per gestionar tota la operativa habitual d'un usuari (alta, login, logout, canvi de contrasenya, etc.), fins i tot amb un model d'usuari modificat (que és el nostre cas).</li>
+<li>D'una banda, utilitza autenticació (per token o per social) mitjançant altres paquets.</li>
+<li>D'altra banda, ens proporciona de sèrie un conjunt de vistes per gestionar tota l'operativa habitual d'un usuari (alta, login, logout, canvi de contrasenya, etc.), fins i tot amb un model d'usuari modificat (que és el nostre cas).</li>
 </ul>
-<p>En els següents subapartats farem la configuració d'aquest paquet i utilitzarem algunes de les seves vistes.</p>
+<p>En els següents subapartats farem la configuració d'aquest paquet i utilitzarem algunes de les seues vistes.</p>
 <h3 id="installacio">Instal·lació<a class="headerlink" href="#installacio" title="Permanent link">&para;</a></h3>
-<p>Segueix la guia d'instal·lació d'aquest <a href="https://djoser.readthedocs.io/en/latest/getting_started.html">enllaç</a>. Instal·la el paquet djangorestframework_simplejwt, NO social-auth-app-django, ja que utilitzarem autentificació per token JWT.</p>
-<p>També configura tot el necessari per al backend d'autentificació de JWT, segons aquest <a href="https://djoser.readthedocs.io/en/latest/authentication_backends.html#json-web-token-authentication">enllaç</a>. Deixarem el diccionari SIMPLE_JWT de la següent manera (en settings.py):</p>
+<p>Segueix la guia d'instal·lació d'aquest <a href="https://djoser.readthedocs.io/en/latest/getting_started.html">enllaç</a>. Instal·la el paquet djangorestframework_simplejwt, NO social-auth-app-django, ja que utilitzarem autenticació per token JWT.</p>
+<p>També configura tot el necessari per al backend d'autenticació de JWT, segons aquest <a href="https://djoser.readthedocs.io/en/latest/authentication_backends.html#json-web-token-authentication">enllaç</a>. Deixarem el diccionari SIMPLE_JWT de la següent manera (en settings.py):</p>
 <p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud10/10000001000001700000005B43F6DA45D4166ADB.png" /></p>
 <p>NOTA: <strong>prefixem</strong> les URLs de Djoser amb "api", de la següent manera:</p>
 <p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud10/100000010000019D000000443C072583355FEB04.png" /></p>
@@ -1473,7 +1473,7 @@
 <p>Aquesta instrucció ens ha retornat dues coses:</p>
 <ul>
 <li>El token d'accés, que haurem d'enviar a tots els endpoints amb vistes protegides.</li>
-<li>El token de refresc, a utilitzar quan caduqui el token d'autentificació.</li>
+<li>El token de refresc, a utilitzar quan caduque el token d'autenticació.</li>
 </ul>
 <p>Quina és la durada del token d'accés? La podem modificar? La resposta és: sí, podem modificar la durada del token d'accés, amb la directiva ACCESS_TOKEN_LIFETIME, segons la <a href="https://django-rest-framework-simplejwt.readthedocs.io/en/latest/settings.html">documentació</a> del paquet Simple JWT. El seu valor per defecte és de 5 minuts, com es detalla en aquesta documentació.</p>
 <p>Un cop obtinguts aquests dos tokens, podem verificar si el token d'accés continua sent vàlid, mitjançant la següent instrucció:
@@ -1500,10 +1500,10 @@
 <li>Realitzar la petició HTTP amb un token d'accés vàlid.</li>
 </ol>
 <h3 id="parametres-de-configuracio">Paràmetres de configuració<a class="headerlink" href="#parametres-de-configuracio" title="Permanent link">&para;</a></h3>
-<p>Per una banda tenim la configuració de Simple JWT, que ja hem mencionat en l'apartat anterior. Revisem les principals opcions de configuració.</p>
-<p>Per altra banda, la documentació de Djoser ens permet veure com canviar els valors predeterminats, en la seva <a href="https://djoser.readthedocs.io/en/latest/settings.html">documentació</a>. Els revisem també durant la classe.</p>
-<h3 id="autentificacio-amb-jwt">Autentificació amb JWT<a class="headerlink" href="#autentificacio-amb-jwt" title="Permanent link">&para;</a></h3>
-<p>Anem, en aquest punt, a modificar les vistes del nostre projecte de portfolio perquè només els usuaris autenticats puguin accedir a les operacions CRUD dels nostres models.</p>
+<p>D'una banda tenim la configuració de Simple JWT, que ja hem mencionat en l'apartat anterior. Revisem les principals opcions de configuració.</p>
+<p>D'altra banda, la documentació de Djoser ens permet veure com canviar els valors predeterminats, en la seua <a href="https://djoser.readthedocs.io/en/latest/settings.html">documentació</a>. Els revisem també durant la classe.</p>
+<h3 id="autenticacio-amb-jwt">Autenticació amb JWT<a class="headerlink" href="#autenticacio-amb-jwt" title="Permanent link">&para;</a></h3>
+<p>Anem, en aquest punt, a modificar les vistes del nostre projecte de portfolio perquè només els usuaris autenticats puguen accedir a les operacions CRUD dels nostres models.</p>
 <p>Les vistes que necessitem securitzar són les següents:</p>
 <ul>
 <li>CategoriaCRUDViewSet</li>
@@ -1518,7 +1518,7 @@
 Importem la classe prèviament:
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">rest_framework.permissions</span><span class="w"> </span><span class="kn">import</span> <span class="n">IsAuthenticated</span>
 </code></pre></div>
-Per a la darrera vista, basada en mètode, necessitem importar el decorador corresponent, i afegir-lo a la vista de la forma:</p>
+Per a l'última vista, basada en mètode, necessitem importar el decorador corresponent, i afegir-lo a la vista de la forma:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">rest_framework.decorators</span><span class="w"> </span><span class="kn">import</span> <span class="n">api_view</span><span class="p">,</span> <span class="n">permission_classes</span>
 <span class="c1"># Codi</span>
 <span class="nd">@api_view</span><span class="p">([</span><span class="s1">&#39;GET&#39;</span><span class="p">])</span>
@@ -1531,7 +1531,7 @@ Per a la darrera vista, basada en mètode, necessitem importar el decorador corr
 <p>Però si intentem accedir a qualsevol operació CRUD de les categories, obtindrem un error de permisos:</p>
 <p><img alt="" src="../../../../modulos/01-Servidor/Pictures/ud10/10000001000004AF0000019B1569A82FC258D47F.png" /></p>
 <p>Podríem pensar en introduir les nostres credencials mitjançant l'opció "Log in" de l'API navegable, però no s'acceptaran les nostres credencials perquè l'opció de configuració DEFAULT_AUTHENTICATION_CLASSES només recull JWTAuthentication, com a mètode d'autenticació.</p>
-<p>Per tant, a partir d'ara, haurem d'utilitzar algun tipus de client (curl, per exemple) per poder testejat els serveis protegits, enviant el token d'accés cada vegada que vulguem realitzar alguna operació protegida.</p>
+<p>Per tant, a partir d'ara, haurem d'utilitzar algun tipus de client (curl, per exemple) per poder provar els serveis protegits, enviant el token d'accés cada vegada que vulguem realitzar alguna operació protegida.</p>
 <p>Per exemple, anem a actualitzar una de les categories mitjançant curl, enviant el token d'accés, mitjançant una instrucció similar a la següent:
 <div class="highlight"><pre><span></span><code>curl -LX PUT http://localhost/api/categoria_crud/1/ -H &#39;Authorization: JWT [TOKEN ACCÉS]&#39; -d &quot;nombre=PHP&quot;
 </code></pre></div></p>
@@ -1550,10 +1550,8 @@ Per a la darrera vista, basada en mètode, necessitem importar el decorador corr
 </ul>
 <p>Simple JWT:</p>
 <ul>
-<li><a href="https://djoser.readthedocs.io/en/latest/jwt_endpoints.html#jwt-create">JWT
-    Create</a></li>
-<li><a href="https://djoser.readthedocs.io/en/latest/jwt_endpoints.html#jwt-refresh">JWT
-    Refresh</a></li>
+<li><a href="https://djoser.readthedocs.io/en/latest/jwt_endpoints.html#jwt-create">JWT Create</a></li>
+<li><a href="https://djoser.readthedocs.io/en/latest/jwt_endpoints.html#jwt-refresh">JWT Refresh</a></li>
 <li><a href="http://verify/">JWT Verify</a></li>
 </ul>
 
